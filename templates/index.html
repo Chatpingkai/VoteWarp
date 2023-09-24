@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Skranji">
     <style>
-    .text{
-        font-family: "Skranji";
-        font-size: 75px;
-    }
-    .text{
-        -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: black;
-        position:fixed;
-        top: 5%;
-        right: 40%;
-    }
-    .picture{
-        position:fixed;
-        top: 50%;
-        right: 40%;
-    }
+        @font-face {
+            font-family: myFirstFont;
+            src: url(quite_something_demo-webfont.woff);
+        }
+        .text{
+            font-family: myFirstFont;
+            font-size: 100px;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: black;
+            position:fixed;
+            top: 2%;
+            right: 40%;
+        }
+        .picture{
+            position:fixed;
+            top: 50%;
+            right: 40%;
+        }
     </style>
     <title>VothWarp</title>
 </head>
