@@ -1,6 +1,8 @@
-div {
-    button {
-        border-radius: 5px; /* มุมโค้ง */
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* เงา */
-    }
+@font-face {
+    font-family: Inter;
+    src: url(../static/font/Inter-Light.woff);
+}
+
+body{
+    font-family: 'Inter', sans-serif
 }
