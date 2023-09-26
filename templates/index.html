@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .text{
-            position:fixed;
-            top: 15%;
-            right: 34%;
-        }
-        .picture{
-            position:fixed;
-            top: 48%;
-            right: 40%;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/css/style_index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
     <title>VothWarp</title>
 </head>
-<body background="../static/img/background_login.png">
+<body>
     <div class="text">
-        <img src="../static/img/Time_To_Warp_login.png" alt="text" width="1200px" height="300px">
+        <img src="../static/img/Time_To_Warp_login.png" alt="text" width="1050px" height="250px">
     </div>
     <div class="picture">
-        <img src="../static/img/object1_login.png" alt="test" width="1000px" height="500px">
+        <img src="../static/img/object1_login.png" alt="earth" width="950px" height="500px">
+    </div>
+    <div class="page_login">
+        <form action="">
+            <h1>Login</h1>
+            <div class="box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="box">
+                <input type="password" placeholder="Password" required>
+                <p class='bx bxs-lock-alt' ></p>
+            </div>
+
+            <div class="remember">
+                <label><input type="checkbox"> Remember me </label>
+                <a href="#"> Forgot password</a>
+            </div>
+
+            <button type="submit" class="Login">Login</button>
+
+            <div class="register-link">
+                <p>
+                    Don't have an account <a href="Register.html">Register</a>
+                </p>
+            </div>
+        </form>
     </div>
 </body>
 </html>
