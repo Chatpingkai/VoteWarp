@@ -1,4 +1,9 @@
+@font-face {
+    font-family: "inter";
+    src: url(../font/Inter-Regular.woff);
+}
 body{
     background-image: url("../img/bgregister.jpg");
     background-repeat: no-repeat;
+    font-family: Inter, sans-serif;
 }
