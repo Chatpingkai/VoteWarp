@@ -1,16 +1,45 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
+
+app.secret_key = "peteza"
 
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
 
-@app.route('/Register')
+
+@app.route('/login')
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        #test
+        if username == 'admin' and password == 'password':
+            session['username'] = username
+            return redirect(url_for('home'))
+        else:
+            return render_template('index.html')
+    else:
+        return render_template('index.html')
+
+
+
+
+@app.route('/register')
 def register():
     return render_template("Register.html")
+
+
+
+@app.route('/home')
+def home():
+    return render_template("home.html")
+
+
 
 
 if __name__ == "__main__":

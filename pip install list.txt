@@ -1,0 +1,11 @@
+used
+pip install flask
+
+not use
+pip install flask-login
+
+not use
+pip install flask-mysql
+
+not use
+pip install flask-oauthlib
