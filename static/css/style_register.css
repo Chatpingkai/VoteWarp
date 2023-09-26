@@ -7,6 +7,8 @@ body{
     background-image: url("../img/bgregister.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     font-family: Inter, sans-serif;
 }
 
@@ -22,4 +24,10 @@ body{
     position: fixed;
     top: 50%;
     right: 50%;
+}
+
+.pic_google{
+    position: fixed;
+    top: 75%;
+    right: 20%;
 }
