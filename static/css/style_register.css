@@ -2,8 +2,24 @@
     font-family: "inter";
     src: url(../font/Inter-Regular.woff);
 }
+
 body{
     background-image: url("../img/bgregister.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     font-family: Inter, sans-serif;
+}
+
+/* let's go */
+.picture1{
+    position:fixed;
+    top: 15%;
+    right: 50%;
+}
+
+/* airplane */
+.picture2{
+    position: fixed;
+    top: 50%;
+    right: 50%;
 }
