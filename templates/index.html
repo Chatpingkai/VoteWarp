@@ -15,14 +15,14 @@
         <img src="../static/img/object1_login.png" alt="earth" width="950px" height="500px">
     </div>
     <div class="page_login">
-        <form action="">
+        <form action="{{url_for('login')}}" method="get">
             <h1>Login</h1>
             <div class="box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" name="Username">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" name="Password" >
                 <p class='bx bxs-lock-alt' ></p>
             </div>
 

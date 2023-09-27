@@ -13,18 +13,20 @@ def index():
 
 @app.route('/login')
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    # if request.method == 'POST':
+    #     username = request.form['username']
+    #     password = request.form['password']
         
-        #test
-        if username == 'admin' and password == 'password':
-            session['username'] = username
-            return redirect(url_for('home'))
-        else:
-            return render_template('index.html')
-    else:
-        return render_template('index.html')
+    #     #test
+    #     if username == 'admin' and password == 'password':
+    #         session['username'] = username
+    #         return redirect(url_for('home'))
+    #     else:
+    #         return render_template('index.html')
+    # else:
+    username = request.args.get('Username')
+    password = request.args.get('Password')
+    return render_template('testlogin.html', data = {"username":username, "password":password})
 
 
 
