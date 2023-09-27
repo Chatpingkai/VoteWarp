@@ -12,22 +12,22 @@ body{
     font-family: Inter, sans-serif;
 }
 
-/* let's go */
-.picture1{
-    position:fixed;
-    top: 15%;
-    right: 50%;
-}
-
-/* airplane */
-.picture2{
+.page_register{
     position: fixed;
-    top: 50%;
-    right: 50%;
+    display: flex;
+    margin: auto;
+    top: 7%;
+    left: 10%;
+    background-color: rgba(245, 245, 245, 0.5);
+    background-position: center;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    border-radius: 50px;
+    padding: 235px 500px;
 }
-
-.pic_google{
-    position: fixed;
-    top: 75%;
-    right: 20%;
-}
+ .airplane{
+    margin: 0 auto;
+    top: 200px;
+    display: flex;
+    padding: auto;
+ }
