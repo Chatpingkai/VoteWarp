@@ -14,23 +14,26 @@ body{
     background-position: center;
 }
 /* time to warp */
-.text{
-    position:fixed;
-    top: 15%;
-    right: 38%;
+.text img{
+    width: 55vw;
+    position: relative;
+    top: 135px;
+    left: 125px;
 }
 /* รูปโลก */
-.picture{
-    position:fixed;
-    top: 48%;
-    right: 40.8%;
+.picture img{
+    width: 63vw;
+    height: 30vw;
+    position: fixed;
+    bottom: 0%;
+    left: 3%;
 }
 /* กล่องใหญ่สุด  */
 .page_login{
-    position: fixed;
-    top: 18%;
-    right: 9%;
-    width: 420px;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 23vw;
     background: transparent;
     border: 3px solid black;
     backdrop-filter: blur(5px);
@@ -41,11 +44,11 @@ body{
 }
 /* text_login */
 .page_login h1 {
-    position: fixed;
     top: 12%;
     right: 33.5%;
     font-weight: 100;
     font-size: 50px;
+    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
 }
@@ -78,7 +81,6 @@ body{
 }
 /* รูปคน */
 .box i{
-    position: fixed;
     right: 65px;
     top: 33.7%;
     /* transform: translate((-50%)); */
@@ -87,7 +89,6 @@ body{
 }
 /* แม่กุญแจ */
 .box p{
-    position: fixed;
     right: 65px;
     top: 46%;
     /* transform: translate((-50%)); */
@@ -164,4 +165,113 @@ body{
 /* register */
 .register-link p a:hover{
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1201px) {
+    /* time to warp */
+    .text img{
+        width: 45vw;
+        height: 15vw;
+        top: 185px;
+        left: 125px;
+    }
+    /* รูปโลก */
+    .picture img{
+        width: 60vw;
+        height: 35vw;
+    }
+    .page_login{
+        width: 30vw;
+    }
+}
+@media screen and (max-width: 1025px) {
+    /* time to warp */
+    .text img{
+        width: 50vw;
+        height: 20vw;
+        top: 135px;
+        left: 75px;
+    }
+    .page_login{
+        width: 30vw;
+        height: 85vh;
+    }
+}
+@media screen and (max-width: 769px) {
+    /* time to warp */
+    .text img{
+        width: 75vw;
+        height: 20vw;
+        top: 20px;
+        left: 15%;
+        right: 15%;
+    }
+    .page_login{
+        top: 20%;
+        left: 25%;
+        width: 50vw;
+        padding: 15px 15px;
+    }
+    .picture img{
+        width: 100vw;
+        height: 50vw;
+        left: 0;
+    }
+    .register-link p{
+        color: #fff;
+    }
+}
+@media screen and (max-width: 481px) {
+    /* time to warp */
+    .text img{
+        width: 80vw;
+        height: 25vw;
+        top: 20px;
+        left: 10%;
+        right: 15%;
+    }
+    .page_login{
+        top: 20%;
+        left: 25%;
+        width: 50vw;
+        height: 60vh;
+        padding: 10px 10px;
+    }
+    .picture img{
+        min-height: 1000x;
+        min-width: 200px;
+    }
+    .page_login h1{
+        font-size: 10vw;
+    }
+    .remember label, .remember a{
+        font-size: 0.5vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    /* time to warp */
+    .text img{
+        width: 80vw;
+        height: 25vw;
+        top: 20px;
+        left: 10%;
+        right: 15%;
+    }
+    .page_login{
+        top: 15%;
+        left: 15%;
+        width: 70vw;
+        height: 55vh;
+        padding: 5px 5px;
+    }
+    .picture img{
+        min-height: 1000x;
+        min-width: 200px;
+    }
+    .page_login h1{
+        font-size: 10vw;
+    }
+    .remember label, .remember a{
+        font-size: 0.5vw;
+    }
 }
