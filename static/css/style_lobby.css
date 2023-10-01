@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: #EEFBFF;
@@ -63,12 +64,12 @@ body{
 .magnify{
     position: relative;
     top: 35%;
-    right: 350px;
+    right: 315px;
 }
 /* ตำแหน่งปุ่มสร้างห้อง */
 .createroom{
     position: absolute;
-    right: 20%;
+    left: 63%;
     top: 30%;
     text-align: center;
     font-size: 50px;
@@ -87,4 +88,135 @@ body{
     top: 30%;
     text-align: center;
     font-size: 50px;
+}
+
+@media screen and (max-width: 1201px) {
+    .profile{
+        width: 125px;
+    }
+    .picture{
+        height: 6.5rem;
+        width: 6.5rem;
+    }
+    .welcome{
+        width: 500px;
+        left: 50px;
+    }
+    .createroom{
+        left: 60%;
+        font-size: 35px;
+    }
+    .createroom img{
+        width: 90%;
+        height: 90%;
+    }
+}
+@media screen and (max-width: 1025px) {
+    .welcome{
+        width: 55vw;
+        left: 75px;
+    }
+    .createroom{
+        left: 60%;
+        top: 25%;
+        font-size: 30px;
+    }
+    .createroom img{
+        width: 80%;
+        height: 80%;
+    }
+    .searchbox input{
+        width: 225px;
+        height: 50px;
+        top: 25%;
+        left: 0%;
+        padding-left: 35px;
+    }
+    .magnify{
+        top: 30%;
+        right: 220px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .welcome{
+        width: 50vw;
+        left: 75px;
+    }
+    .createroom{
+        font-size: 25px;
+    }
+    .createroom img{
+        width: 75%;
+        height: 75%;
+    }
+    .searchbox input{
+        width: 30vw;
+        top: 25%;
+        left: 0%;
+        padding-left: 35px;
+    }
+    .magnify{
+        top: 30%;
+        right: 29.5vw;
+    }
+}
+@media screen and (max-width: 481px) {
+    .welcome{
+        width: 0vw;
+        height: 0vw;
+    }
+    .createroom{
+        left: 30%;
+        top: 25%;
+        font-size: 35px;
+    }
+    .createroom img{
+        width: 85%;
+        height: 85%;
+    }
+    .searchbox input{
+        width: 45vw;
+        position: absolute;
+        top: 25%;
+        left: 40%;
+        padding-left: 35px;
+    }
+    .magnify{
+        top: 30%;
+        position: absolute;
+        top: 35%;
+        left: 42vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    .createroom{
+        left: 40%;
+        top: 20%;
+        font-size: 8.5vw;
+    }
+    .createroom img{
+        width: 80%;
+        height: 80%;
+    }
+    .profile{
+        width: 35vw;
+        height: 100vh;
+    }
+    .picture{
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+    .searchbox input{
+        width: 45vw;
+        position: absolute;
+        top: 25%;
+        left: 40%;
+        padding-left: 35px;
+    }
+    .magnify{
+        top: 30%;
+        position: absolute;
+        top: 35%;
+        left: 42vw;
+    }
 }
