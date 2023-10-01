@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #EEFBFF;
+}
+/* แถบสีเหลือง */
+.searchbar{
+    width: 100vw;
+    height: 15vh;
+    background-color: #FBEEAC;
+    position: fixed;
+    border-bottom: 1.5px solid black;
+    display: flex;
+    justify-content: right;
+}
+/* แถบโปรไฟล์ */
+.profile{
+    width: 150px;
+    height: 100vh;
+    background-color: #31ABF0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    border-right: 1.5px solid black;
+}
+/* วงกลมโปรไฟล์ */
+.picture{
+    height: 7.5rem;
+    width: 7.5rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    top: 3%;
+}
+/* สี่เหลี่ยมมนๆสีฟ้า */
+.welcome{
+    width: 635px;
+    height: 95vh;
+    background-color: #C5F1FF;
+    position: fixed;
+    left: 100px;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    border: 1.5px solid black;
+    border-radius: 50px;
+}
+/* ช่องหาห้อง */
+.searchbox input{
+    width: 300px;
+    height: 50px;
+    background-color: #FBFFDC;
+    border: 1.5px solid black;
+    position: relative;
+    top: 30%;
+    right: 5%;
+    padding-left: 35px;
+    font-size: 1rem;
+}
+/* รูปแว่นขยาย */
+.magnify{
+    position: relative;
+    top: 35%;
+    right: 350px;
+}
+/* ตำแหน่งปุ่มสร้างห้อง */
+.createroom{
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    text-align: center;
+    font-size: 50px;
+}
+/* ปุ่มสร้างห้อง */
+.createroom button{
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    padding-top: 25px;
+}
+/* จดหมาย */
+.letter{
+    position: absolute;
+    right: 20%;
+    top: 30%;
+    text-align: center;
+    font-size: 50px;
+}
