@@ -2,7 +2,7 @@
     font-family: "inter";
     src: url(../font/Inter-Regular.woff);
 }
-
+/*ภาพ background*/
 body{
     background-image: url("../img/bgregister.jpg");
     background-size: cover;
@@ -11,23 +11,29 @@ body{
     background-position: center;
     font-family: Inter, sans-serif;
 }
-
+/*ทั้งหมดในกรอบขาว*/
 .page_register{
     position: fixed;
     display: flex;
-    margin: auto;
-    top: 7%;
-    left: 10%;
+    justify-content: space-around;
+    flex-direction: row;
+    top: 5%;
+    left: 11%;
     background-color: rgba(245, 245, 245, 0.5);
-    background-position: center;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-    color: #ffffff;
     border-radius: 50px;
-    padding: 235px 500px;
+    width: 1400px;
+    height: 810px;
+    align-content: stretch;
+    margin: auto;
 }
- .airplane{
-    margin: 0 auto;
-    top: 200px;
+/*หน้าสมัคร*/
+.register{
     display: flex;
-    padding: auto;
+}
+/*รวมภาพไว้ในกลุ่มเดียวกัน*/
+ .picture{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
  }
