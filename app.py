@@ -50,7 +50,7 @@ def lobby():
 
 
 @app.route('/forgot_password')
-def lobby():
+def forgot_password():
     return render_template("forgot_password.html")
 
 
