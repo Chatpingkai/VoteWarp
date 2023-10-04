@@ -49,6 +49,11 @@ def lobby():
 
 
 
+@app.route('/forgot_password')
+def lobby():
+    return render_template("forgot_password.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
