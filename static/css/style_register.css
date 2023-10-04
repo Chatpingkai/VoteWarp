@@ -22,6 +22,10 @@ body{
     background-color: rgba(245, 245, 245, 0.5);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
     border-radius: 50px;
+    border: none;
+    outline: none;
+    border: 2px solid;
+    border-color: black;
     width: 1400px;
     height: 810px;
     align-content: stretch;
@@ -29,8 +33,9 @@ body{
 }
 /*หน้าสมัคร*/
 .register{
+    position: relative;
     display: flex;
-    justify-content: stretch;
+    margin-top: 80px;
 }
 /*รวมภาพไว้ในกลุ่มเดียวกัน*/
  .picture{
@@ -38,6 +43,7 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
  }
+ /*createaccount button*/
 .register .Createaccount{
     width: 100%;
     height: 45px;
@@ -52,22 +58,35 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     
 }
-.register .box{
+
+.register .box input{
     align-items: center;
     width: 100%;
-    height: 50px;
-    margin: 30px 0;
+    height: 15px;
+    margin: px;
 }
+
 .box input{
     width: 100%;
     height: 100%;
-    background: transparent;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
     border: none;
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
-    font-size: 16px;
-    border-color: black;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
     margin-top: 30px;
     padding: 20px 45px 20px 20px;
+}
+
+h1{
+    text-shadow: 0 0 70px;
+}
+
+*{
+    margin: 10px;
+    padding: px 45px 20px 20px;
+    box-sizing: border-box;
 }
