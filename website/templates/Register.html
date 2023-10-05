@@ -55,9 +55,13 @@
         <span class="closebtn" onclick="closeAlert()">&times;</span>
         {{ message }}
     </div>
-     <script src="../static/javascript/resgister.js"></script>
+    <script src="../static/javascript/resgister.js"></script>
     {% else %}
-        <h1>{{ message }}</h1>
+    <div class="alert">
+        <span class="closebtn" onclick="closeAlert()">&times;</span>
+        {{ message }}
+    </div>
+    <script src="../static/javascript/resgister.js"></script>
     {% endif %}
     {% endfor %}
 {% endif %}
