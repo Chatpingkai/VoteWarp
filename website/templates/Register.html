@@ -47,6 +47,21 @@
     {% endif %}
     {% endwith %}
 </form> -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="alert">
+        <span class="closebtn" onclick="closeAlert()">&times;</span>
+        {{ message }}
+    </div>
+     <script src="../static/javascript/resgister.js"></script>
+    {% else %}
+        <h1>{{ message }}</h1>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+{% endwith %}
     <form method="POST"
         <div class="page_register">
             <div class="picture">
