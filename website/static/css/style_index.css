@@ -275,3 +275,25 @@ body{
         font-size: 0.5vw;
     }
 }
+/* ฝากแ้กด้วยจุ๊บๆ */
+.alert {
+    z-index: 1;
+    padding: 20px;
+    background-color: #f44336; /* สีแดง */
+    color: white;
+    margin-bottom: 15px;
+    position: absolute;
+}
+
+.closebtn {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    background-color: #d32f2f;
+}

@@ -7,7 +7,6 @@
 </head>
 <body>
     <h1>ไม่ต้องตกใจอันนี้กูยังไม่ทำ</h1>
-    {% if user.is_authenticated %}
     <div class="register-link">
         <p>
             Login <a href="/login">Login</a>
@@ -15,15 +14,8 @@
     </div>
     <div class="register-link">
         <p>
-            logout <a href="/logout">logout</a>
-        </p>
-    </div>
-    {% else %}
-    <div class="register-link">
-        <p>
             register <a href="/register">register</a>
         </p>
     </div>
-    {% endif %}
 </body>
 </html>

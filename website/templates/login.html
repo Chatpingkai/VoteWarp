@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
     <title>VothWarp</title>
 </head>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="alert">
+        <span class="closebtn" onclick="closeAlert()">&times;</span>
+        {{ message }}
+    </div>
+    <script src="../static/javascript/resgister.js"></script>
+    {% else %}
+    <div class="alert">
+        <span class="closebtn" onclick="closeAlert()">&times;</span>
+        {{ message }}
+    </div>
+    <script src="../static/javascript/resgister.js"></script>
+    {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endwith %}
     <form method="POST">
         <div class="text">
             <img src="../static/img/Time_To_Warp_login.png" alt="text">

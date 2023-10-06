@@ -19,7 +19,7 @@ def login():
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
-                login_user(user, remember=True)
+                # login_user(user, remember=True)
                 return render_template("lobby.html")
             else:
                 flash('Incorrect Password, try again', category='error')
@@ -51,18 +51,19 @@ def register():
             flash("Don't joke to me put ur real email", category='error')
         elif len(first_name) < 2:
             flash("Yo! Bro we think ur name is to short!! EiEi -3-", category='error')
+        elif len(password1) < 8:
+            flash("YoYo Ur pass too weak make them power up pls", category='error')
         elif password1 != password2:
             flash("Are u got a problem about remember?? It's Not Match", category='error')
-        elif len(password1) < 5:
-            flash("YoYo Ur pass too weak make them power up pls", category='error')
+        
         else:
             # add user to our database <3
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            # login_user(user, remember=True)
             flash("Account Created!! enjoy kub pom", category='success')
-            return render_template('lobby.html')
+            return render_template('login.html')
 
     return render_template('Register.html')
 
