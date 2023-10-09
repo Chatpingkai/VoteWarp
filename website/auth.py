@@ -20,7 +20,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 # login_user(user, remember=True)
-                return render_template("lobby.html")
+                return render_template("page_user.html")
             else:
                 flash('Incorrect Password, try again', category='error')
         else:
