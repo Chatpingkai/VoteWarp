@@ -38,6 +38,7 @@ function addroom(){
     timey.className = "timey"
     let picpic = document.createElement("div");
     picpic.className = "picpic"
+    picpic.setAttribute("id", "picpic")
     let line_1 = document.createElement("div");
     line_1.className = "line2"
     let line_2 = document.createElement("div");
@@ -49,7 +50,6 @@ function addroom(){
     line_3.appendChild(line_time);
     let check_img = document.createElement("img");
     check_img.src = "../static/img/check-mark (1).png"
-    picpic.style.backgroundColor.url = "../img/anonymous2.png"
     line.appendChild(name_room)
     status.appendChild(text_status)
     status.appendChild(complete)

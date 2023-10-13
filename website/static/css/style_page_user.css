@@ -180,10 +180,11 @@ span.photo{
     border: 3.5px solid black;
     display: block;
     overflow: hidden;
-    background: no-repeat;
+    background: url(../img/anonymous2.png) no-repeat;
     background-size: cover;
     background-position: center top;
     border-radius: 100%;
+    cursor: pointer;
 }
 span.photo:after{
   content: " Edit your Profile ";
