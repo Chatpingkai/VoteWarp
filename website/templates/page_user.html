@@ -13,7 +13,9 @@
         </div>
     </div>
     <div class="name_user">
-        Chatchawan Tongsirikun
+        {% for user in new_user %}
+        {{ user }}
+        {% endfor %}
     </div>
     <div class="searchbar">
         <div class="searchbox">

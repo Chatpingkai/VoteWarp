@@ -20,7 +20,8 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 # login_user(user, remember=True)
-                return render_template("page_user.html")
+                new_user = User.query.filter_by(email=email).with_entities(User.first_name).first()
+                return render_template("page_user.html", new_user=new_user)
             else:
                 flash('Incorrect Password, try again', category='error')
         else:
