@@ -180,7 +180,7 @@ span.photo{
     border: 3.5px solid black;
     display: block;
     overflow: hidden;
-    background: #ddd url("../img/anonymous2.png") no-repeat;
+    background: no-repeat;
     background-size: cover;
     background-position: center top;
     border-radius: 100%;
@@ -208,4 +208,3 @@ span.photo:hover:after{
   opacity: 1;
   color: #fff;
 }
-
