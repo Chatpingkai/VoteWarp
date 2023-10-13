@@ -17,11 +17,11 @@ body{
 .picture{
     height: 15vw;
     width: 15vw;
-    border: 3.5px solid black;
     border-radius: 50%;
     position: absolute;
     top: 15%;
     left: 15%;
+    object-fit: cover;
 }
 
 .searchbar{
@@ -76,25 +76,40 @@ body{
     gap: 50px;
     overflow-x: auto;
     grid-auto-flow: column;
-    margin-top: 3.5%
+    padding: 1.5% 1.5% 0 1.5%;
 }
 .room_box{
-    width: 15vw;
-    height: 20vw;
+    width: 18.5vw;
+    height: 22vw;
     object-fit: cover;
     margin-left: 15px;
     background-color: #e0f7bb;
-    border-radius: 50px;
+    border-radius: 27.5px;
     align-items: center;
     border: 1px solid black;
+    padding: 0 25px 0px 23px;
+}
+.line{
+    position: relative;
+    top: 1%;
+    left: 14%;
+    width: 12.5vw;
+    border-bottom: 1px solid black;
+}
+.line2{
+    position: relative;
+    top: 1%;
+    width: 10vw;
+    border-bottom: 1px solid black;
 }
 .createroom{
+    width: 15vw;
+    height: 15vw;
     margin-top: 3.5%;
     text-align: center;
     font-size: 2.5vw;
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: 50px;
 }
 /* ปุ่มสร้างห้อง */
 .createroom button{
@@ -110,8 +125,87 @@ body{
     cursor: pointer;
     padding-top: 25px;
 }
-
 .room_box p{
-    text-align: center;
-    margin: 20px auto;
+    position: relative;
+    top: 9.5%;
+    left: -2%;
+    font-size: 1vw;
 }
+.line p{
+    text-align:start;
+    padding-left: 35px;
+    font-size: 1.25vw;
+}
+.status{
+    display: flex;
+    gap: 0.25vw;
+    position: relative;
+    top: 5%;
+}
+.status img{
+    position: relative;
+    top: -0.25vw;
+    left: -0.2vw;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.place, .date, .timey{
+    display: flex;
+    gap: 0.25vw;
+    position: relative;
+    top: 6%;
+    padding-bottom: 10px;
+}
+.line2 p{
+    position: relative;
+    top: 0;
+    left: 3px;
+}
+.picpic{
+    position: relative;
+    top: 6.75%;
+    width: 14.9vw;
+    height: 10vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: url(../img/bgregister.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+span.photo{
+    position: relative;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    border: 3.5px solid black;
+    display: block;
+    overflow: hidden;
+    background: #ddd url("../img/anonymous2.png") no-repeat;
+    background-size: cover;
+    background-position: center top;
+    border-radius: 100%;
+}
+span.photo:after{
+  content: " Edit your Profile ";
+  text-align: center;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  padding: 35% 0 65%;
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  color: #222;
+  background-color: rgba(0,0,0,0.25);
+  background-size: 100%;
+  transition: 0.35s ease-in-out;
+  overflow: hidden;
+  border-radius: 100%;
+  font-size: 3vw;
+}
+span.photo:hover:after{
+  bottom: 0;
+  opacity: 1;
+  color: #fff;
+}
+
