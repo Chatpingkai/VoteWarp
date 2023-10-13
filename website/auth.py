@@ -70,3 +70,11 @@ def register():
 @auth.route('/lobby')
 def lobby():
     render_template("lobby.html")
+
+@auth.route('/forgot_password_1')
+def forgot_password_1():
+    return render_template("forgot_password_first.html")
+
+@auth.route('/forgot_password_2')
+def forgot_password_2():
+    return render_template("forgot_password_second.html")
