@@ -24,24 +24,31 @@ body{
     left: 15%;
 }
 
+.searchbar{
+    width: 45vw;
+    height: 3vw;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}
 .searchbox input{
     width: 45vw;
     height: 3vw;
     background-color: #ffffff;
     border: 1.5px solid black;
-    position: absolute;
-    top: 30%;
-    left: 35%;
     padding-left: 35px;
     font-size: 1rem;
 }
 /* รูปแว่นขยาย */
-.magnify img{
+.searchbox span{
     position: absolute;
-    top: 31.75%;
-    left: 35.5%;
+    top: 25%;
+    left: 10px;
+    width: 1.5vw;
+    height: 1.5vw;
+    background: url(../img/magnify_glass.png) no-repeat;
+    background-size: contain;
 }
-
 .name_user{
     font-size: 5vw;
     position: absolute;
