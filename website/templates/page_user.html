@@ -8,53 +8,78 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
 </head>
 <body>
-    <div class="profile">
-        <div class="picture">
-            <span class="photo" title="Upload your Avatar!"></span>
-        </div>
-    </div>
-    <div class="name_user">
-        {% for user in new_user %}
-        {{ user }}
-        {% endfor %}
-    </div>
-    <div class="searchbar">
-        <div class="searchbox">
-            <span></span>
-            <input type="text" placeholder="search your group" src="">
-        </div>
-    </div>
-    <div class="box">
-        <div class="wrapper" id="wrapper">
-            <!-- function addroom() จะ add room_box ตรงนี้ -->
-            <!-- <div class="room_box">
-                <p>room</p>
-                <div class="line">
-                    <p>แมนซ่า</p>
-                </div>
-                <div class="status">
-                    <p>status:</p>
-                    <p>complete</p>
-                    <img src="../static/img/check-mark (1).png" alt="">
-                </div>
-                <div class="place">
-                    <p>place:</p>
-                    <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
-                </div>
-                <div class="date">
-                    <p>date:</p>
-                    <div class="line2"><p>07/10/2023</p></div>
-                </div>
-                <div class="timey">
-                    <p>time:</p>
-                    <div class="line2"><p>22.00 น.</p></div>
-                </div>
-                <div class="picpic"></div>
-            </div> -->
-            <div class="createroom" id="createroom">
-                <button onclick="addroom()"><img src="../static/img/createroom_button.png" alt=""></button>
-                <div>Create Room</div>
+    <div class="interface">
+        <div class="profile">
+            <div class="picture">
+                <span class="photo" title="Upload your Avatar!"></span>
             </div>
+        </div>
+        <div class="name_user">
+            {% for user in new_user %}
+            {{ user }}
+            {% endfor %}
+        </div>
+        <div class="searchbar">
+            <div class="searchbox">
+                <span></span>
+                <input type="text" placeholder="search your group" src="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="wrapper" id="wrapper">
+                <!-- function addroom() จะ add room_box ตรงนี้ -->
+                <!-- <div class="room_box">
+                    <p>room</p>
+                    <div class="line">
+                        <p>แมนซ่า</p>
+                    </div>
+                    <div class="status">
+                        <p>status:</p>
+                        <p>complete</p>
+                        <img src="../static/img/check-mark (1).png" alt="">
+                    </div>
+                    <div class="place">
+                        <p>place:</p>
+                        <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
+                    </div>
+                    <div class="date">
+                        <p>date:</p>
+                        <div class="line2"><p>07/10/2023</p></div>
+                    </div>
+                    <div class="timey">
+                        <p>time:</p>
+                        <div class="line2"><p>22.00 น.</p></div>
+                    </div>
+                    <div class="picpic"></div>
+                </div> -->
+                <div class="createroom" id="createroom">
+                    <button onclick="popup_createroom()"><img src="../static/img/createroom_button.png" alt=""></button>
+                    <div>Create Room</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup_box">
+        <div class="popup_content">
+            <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
+            <div class="page_creategroup">
+                <h1>Create Your Group</h1>
+            </div><br>
+            <div class="headword">
+                <h3>Group name</h3>
+                <input  type="text" 
+                        id="groupname" 
+                        name="groupname"><br><br>
+                <h3>people limit</h3>
+                <input  type="number" 
+                        id="peoplelimit" 
+                        name="peoplelimit"><br><br>
+                <h3>group password</h3>
+                <input  type="password" 
+                        id="grouppassword" 
+                        name="grouppassword"><br><br>
+            </div><br>
+            <input type="submit" name="submit" onclick="addroom()" class="create_submit">
         </div>
     </div>
     <script src="../static/javascript/page_user.js"></script>

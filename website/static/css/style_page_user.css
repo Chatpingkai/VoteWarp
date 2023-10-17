@@ -12,6 +12,8 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .picture{
@@ -50,7 +52,7 @@ body{
     background-size: contain;
 }
 .name_user{
-    font-size: 5vw;
+    font-size: 70px;
     position: absolute;
     top: 15%;
     left: 35%;
@@ -60,35 +62,38 @@ body{
 
 .box{
     width: 75vw;
-    height: 25vw;
+    height: 325px;
     background-color: #ffffff;
     position: absolute;
     bottom: 0;
     left: 13%;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 
 .wrapper::-webkit-scrollbar{
     display: none;
 }
 .wrapper{
+    width: 100%;
+    height: 100%;
     display: grid;
     gap: 50px;
     overflow-x:scroll;
     grid-auto-flow: column;
-    padding: 1.5% 1.5% 0 1.5%;
+    padding: 1.5% 3% 1.5% 3%;
+    align-items: center;
 }
 .room_box{
-    width: 18.5vw;
-    height: 22vw;
+    width: 235px;
+    height: 100%;
     object-fit: cover;
-    margin-left: 15px;
     background-color: #e0f7bb;
     border-radius: 27.5px;
     align-items: center;
     border: 1px solid black;
-    padding: 0 25px 0px 23px;
+    padding: 0 0px 0px 23px;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 .line{
     position: relative;
@@ -106,7 +111,6 @@ body{
 .createroom{
     width: 15vw;
     height: 15vw;
-    margin-top: 3.5%;
     text-align: center;
     font-size: 2.5vw;
     font-weight: 100;
@@ -162,23 +166,24 @@ body{
     top: 0;
     left: 3px;
 }
-.picpic{
+.room_box .picpic{
     position: relative;
-    top: 6.75%;
-    width: 14.9vw;
-    height: 10vw;
+    bottom: -15px;
+    width: 90%;
+    height: 40%;
     border: 1px solid black;
     border-radius: 20px;
     background: url(../img/bgregister.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);
 }
 span.photo{
     position: relative;
     height: 15vw;
     width: 15vw;
     border-radius: 50%;
-    border: 3.5px solid black;
+    border: 2px solid black;
     display: block;
     overflow: hidden;
     background: url(../img/anonymous2.png) no-repeat;
@@ -192,7 +197,6 @@ span.photo:after{
   text-align: center;
   position: absolute;
   left: 0;
-  z-index: 2;
   padding: 35% 0 65%;
   height: 0;
   width: 100%;
@@ -209,4 +213,58 @@ span.photo:hover:after{
   bottom: 0;
   opacity: 1;
   color: #fff;
+}
+.popup_create{
+    background-color: #FFE299;
+}
+.popup_box{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    display: none;
+}
+.popup_content{
+    width: 70%;
+    min-height: 70%;
+    background-color: #FFE299;
+    position: absolute;
+    padding: 50px;
+    border-radius: 40px;
+    border: 2px solid black;
+}
+.headword input{
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: floralwhite;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    border-color: black;
+    margin-top: 30px;
+    padding: 15px 20px 15px 10px;
+}
+input{
+    flex: auto;
+    width: 10%;
+    height: 45px;
+    background: black;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(46, 42, 42, 0.3);
+}
+.create_submit{
+    color: #fff;
+    width: 90px;
+}
+.close{
+    width: 45px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
 }

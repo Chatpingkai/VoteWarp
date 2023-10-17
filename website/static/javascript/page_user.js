@@ -1,4 +1,11 @@
-// รับ element ใน id="letter"
+
+function popup_createroom(){
+    document.querySelector(".popup_box").style.display = "flex";
+}
+function close_popup(){
+    document.querySelector(".popup_box").style.display = "none";
+}
+// เพิ่ม room_box
 const box = document.getElementById("wrapper");
 const createroom = document.getElementById("createroom");
 function addroom(){
@@ -69,7 +76,9 @@ function addroom(){
     room_box.appendChild(picpic)
     box.appendChild(room_box)
     box.appendChild(createroom)
+    document.querySelector(".popup_box").style.display = "none";
 }
+// ทำให้ room_box ขยับซ้ายขวาได้
 const tabBox = document.querySelector(".wrapper");
 
 let isDragging = false;
