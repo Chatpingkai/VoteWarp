@@ -74,7 +74,7 @@ body{
 .wrapper{
     display: grid;
     gap: 50px;
-    overflow-x: auto;
+    overflow-x:scroll;
     grid-auto-flow: column;
     padding: 1.5% 1.5% 0 1.5%;
 }
@@ -88,6 +88,7 @@ body{
     align-items: center;
     border: 1px solid black;
     padding: 0 25px 0px 23px;
+    cursor: pointer;
 }
 .line{
     position: relative;

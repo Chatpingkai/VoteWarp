@@ -70,3 +70,19 @@ function addroom(){
     box.appendChild(room_box)
     box.appendChild(createroom)
 }
+const tabBox = document.querySelector(".wrapper");
+
+let isDragging = false;
+
+const dragging = (e) => {
+    if(!isDragging) return;
+    tabBox.scrollLeft -= e.movementX;
+}
+
+const dragstop = () => {
+    isDragging = false;
+}
+
+tabBox.addEventListener("mousedown", () => isDragging = true);
+tabBox.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragstop);
