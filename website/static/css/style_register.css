@@ -91,6 +91,7 @@ h1{
     padding: px 45px 20px 20px;
     box-sizing: border-box;
 }
+/* ขึ้นแจ้งเตือน */
 .alert {
     padding: 20px;
     background-color: #f44336; /* สีแดง */

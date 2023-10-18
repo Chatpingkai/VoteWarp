@@ -275,14 +275,17 @@ body{
         font-size: 0.5vw;
     }
 }
-/* ฝากแ้กด้วยจุ๊บๆ */
+/* ขึ้นแจ้งเตือน */
 .alert {
+    font-family: sans-serif;
     z-index: 1;
-    padding: 20px;
+    padding: 1%;
     background-color: #f44336; /* สีแดง */
     color: white;
-    margin-bottom: 15px;
-    position: absolute;
+    margin: 1%;
+    width: 96%;
+    position: fixed;
+
 }
 
 .closebtn {
@@ -290,7 +293,8 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 0.5%;
+    margin: 0.5%;
     cursor: pointer;
 }
 
