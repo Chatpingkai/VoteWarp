@@ -25,8 +25,11 @@ function addroom(){
     text_status.innerHTML = "status:"
     complete.innerHTML = "complete"
     text_place.innerHTML = "place:"
+    text_place.className = "text_place"
     text_date.innerHTML = "date:"
+    text_date.className = "text_date"
     text_time.innerHTML = "time:"
+    text_time.className = "text_time"
     let line_place = document.createElement("p");
     let line_date = document.createElement("p");
     let line_time = document.createElement("p");
@@ -95,3 +98,18 @@ const dragstop = () => {
 tabBox.addEventListener("mousedown", () => isDragging = true);
 tabBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragstop);
+
+const getFontSize = (textLength) => {
+    const baseSize = 20
+    if (textLength >= baseSize) {
+      textLength = baseSize - 2
+    }
+    const fontSize = baseSize - textLength
+    return `${fontSize}vw`
+  }
+  
+  const boxes = document.querySelectorAll('.name_user p')
+    
+  boxes.forEach(box => {
+    box.style.fontSize = getFontSize(box.textContent.length)
+  })

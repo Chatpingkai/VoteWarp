@@ -17,8 +17,8 @@ body{
 }
 
 .picture{
-    height: 15vw;
-    width: 15vw;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     position: absolute;
     top: 15%;
@@ -35,7 +35,7 @@ body{
 }
 .searchbox input{
     width: 45vw;
-    height: 3vw;
+    height: 35px;
     background-color: #ffffff;
     border: 1.5px solid black;
     padding-left: 35px;
@@ -44,20 +44,21 @@ body{
 /* รูปแว่นขยาย */
 .searchbox span{
     position: absolute;
-    top: 25%;
+    top: 10px;
     left: 10px;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 15px;
+    height: 50px;
     background: url(../img/magnify_glass.png) no-repeat;
     background-size: contain;
 }
 .name_user{
-    font-size: 70px;
+    font-size: 2.5vw;
     position: absolute;
     top: 15%;
     left: 35%;
     font-family: Jua;
     color: black;
+    -webkit-text-stroke: 0.005vw white;
 }
 
 .box{
@@ -97,22 +98,25 @@ body{
 }
 .line{
     position: relative;
-    top: 1%;
-    left: 14%;
-    width: 12.5vw;
+    left: 11%;
+    width: 150px;
     border-bottom: 1px solid black;
 }
 .line2{
     position: relative;
-    top: 1%;
-    width: 10vw;
+    left: -3%;
+    width: 150px;
     border-bottom: 1px solid black;
 }
 .createroom{
-    width: 15vw;
-    height: 15vw;
+    position: relative;
+    top: -5%;
+    width: 200px;
+    height: 130px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 25px;
     font-weight: 100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -123,23 +127,21 @@ body{
     cursor: pointer;
 }
 .createroom img{
-    width: 10vw;
-    height: 10vw;
+    width: 130px;
+    height: 110px;
     background-color: transparent;
     border-style: none;
     cursor: pointer;
-    padding-top: 25px;
 }
 .room_box p{
     position: relative;
     top: 9.5%;
     left: -2%;
-    font-size: 1vw;
+    font-size: 12px;
 }
 .line p{
-    text-align:start;
-    padding-left: 35px;
-    font-size: 1.25vw;
+    text-align:center;
+    font-size: 20px;
 }
 .status{
     display: flex;
@@ -161,6 +163,9 @@ body{
     top: 6%;
     padding-bottom: 10px;
 }
+.place p.text_place, .date p.text_date, .timey p.text_time{
+    top: 3px;
+}
 .line2 p{
     position: relative;
     top: 0;
@@ -168,7 +173,7 @@ body{
 }
 .room_box .picpic{
     position: relative;
-    bottom: -15px;
+    bottom: -30px;
     width: 90%;
     height: 40%;
     border: 1px solid black;
@@ -180,8 +185,8 @@ body{
 }
 span.photo{
     position: relative;
-    height: 15vw;
-    width: 15vw;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     border: 2px solid black;
     display: block;
