@@ -99,17 +99,17 @@ tabBox.addEventListener("mousedown", () => isDragging = true);
 tabBox.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragstop);
 
-const getFontSize = (textLength) => {
-    const baseSize = 20
-    if (textLength >= baseSize) {
-      textLength = baseSize - 2
-    }
-    const fontSize = baseSize - textLength
-    return `${fontSize}vw`
-  }
+// const getFontSize = (textLength) => {
+//     const baseSize = 20
+//     if (textLength >= baseSize) {
+//       textLength = baseSize - 2
+//     }
+//     const fontSize = baseSize - textLength
+//     return `${fontSize}vw`
+//   }
   
-  const boxes = document.querySelectorAll('.name_user p')
+//   const boxes = document.querySelectorAll('.name_user p')
     
-  boxes.forEach(box => {
-    box.style.fontSize = getFontSize(box.textContent.length)
-  })
+//   boxes.forEach(box => {
+//     box.style.fontSize = getFontSize(box.textContent.length)
+//   })

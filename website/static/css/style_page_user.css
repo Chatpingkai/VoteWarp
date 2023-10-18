@@ -17,8 +17,6 @@ body{
 }
 /* ช่องโปรไฟล์ */
 .picture{
-    height: 150px;
-    width: 150px;
     border-radius: 50%;
     position: absolute;
     top: 15%;
@@ -36,10 +34,10 @@ body{
 /* ตัว element ช่องsearch */
 .searchbox input{
     width: 45vw;
-    height: 35px;
+    height: 50px;
     background-color: #ffffff;
     border: 1.5px solid black;
-    padding-left: 35px;
+    padding-left: 45px;
     font-size: 1rem;
 }
 /* รูปแว่นขยาย */
@@ -47,16 +45,16 @@ body{
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 15px;
-    height: 50px;
-    background: url(../img/magnify_glass.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    background: url(../img/magnifying-glass.png) no-repeat;
     background-size: contain;
 }
 /* ชื่อ user */
 .name_user{
     font-size: 2.5vw;
     position: absolute;
-    top: 15%;
+    top: 17.5%;
     left: 35%;
     font-family: Jua;
     color: black;
@@ -65,7 +63,7 @@ body{
 /* กล่องสี่เหลี่ยมสีขาว */
 .box{
     width: 75vw;
-    height: 325px;
+    height: 425px;
     background-color: #ffffff;
     position: absolute;
     bottom: 0;
@@ -89,8 +87,8 @@ body{
 }
 /* ก็ room_box นั่นแหละ */
 .room_box{
-    width: 235px;
-    height: 100%;
+    width: 275px;
+    height: 95%;
     object-fit: cover;
     background-color: #e0f7bb;
     border-radius: 27.5px;
@@ -104,7 +102,7 @@ body{
 .line{
     position: relative;
     left: 11%;
-    width: 150px;
+    width: 200px;
     border-bottom: 1px solid black;
 }
 /* เส้นใต้ตัวอักษรของ place, date, time */
@@ -117,14 +115,14 @@ body{
 /* ขนาดของ create room */
 .createroom{
     position: relative;
-    top: -5%;
+    top: 20%;
     width: 200px;
-    height: 130px;
+    height: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 25px;
-    font-weight: 100;
+    font-size: 30px;
+    font-weight: 2100;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* ปุ่มสร้างห้อง */
@@ -135,8 +133,8 @@ body{
 }
 /* รูปปุ่มสร้างห้อง */
 .createroom img{
-    width: 130px;
-    height: 110px;
+    width: 200px;
+    height: 170px;
     background-color: transparent;
     border-style: none;
     cursor: pointer;
@@ -144,13 +142,14 @@ body{
 /* 'room' ใน room_box */
 .room_box p{
     position: relative;
-    top: 9.5%;
+    top: 8.25%;
     left: -2%;
-    font-size: 12px;
+    font-size: 15px;
 }
 /* ชื่อห้อง */
 .line p{
     text-align:center;
+    left: -10%;
     font-size: 20px;
 }
 /* element ของ status ใน room_box */
@@ -163,10 +162,10 @@ body{
 /* รูปของ status */
 .status img{
     position: relative;
-    top: -0.25vw;
-    left: -0.2vw;
-    width: 1.5vw;
-    height: 1.5vw;
+    top: -5px;
+    left: -3.5px;
+    width: 25px;
+    height: 25px;
 }
 /* element ของ place, date, time ใน room_box */
 .place, .date, .timey{
@@ -189,7 +188,7 @@ body{
 /* รูปใน room_box */
 .room_box .picpic{
     position: relative;
-    bottom: -30px;
+    bottom: -10%;
     width: 90%;
     height: 40%;
     border: 1px solid black;
@@ -202,8 +201,8 @@ body{
 /* รูปโปรไฟล์ */
 span.photo{
     position: relative;
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     border: 2px solid black;
     display: block;
@@ -298,4 +297,146 @@ input{
     top: 20px;
     right: 40px;
     cursor: pointer;
+}
+
+@media (max-width: 1340px) {
+    .searchbar{
+        top: 30%;
+        left: 37%;
+        transition: .2s;
+    }
+    .name_user{
+        top: 20%;
+        left: 37%;
+        transition: .2s;
+    }
+    span.photo{
+        height: 230px;
+        width: 230px;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 1201px) {
+    span.photo{
+        height: 200px;
+        width: 200px;
+        transition: .2s;
+    }
+}
+@media (max-width: 1025px) {
+    .searchbar{
+        top: 30%;
+        left: 39%;
+        transition: .2s;
+    }
+    .name_user{
+        top: 23.5%;
+        left: 39%;
+        transition: .2s;
+    }
+    span.photo{
+        height: 180px;
+        width: 180px;
+        transition: .2s;
+    }
+    .close{
+        width: 35px;
+        transition: .2s;
+    }
+}
+@media (max-width: 769px) {
+    .searchbar{
+        top: 40%;
+        left: 15%;
+        transition: .2s;
+    }
+    .searchbar input{
+        width: 65vw;
+        transition: .2s;
+    }
+    .name_user{
+        font-size: 5vw;
+        top: 150px;
+        left: 300px;
+        transition: .2s;
+    }
+    span.photo{
+        height: 180px;
+        width: 180px;
+        transition: .2s;
+    }
+    .close{
+        width: 27px;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 426px) {
+    .interface{
+        width: 100vw;
+        height: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .name_user{
+        position: absolute;
+        top: 30%;
+        left: 17.5%;
+        transition: .2s;
+    }
+    .picture{
+        position: absolute;
+        top: 5%;
+        left: 27.5%;
+        transition: .2s;
+    }
+    .searchbar input{
+        width: 70vw;
+        transition: .2s;
+    }
+    .wrapper{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 50px;
+        overflow-y:scroll;
+        grid-auto-flow: row;
+        padding: 1.5% 3% 1.5% 3%;
+        align-items: center;
+    }
+    .createroom{
+        left: 10%;
+    }
+    .room_box{
+        width: 90%;
+        height: 350px;
+        position: relative;
+        left: 5%;
+        padding: 0 0px 0px 15px;
+        overflow: hidden;
+    }
+    .line{
+        left: 12%;
+        width: 175px;
+    }
+    .line2{
+        position: relative;
+        left: -2%;
+        width: 160px;
+    }
+    .place p.text_place, .date p.text_date, .timey p.text_time{
+        top: 4px;
+    }
+    .popup_box{
+        position: absolute;
+        bottom: 0;
+        transition: .2s;
+    }
+    .close{
+        width: 26px;
+        right: 30px;
+        transition: .2s;
+    }
 }
