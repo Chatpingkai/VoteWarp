@@ -30,17 +30,13 @@ body{
 }
 /* กล่องใหญ่สุด  */
 .page_login{
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 23vw;
-    background: transparent;
-    border: 3px solid black;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    color: #ffffff;
-    border-radius: 30px;
-    padding: 150px 50px;
+    background-color: rgba(245, 245, 245, 0.5);
+    position: fixed;
+    width : 40%;
+    height : 55%;
+    margin-top: 5%;
+    margin-left: 10%;
+    border-radius: 50px;
 }
 /* text_login */
 .page_login h1 {
@@ -61,17 +57,14 @@ body{
 }
 /* กล่อง username and password */
 .box input{
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 90%;
     background: transparent;
-    border: none;
-    outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 16px;
     border-color: black;
-    margin-top: 30px;
-    padding: 20px 45px 20px 20px;
+    margin-left: 10%;
 }
 /* คำข้างในกล่อง */
 .box input::placeholder{
@@ -102,6 +95,7 @@ body{
     font-size: 14.5px;
     /* margin: -15px 0 15px; */
     margin-top: 50px;
+    margin-left: 10%;
 }
 /* ติ้กถูกตรง remember */
 .remember{
@@ -114,6 +108,7 @@ body{
     font-weight: 100;
     color: black;
     text-decoration: none;
+    margin-right: 23%;
 }
 /* คำช่อง remember */
 .remember label{
@@ -128,7 +123,7 @@ body{
 }
 /*  ปุ่ม login */
 .page_login .Login{
-    width: 100%;
+    width: 30%;
     height: 45px;
     background: black;
     border: none;
@@ -140,6 +135,7 @@ body{
     font-weight: 600;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     margin-top: 50px;
+    margin-left: 35%;
 }
 /* คำข้างล่าง login */
 .page_login .register-link{
