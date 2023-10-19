@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 10vh;
+    background: #F5D899;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* box namw */
+.text_name input{
+    height: 100%;
+    width: 50%;
+    border: none;
+    font-size: 30px;
+    border-bottom: 2px solid black;
+    background-color: #F5D899;
+    font-family: Jua;
+}
+
+/* ปรับขนาดกล่อง */
+.all .text_name input{
+    height: 40px;
+    width: 40%;
+    position: absolute;
+    top: 33%;
+    left: 10%;
+}
+
+/* picture pencil */
+.text_name i{
+    position: absolute;
+    top: 33.5%;
+    left: 48%;
+    font-size: 30px;
+}
+
+/* text Name */
+.text_name label{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: black;
+    font-size: 50px;
+    font-family: Jua;
+    color: #fff;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+}
+
+/* text edit profile */
+.all h1{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 90px;
+    font-family: Jua;
+    color: #fff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
+
+/* img profile */
+.photo_profile img{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+/* img background */
+.photo_background img{
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+/* button change profile */
+.all .photo_profile button{
+    position: absolute;
+    top: 48%;
+    left: 30%;
+    width: 20%;
+    height: 6%;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+/* button change background */
+.all .photo_background button{
+    position: absolute;
+    top: 72%;
+    left: 30%;
+    width: 20%;
+    height: 6%;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+/* button save */
+.all button{
+    position: absolute;
+    top: 88%;
+    right: 30%;
+    width: 10%;
+    height: 6%;
+    background: rgb(255, 255, 255);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
