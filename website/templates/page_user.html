@@ -10,19 +10,11 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
-    {% if category == 'error' %}
     <div class="alert">
         <span class="closebtn" onclick="closeAlert()">&times;</span>
         {{ message }}
     </div>
     <script src="../static/javascript/resgister.js"></script>
-    {% else %}
-    <div class="alert">
-        <span class="closebtn" onclick="closeAlert()">&times;</span>
-        {{ message }}
-    </div>
-    <script src="../static/javascript/resgister.js"></script>
-    {% endif %}
     {% endfor %}
   {% endif %}
 {% endwith %}
