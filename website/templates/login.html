@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style_index.css">
+    <link rel="stylesheet" href="../static/css/style_login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>VothWarp</title>
 </head>
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -27,34 +28,31 @@
   {% endif %}
 {% endwith %}
     <form method="POST">
-        <div class="text">
-            <img src="../static/img/Time_To_Warp_login.png" alt="text">
-        </div>
-        <div class="picture">
-            <img src="../static/img/object1_login.png" alt="earth">
-        </div>
         <div class="page_login">
-            <h1>Login</h1>
-            <div class="box">
-                <input type="email" placeholder="Enter Your Email" name="email">
-                <i class='bx bxs-user'></i>
+            <div class="text_time">
+                <img src="../static/img/Time_To_Warp_login.png" width="900px" height="200px">
             </div>
-            <div class="box">
-                <input type="password" placeholder="Enter Your password" name="password" >
-                <p class='bx bxs-lock-alt' ></p>
+            <div class="world">
+                <img src="../static/img/object1_login.png" width="900px" height="450px">
             </div>
-
-            <div class="remember">
-                <label><input type="checkbox"> Remember me </label>
-                <a href="/forgot_password_1"> Forgot password</a>
-            </div>
-            <br />
-            <button type="submit" class="Login">Login</button>
-
-            <div class="register-link">
-                <p>
-                    Don't have an account <a href="/register">Register</a>
-                </p>
+            <div class="box_login">
+                <h1>Login</h1>
+                <div class="username">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="password">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="../templates/forgot_password_first.html"> Forgot password</a>
+                </div>
+                <button type="submit">Login</button>
+                <div class="login">
+                    <p>Don't have an account <a href="../templates/Register.html">Register</a></p>
+                </div>
             </div>
         </div>
     </form>

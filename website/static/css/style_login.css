@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 10vh;
+    background: url(../img/background_login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* background box login */
+.box_login{
+    background-color: rgba(245, 245, 245, 0.5);
+    position: absolute;
+    width : 23%;
+    height : 65%;
+    /* top: 20%; */
+    /* right: 10%; */
+    margin-top: 8%;
+    margin-left: 65%;
+    border-radius: 50px;
+}
+
+/* picture time to warp */
+.text_time{
+    position: fixed;
+    top: 15%;
+    margin-left: 5%;
+}
+
+/* picture world */
+.world{
+    position: fixed;
+    top: 53%;
+    margin-left: 8%;
+}
+
+/* text login */
+.box_login h1{
+    font-size: 50px;
+    font-weight: 100;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 22%;
+}
+
+/* box username */
+.username input{
+    width: 80%;
+    height: 6%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    border-color: black;
+    position: absolute;
+    margin-top: 12%;
+    margin-left: 8%;
+    padding: 6px 20px;
+}
+
+/* picture human */
+.username i{
+    position: absolute;
+    margin-top: 13.5%;
+    margin-left: 80%;
+    font-size: 25px;
+}
+
+/* box password */
+.password input{
+    width: 80%;
+    height: 6%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    border-color: black;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 8%;
+    padding: 6px 20px;
+}
+
+/* picture lock */
+.password i{
+    position: absolute;
+    margin-top: 31.3%;
+    margin-left: 80%;
+    font-size: 25px;
+}
+
+/* text remember me & check box */
+.remember label{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: #000000;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 8%;
+}
+
+/* text forgot password */
+.remember a{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 65%;
+}
+
+/*  คำ forgot */
+.remember a:hover{
+    text-decoration: underline;
+}
+
+/* button login */
+.page_login button{
+    width: 30%;
+    height: 10%;
+    background: black;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    position: absolute;
+    margin-top: 60%;
+    margin-left: 35%;
+}
+
+/* text Don't have */
+.login p{
+    text-align: center;
+    margin-top: 78%;
+    color: black;
+    text-decoration: none;
+    font-weight: Thin;
+    font-family: Inter;
+    font-weight: 100;
+}
+
+/* text register */
+.login a{
+    color: red;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: Inter;
+}
+
+/*  text register add line */
+.login a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ขึ้นแจ้งเตือน */
+.alert {
+    font-family: sans-serif;
+    z-index: 1;
+    padding: 1%;
+    background-color: #f44336; /* สีแดง */
+    color: white;
+    margin: 1%;
+    width: 96%;
+    position: fixed;
+
+}
+
+.closebtn {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5%;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    background-color: #d32f2f;
+}
