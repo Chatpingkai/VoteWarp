@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 10vh;
+    /* background: url(../img/background_login.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* time to warp */
+.text img{
+    width: 55vw;
+    position: relative;
+    top: 135px;
+    left: 125px;
+}
+/* รูปโลก */
+.picture img{
+    width: 63vw;
+    height: 30vw;
+    position: fixed;
+    bottom: 0%;
+    left: 3%;
+}
+/* กล่องใหญ่สุด  */
+.page_login{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 23vw;
+    background: transparent;
+    border: 3px solid black;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 150px 50px;
+}
+/* text_login */
+.page_login h1 {
+    top: 12%;
+    right: 33.5%;
+    font-weight: 100;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+/* ระยะห่าง username and password */
+.page_login .box{
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+/* กล่อง username and password */
+.box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    border-color: black;
+    margin-top: 30px;
+    padding: 20px 45px 20px 20px;
+}
+/* คำข้างในกล่อง */
+.box input::placeholder{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: #fff;
+}
+/* รูปคน */
+.box i{
+    position: absolute;
+    right: 65px;
+    top: 33.7%;
+    /* transform: translate((-50%)); */
+    font-size: 20px;
+    color: black;
+}
+/* แม่กุญแจ */
+.box p{
+    right: 65px;
+    top: 46%;
+    /* transform: translate((-50%)); */
+    font-size: 20px;
+    color: black;
+}
+/* ช่องตำแหน่ง remember me */
+.page_login .remember{
+    display: flex;
+    justify-content:space-between;
+    font-size: 14.5px;
+    /* margin: -15px 0 15px; */
+    margin-top: 50px;
+}
+/* ติ้กถูกตรง remember */
+.remember{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+/* คำช่อง forgot */
+.remember a{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: black;
+    text-decoration: none;
+}
+/* คำช่อง remember */
+.remember label{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: #fff;
+    text-decoration: none;
+}
+/*  คำ forgot */
+.remember a:hover{
+    text-decoration: underline;
+}
+/*  ปุ่ม login */
+.page_login .Login{
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    margin-top: 50px;
+}
+/* คำข้างล่าง login */
+.page_login .register-link{
+    font-size: 14.5;
+    text-align: center;
+    margin-top: 20px;
+}
+/* don't have */
+.register-link p{
+    color: black;
+    text-decoration: none;
+    font-weight: Thin;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+/* register */
+.register-link a{
+    color: red;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: Inter;
+}
+/* register */
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1201px) {
+    /* time to warp */
+    .text img{
+        width: 45vw;
+        height: 15vw;
+        top: 185px;
+        left: 125px;
+    }
+    /* รูปโลก */
+    .picture img{
+        width: 60vw;
+        height: 35vw;
+    }
+    .page_login{
+        width: 30vw;
+    }
+}
+@media screen and (max-width: 1025px) {
+    /* time to warp */
+    .text img{
+        width: 50vw;
+        height: 20vw;
+        top: 135px;
+        left: 75px;
+    }
+    .page_login{
+        width: 30vw;
+        height: 85vh;
+    }
+}
+@media screen and (max-width: 769px) {
+    /* time to warp */
+    .text img{
+        width: 75vw;
+        height: 20vw;
+        top: 20px;
+        left: 15%;
+        right: 15%;
+    }
+    .page_login{
+        top: 20%;
+        left: 25%;
+        width: 50vw;
+        padding: 15px 15px;
+    }
+    .picture img{
+        width: 100vw;
+        height: 50vw;
+        left: 0;
+    }
+    .register-link p{
+        color: #fff;
+    }
+}
+@media screen and (max-width: 481px) {
+    /* time to warp */
+    .text img{
+        width: 80vw;
+        height: 25vw;
+        top: 20px;
+        left: 10%;
+        right: 15%;
+    }
+    .page_login{
+        top: 20%;
+        left: 25%;
+        width: 50vw;
+        height: 60vh;
+        padding: 10px 10px;
+    }
+    .picture img{
+        min-height: 1000x;
+        min-width: 200px;
+    }
+    .page_login h1{
+        font-size: 10vw;
+    }
+    .remember label, .remember a{
+        font-size: 0.5vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    /* time to warp */
+    .text img{
+        width: 80vw;
+        height: 25vw;
+        top: 20px;
+        left: 10%;
+        right: 15%;
+    }
+    .page_login{
+        top: 15%;
+        left: 15%;
+        width: 70vw;
+        height: 55vh;
+        padding: 5px 5px;
+    }
+    .picture img{
+        min-height: 1000x;
+        min-width: 200px;
+    }
+    .page_login h1{
+        font-size: 10vw;
+    }
+    .remember label, .remember a{
+        font-size: 0.5vw;
+    }
+}
+/* ฝากแ้กด้วยจุ๊บๆ */
+.alert {
+    z-index: 1;
+    padding: 20px;
+    background-color: #f44336; /* สีแดง */
+    color: white;
+    margin-bottom: 15px;
+    position: absolute;
+}
+
+.closebtn {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    background-color: #d32f2f;
+}
