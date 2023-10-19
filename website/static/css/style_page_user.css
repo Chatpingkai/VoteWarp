@@ -440,3 +440,31 @@ input{
         transition: .2s;
     }
 }
+
+/* ขึ้นแจ้งเตือน */
+.alert {
+    font-family: sans-serif;
+    z-index: 1;
+    padding: 1%;
+    background-color: #32fc00;
+    color: white;
+    margin: 2%;
+    margin-top: 1.5%;
+    width: 96%;
+    position: fixed;
+
+}
+
+.closebtn {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5%;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    background-color: #08f100;
+}
