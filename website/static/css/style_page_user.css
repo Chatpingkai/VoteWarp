@@ -7,7 +7,7 @@
 body{
     display: flex;
     min-height: 10vh;
-    background: url(../img/default.png);
+    background: url(../img/fuji.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
