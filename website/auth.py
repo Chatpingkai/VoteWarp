@@ -1,9 +1,10 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User
+from flask import Blueprint, render_template, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
-from flask_login import login_user, login_required, logout_user, current_user
-
+from flask_login import login_required, logout_user, current_user
+from .models import User
+from . import created_mail
+from flask_mail import Message
 
 
 auth = Blueprint('auth', __name__)
@@ -72,10 +73,40 @@ def register():
 def lobby():
     render_template("lobby.html")
 
-@auth.route('/forgot_password_1')
+@auth.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password_1():
+    if request.method == 'POST':
+        mail = created_mail()
+        email = request.form.get('email')
+        user = User.query.filter_by(email=email).first()
+        global user_email
+        user_email = email
+        if user:
+            #check email to our database
+            msg = Message("Hey",
+                sender='test@gmail.com',
+                recipients=[email])
+            msg.html = render_template("email.html")
+            mail.send(msg)
+            return "<h1>Sented</h1>"
+        else:
+            return "<h1>EMAIL NOT MATCH TO OUR DATABASE</h1>"
     return render_template("forgot_password_first.html")
 
-@auth.route('/forgot_password_2')
-def forgot_password_2():
-    return render_template("forgot_password_second.html")
+
+@auth.route('/reset_password', methods=['GET', 'POST'])
+def reset_password():
+    password1 = request.form.get('password')
+    password2 = request.form.get('password2')
+    if request.method == 'POST':
+        if password1 == password2:
+            user = User.query.filter_by(email=user_email).first()
+            if user:
+                hashed_pass = generate_password_hash(password1, method='sha256')
+                user.password = hashed_pass
+                db.session.commit()
+            return render_template("login.html")
+        else:
+            return render_template("page_user.html")
+    return render_template("reset_password.html")
+
