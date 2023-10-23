@@ -113,3 +113,36 @@ h1{
 .closebtn:hover {
     background-color: #d32f2f;
 }
+
+.cloudimation{
+    position: absolute;
+    left: -40%;
+    top: -50%;
+    display: block;
+    opacity: 0;
+    animation: cloud 3s;
+}
+.cloud1{
+    position: absolute;
+    display: block;
+}
+.cloud2{
+    position: absolute;
+    display: block;
+}
+.cloud3{
+    position: absolute;
+    display: block;
+}
+.cloud4{
+    max-width: 100vw;
+    position: absolute;
+}
+@keyframes cloud{
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
