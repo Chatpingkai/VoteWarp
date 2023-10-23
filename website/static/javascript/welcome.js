@@ -21,3 +21,7 @@ function cloud_transition_register() {
 function wait_register() {
     window.location.href = "Register.html";
 }
+setTimeout(function() {
+    var cloudImage = document.querySelector(".cloudimation");
+    cloudImage.style.display = "none"; // ซ่อนรูปภาพหลังจาก 3 วินาที
+}, 3000);

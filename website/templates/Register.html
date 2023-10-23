@@ -12,41 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
 </head>
-<!-- <form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        {% for category, message in messages %}
-        {% if category == 'error' %}
-        <div class="alert alert-danger alter-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="cloes" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div role="alert">
-            {{ message }}
-            <button type="button" class="cloes" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        {% else %}
-        <div class="alert alert-success alter-dismissable fade show" role="alert">
-            {{ message }}
-            <button type="button" class="cloes" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div role="alert">
-            {{ message }}
-            <button type="button" class="cloes" data-dismiss="alert">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        {% endif %}
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-</form> -->
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
     {% for category, message in messages %}
@@ -122,5 +87,6 @@
         <!-- <img src="../static/img/cloud6.png" class="cloud6"> -->
         <!-- <img src="../static/img/clound7.png" class="cloud7"> -->
     </div>
+    <script src="../static/javascript/resgister.js"></script>
 </body>
 </html>
