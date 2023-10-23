@@ -12,7 +12,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/user_page')
 def user_page():
-    new_user = request.args.get('new_user')[2:-3]
+    new_user = request.args.get('new_user')
     return render_template('page_user.html', new_user=new_user)
 
 
@@ -28,7 +28,7 @@ def login():
                 flash('Logged in successfully!', category='success')
                 # login_user(user, remember=True)
                 new_user = User.query.filter_by(email=email).with_entities(User.first_name).first()
-                return redirect(url_for("auth.user_page", new_user=new_user))
+                return redirect(url_for("auth.user_page", new_user=new_user[0]))
             else:
                 flash('Incorrect Password, try again', category='error')
         else:
@@ -94,9 +94,9 @@ def forgot_password_1():
                 recipients=[email])
             msg.html = render_template("email.html")
             mail.send(msg)
-            return "<h1>Sented</h1>"
+            flash("Sented", category=0)
         else:
-            return "<h1>EMAIL NOT MATCH TO OUR DATABASE</h1>"
+            flash("Email not match to our database", category=1)
     return render_template("forgot_password_first.html")
 
 

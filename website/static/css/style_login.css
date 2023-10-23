@@ -162,6 +162,7 @@ body{
 /* ขึ้นแจ้งเตือน */
 .alert {
     font-family: sans-serif;
+    font-weight: bold;
     z-index: 1;
     padding: 1%;
     background-color: #f44336; /* สีแดง */

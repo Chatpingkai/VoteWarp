@@ -93,6 +93,8 @@ h1{
 }
 /* ขึ้นแจ้งเตือน */
 .alert {
+    font-family: sans-serif;
+    font-weight: bold;
     padding: 20px;
     background-color: #f44336; /* สีแดง */
     color: white;
