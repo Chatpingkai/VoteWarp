@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;  /* กล่องไม่มีกรอบ */
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    min-height: 10vh;
+    background-color: #F8EBAB;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ปรับตำแหน่งรูปกับชื่อสถานที่ */
+.name_place{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 35%;
+}
+
+/* ปรับมุมรูป */
+.name_place img{
+    border-radius: 30px;
+}
+
+/* ตำแหน่งชื่อสถานที่ */
+.name_place label{
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 27%;
+    font-size: 20px;
+}
+
+/* กล่องชื่อ name */
+.name_place p{
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 38%;
+    height: 7%;
+    width: 50%;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    background-color: #F8EBAB;
+    font-family: Playpen Sans, Sriracha;
+    padding-left: 3%;
+}
+
+/* กล่องขาวข้างล่างรูป */
+.box_des{
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 35%;
+    background-color: #fff;
+    width : 30%;
+    height : 60%;
+    border-radius: 50px;
+}
+
+/* ชื่อ date */
+.date label{
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+/* กล่อง date */
+.date p{
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 10%;
+    height: 4%;
+    width: 78%;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    font-family: Playpen Sans;
+    padding-bottom: 5%;
+}
+
+/* name time */
+.time label{
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+/* box time */
+.time p{
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 10%;
+    height: 4%;
+    width: 78%;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    font-family: Playpen Sans;
+    padding-bottom: 5%;
+}
+
+/* name link */
+.link_smth label{
+    position: absolute;
+    margin-top: 22%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+/* box link */
+.link_smth p{
+    position: absolute;
+    margin-top: 24.5%;
+    margin-left: 10%;
+    height: 4%;
+    width: 78%;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    font-family: Playpen Sans;
+    padding-bottom: 5%;
+}
+
+/* name descrip */
+.descrip label{
+    position: absolute;
+    margin-top: 31.5%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+/* box descrip */
+.descrip p{
+    position: absolute;
+    margin-top: 34%;
+    margin-left: 10%;
+    height: 30%;
+    width: 78%;
+    border: none;
+    resize: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    font-family: Sriracha;
+    padding-bottom: 5%;
+}
+
+/* del scrollbar */
+.descrip textarea::-webkit-scrollbar{
+    display: none;
+}
