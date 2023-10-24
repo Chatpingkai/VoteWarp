@@ -4,7 +4,7 @@
 }
 /*ภาพ background*/
 body{
-    background-image: url("../img/bgregister.jpg");
+    background-image: url("../img/background_login.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
