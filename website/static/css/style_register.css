@@ -10,6 +10,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     font-family: Inter, sans-serif;
+    overflow: hidden;
 }
 /*ทั้งหมดในกรอบขาว*/
 .page_register{

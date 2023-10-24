@@ -12,6 +12,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    overflow: hidden;
 }
 
 /* background box login */
@@ -23,6 +24,8 @@ body{
     margin-top: 8%;
     margin-left: 65%;
     border-radius: 50px;
+    border: 2px solid;
+    border-color: black;
 }
 
 /* picture time to warp */
