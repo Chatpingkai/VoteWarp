@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
-</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .backdrop {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .reset {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .reset:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <form method="POST">
         <div class="backdrop">
             <h1>Reset Password</h1>
-            <p>
-                Click On the link to go to reset password page!!
-            </p>
-            <a href="http://127.0.0.1:5000/reset_password"><button type="submit" class="reset">Reset Password</button></a>
+            <p>Click the link below to reset your password:</p>
+            <a href="http://127.0.0.1:5000/reset_password" class="reset">Reset Password</a>
         </div>
     </form>
 </body>
