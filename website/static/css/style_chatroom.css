@@ -14,7 +14,7 @@ body{
     margin: 2em;
 }
 .writing_panel{
-    justify-content: center;
+    justify-content: start;
     display: flex;
     gap: 1em;
     padding-top: 100px;
