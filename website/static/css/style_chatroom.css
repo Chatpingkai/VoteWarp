@@ -6,6 +6,7 @@
 
 body{
     height: 100vh;
+    background-color: bisque;
 }
 
 .container{
@@ -16,6 +17,7 @@ body{
     justify-content: center;
     display: flex;
     gap: 1em;
+    padding-top: 100px;
 }
 .chat_box{
     display: flex;
@@ -32,18 +34,34 @@ body{
     height: 100px;
     border: 1px solid black;
     border-radius: 50px;
+    overflow: hidden;
+    background: url(../img/anonymous2.png) no-repeat;
+    background-size: cover;
+    background-position: center top;
 }
 .messagebox{
-    width: 1;
+    max-width: 500px;
+    border: 1px solid black;
+    border-radius: 0px 20px 20px 20px;
+    padding: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    background-color: white;
 }
 .messagebox p{
-    margin-top: 1em;
     font-size: 20px;
 }
-.writing_panel input{
-    width: 200px;
-    height: 50px;
-}
+
 .write{
     padding-left: 20px;
+    width: 75vw;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.submit_button{
+    content: "send";
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
 }
