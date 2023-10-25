@@ -33,7 +33,9 @@ body{
     border: 1px solid black;
     border-radius: 50px;
 }
-
+.messagebox{
+    width: 1;
+}
 .messagebox p{
     margin-top: 1em;
     font-size: 20px;

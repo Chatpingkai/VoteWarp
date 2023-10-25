@@ -90,7 +90,6 @@ body{
     width: 275px;
     height: 95%;
     object-fit: cover;
-    background-color: #e0f7bb;
     border-radius: 27.5px;
     align-items: center;
     border: 1px solid black;
@@ -160,13 +159,22 @@ body{
     top: 5%;
 }
 /* รูปของ status */
-.status img{
+.green img{
     position: relative;
     top: -5px;
     left: -3.5px;
     width: 25px;
     height: 25px;
 }
+
+.yellow img{
+    position: absolute;
+    left: 80px;
+    top: -11px;
+    width: 20px;
+    height: 35px;
+}
+
 /* element ของ place, date, time ใน room_box */
 .place, .date, .timey{
     display: flex;
@@ -299,6 +307,12 @@ input{
     cursor: pointer;
 }
 
+.green{
+    background-color: #e0f7bb;
+}
+.yellow{
+    background-color: #f7f2bc;
+}
 @media (max-width: 1340px) {
     .searchbar{
         top: 30%;

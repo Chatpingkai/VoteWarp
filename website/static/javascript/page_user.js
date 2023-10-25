@@ -8,11 +8,12 @@ function close_popup(){
 // เพิ่ม room_box
 const box = document.getElementById("wrapper");
 const createroom = document.getElementById("createroom");
+const statuslist = ["room_box green", "room_box yellow"]
 function addroom(){
     // เพิ่มห้องจดหมาย (img = จดหมาย, text = ชื่อ)
     createroom.remove();
     let room_box = document.createElement("div");
-    room_box.className = "room_box"
+    room_box.className = statuslist[Math.floor(Math.random()*statuslist.length)];
     let text_room = document.createElement("p");
     let name_room = document.createElement("p");
     let text_status = document.createElement("p");
@@ -23,7 +24,11 @@ function addroom(){
     text_room.innerHTML = "room"
     name_room.innerHTML = "แมนซ่า"
     text_status.innerHTML = "status:"
-    complete.innerHTML = "complete"
+    if (room_box.className === "room_box green") {
+        complete.innerHTML = "complete"
+    } else {
+        complete.innerHTML = "voting"
+    }
     text_place.innerHTML = "place:"
     text_place.className = "text_place"
     text_date.innerHTML = "date:"
@@ -59,7 +64,11 @@ function addroom(){
     line_2.appendChild(line_date);
     line_3.appendChild(line_time);
     let check_img = document.createElement("img");
-    check_img.src = "../static/img/check-mark (1).png"
+    if (room_box.className === "room_box green") {
+        check_img.src = "../static/img/check-mark (1).png"
+    } else {
+        check_img.src = "../static/img/voteting.png"
+    }
     line.appendChild(name_room)
     status.appendChild(text_status)
     status.appendChild(complete)
