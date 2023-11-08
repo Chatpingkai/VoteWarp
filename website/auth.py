@@ -3,11 +3,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
 from flask_login import login_required, logout_user, current_user
 from .models import User
-from . import created_mail
+from . import created_mail, create_app
 from flask_mail import Message
+from itsdangerous import URLSafeTimedSerializer
 
 
 auth = Blueprint('auth', __name__)
+
 
 
 @auth.route('/user_page')
@@ -79,34 +81,58 @@ def register():
 def lobby():
     render_template("lobby.html")
 
+
+#make token to reset password
+def generate_reset_token(email):
+    app = create_app()
+    serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
+    return serializer.dumps(email, salt='reset-password')
+
+
+#if time > 3600 it need to resented
+def validate_reset_token(token):
+    app = create_app()
+    serializer = URLSafeTimedSerializer(app.config['SECRET_KEY'])
+    max_age = 3600  # The token is valid for one hour (adjust as needed)
+    try:
+        email = serializer.loads(token, salt='reset-password', max_age=max_age)
+        return email
+    except:
+        return None
+
+
+
 @auth.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password_1():
     if request.method == 'POST':
         mail = created_mail()
         email = request.form.get('email')
         user = User.query.filter_by(email=email).first()
-        global user_email
-        user_email = email
         if user:
             #check email to our database
             msg = Message("Hey",
                 sender='test@gmail.com',
                 recipients=[email])
-            msg.html = render_template("email.html")
+            #get token = email
+            token = generate_reset_token(email)
+            #make reset link for email
+            reset_link = url_for('auth.reset_password', token=token, _external=True)
+            msg.html = render_template("email.html", reset_link=reset_link)
             mail.send(msg)
-            flash("Sented", category=0)
+            flash("Password reset link sent to your email.", category=0)
         else:
             flash("Email not match to our database", category=1)
     return render_template("forgot_password_first.html")
 
 
-@auth.route('/reset_password', methods=['GET', 'POST'])
-def reset_password():
-    password1 = request.form.get('password')
-    password2 = request.form.get('password2')
+@auth.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    email = validate_reset_token(token)#get token from forgotpass
     if request.method == 'POST':
+        password1 = request.form.get('password')
+        password2 = request.form.get('password2')
         if password1 == password2:
-            user = User.query.filter_by(email=user_email).first()
+            user = User.query.filter_by(email=email).first()
             if user:
                 hashed_pass = generate_password_hash(password1, method='sha256')
                 user.password = hashed_pass
