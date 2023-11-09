@@ -54,6 +54,7 @@ function addroom(){
     let picpic = document.createElement("div");
     picpic.className = "picpic"
     picpic.setAttribute("id", "picpic")
+    picpic.style.backgroundImage = "url("+profilePicture.src+")"
     let line_1 = document.createElement("div");
     line_1.className = "line2"
     let line_2 = document.createElement("div");
