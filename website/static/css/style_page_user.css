@@ -335,14 +335,14 @@ input{
     font-family: Jua;
     margin-top: 1%;
     margin-left: 1px;
-    width: 20%;
+    width: 25%;
     height: 40px;
     background: rgb(255, 255, 255);
     border-radius: 40px;
     font-size: 20px;
     color: #777777;
     font-weight: 500;
-    padding-top: 9px;
+    padding-top: 5px;
     padding-left: 1%;
 }
 
@@ -360,7 +360,7 @@ input{
 .yellow{
     background-color: #f7f2bc;
 }
-@media (max-width: 1340px) {
+@media (max-width: 1440px) {
     .searchbar{
         top: 30%;
         left: 37%;
@@ -374,6 +374,14 @@ input{
     span.photo{
         height: 230px;
         width: 230px;
+        transition: .2s;
+    }
+    .headword img{
+        margin-top: 1%;
+        transition: .2s;
+    }
+    .headword .yohoo{
+        margin-top: 2%;
         transition: .2s;
     }
 }
@@ -405,6 +413,21 @@ input{
         width: 35px;
         transition: .2s;
     }
+    .headword label{
+        width: 30%;
+        font-size: 18px;
+        padding-top: 8px;
+        margin-top: 2%;
+        transition: .2s;
+    }
+    .headword img{
+        margin-top: 2%;
+        transition: .2s;
+    }
+    .headword .yohoo{
+        margin-top: 3%;
+        transition: .2s;
+    }
 }
 @media (max-width: 769px) {
     .searchbar{
@@ -433,6 +456,21 @@ input{
     }
     .create_submit{
         width: 40%;
+    }
+    .headword label{
+        width: 55%;
+        font-size: 16px;
+        margin-top: 4%;
+        padding-top: 8px;
+        transition: .2s;
+    }
+    .headword img{
+        margin-top: 2%;
+        transition: .2s;
+    }
+    .headword .yohoo{
+        margin-top: 5%;
+        transition: .2s;
     }
 }
 
@@ -505,6 +543,44 @@ input{
     }
 }
 
+@media (max-width: 430px){
+    .headword input{
+        margin-top: 10%;
+        font-size: 12px;
+        width: 110%;
+        transition: .2s;
+    }
+    .page_creategroup h1{
+        font-size: 40px;
+        transition: .2s;
+    }
+    .headword h3{
+        font-size: 25px;
+        transition: .2s;
+    }
+    .create_submit{
+        width: 60%;
+        margin-top: 15%;
+        transition: .2s;
+    }
+    .headword label{
+        width: 85%;
+        font-size: 14px;
+        padding-top: 8px;
+        padding-left: 8px;
+        margin-top: 10%;
+        transition: .2s;
+    }
+    .headword img{
+        margin-top: 10%;
+        transition: .2s;
+    }
+    .headword .yohoo{
+        margin-top: 10%;
+        transition: .2s;
+    }
+}
+
 /* ขึ้นแจ้งเตือน */
 .alert {
     font-family: sans-serif;
@@ -531,22 +607,4 @@ input{
 
 .closebtn:hover {
     background-color: #08f100;
-}
-
-@media (max-width: 430px){
-    .headword input{
-        margin-top: 10%;
-        font-size: 12px;
-        width: 110%;
-    }
-    .page_creategroup h1{
-        font-size: 40px;
-    }
-    .headword h3{
-        font-size: 25px;
-    }
-    .create_submit{
-        width: 60%;
-        margin-top: 15%;
-    }
 }
