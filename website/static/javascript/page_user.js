@@ -60,9 +60,9 @@ function addroom(){
     line_2.className = "line2"
     let line_3 = document.createElement("div");
     line_3.className = "line2"
-    line_1.appendChild(line_place);
+    // line_1.appendChild(line_place);
     line_2.appendChild(line_date);
-    line_3.appendChild(line_time);
+    // line_3.appendChild(line_time);
     let check_img = document.createElement("img");
     if (room_box.className === "room_box green") {
         check_img.src = "../static/img/check-mark (1).png"
@@ -73,12 +73,12 @@ function addroom(){
     status.appendChild(text_status)
     status.appendChild(complete)
     status.appendChild(check_img)
-    place.appendChild(text_place)
-    place.appendChild(line_1)
+    // place.appendChild(text_place)
+    // place.appendChild(line_1)
     date.appendChild(text_date)
     date.appendChild(line_2)
-    timey.appendChild(text_time)
-    timey.appendChild(line_3)
+    // timey.appendChild(text_time)
+    // timey.appendChild(line_3)
     room_box.appendChild(text_room)
     room_box.appendChild(line)
     room_box.appendChild(status)
