@@ -53,14 +53,14 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 .cloudgroup img{
     opacity: 0.2;
-    max-width: 100vw;
-    max-height: 100vh;
+    max-width: 2000px;
+    max-height: 2000px;
     position: absolute;
-    bottom: 0;
-    left: 0;
     animation: anicloud calc(5s * var(--i)) linear infinite;
 }
 
@@ -389,4 +389,48 @@ body{
   overflow: hidden;
   display: none;
   animation: none 3s;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    text-align: center;
+    justify-content: center;
+  }
+  /* .world{
+    width: 90%;
+    top: 30%;
+    transition: .3s;
+    left: 5%;
+  } */
+  .cloudgroup{
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    text-align: center;
+  }
+  /* .world{
+    width: 90vw;
+    transition: .2s;
+  } */
+  .welcome_text {
+    font-size: 75px;
+    transition: .2s;
+  }
+  .log_re_button{
+    flex-direction: column;
+    top: 45%;
+    transition: .2s;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    overflow: hidden;
+  }
+  .world {
+    display: none;
+  }
 }
