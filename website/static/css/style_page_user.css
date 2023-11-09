@@ -279,7 +279,7 @@ span.photo:hover:after{
     border-radius: 40px;
     font-size: 16px;
     border-color: black;
-    margin-top: 30px;
+    margin-top: 7px;
     padding: 15px 20px 15px 10px;
 }
 
@@ -326,6 +326,32 @@ input{
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black;
     font-size: 30px;
+}
+
+.headword label{
+    display: block;
+    cursor: pointer;
+    border: 2px solid black;
+    font-family: Jua;
+    margin-top: 1%;
+    margin-left: 1px;
+    width: 20%;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 40px;
+    font-size: 20px;
+    color: #777777;
+    font-weight: 500;
+    padding-top: 9px;
+    padding-left: 1%;
+}
+
+#input-file{
+    display: none;
+}
+
+#picture_room{
+    border-radius: 50%;
 }
 
 .green{

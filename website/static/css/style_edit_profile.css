@@ -86,43 +86,59 @@ body{
 }
 
 /* button change profile */
-.all .photo_profile button{
+.all .photo_profile label{
+    display: block;
+    cursor: pointer;
     position: absolute;
-    top: 48%;
-    left: 30%;
+    border: 2px solid black;
+    margin-top: 24%;
+    margin-left: 30%;
     width: 20%;
     height: 6%;
     background: rgb(255, 255, 255);
     border-radius: 30px;
-    cursor: pointer;
     font-size: 25px;
     color: #000000;
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding-top: 9px;
+    padding-left: 5.5%;
+}
+
+/* hide input change file */
+.all .photo_profile input{
+    display: none;
 }
 
 /* button change background */
-.all .photo_background button{
+.all .photo_background label{
+    display: block;
+    cursor: pointer;
     position: absolute;
-    top: 72%;
-    left: 30%;
+    border: 2px solid black;
+    margin-top: 35%;
+    margin-left: 30%;
     width: 20%;
     height: 6%;
     background: rgb(255, 255, 255);
     border-radius: 30px;
-    cursor: pointer;
     font-size: 25px;
     color: #000000;
     font-weight: 600;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    padding-top: 9px;
+    padding-left: 4.3%;
+}
+
+/* hide input change file */
+.all .photo_background input{
+    display: none;
 }
 
 /* button save */
 .all button{
     position: absolute;
-    top: 88%;
-    right: 30%;
-    width: 10%;
+    margin-top: 40%;
+    margin-left: 80%;
+    width: 13%;
     height: 6%;
     background: rgb(255, 255, 255);
     border-radius: 30px;
