@@ -185,3 +185,108 @@ body {
     border: 3px solid black;
     background-size: cover;
 }
+
+.chatroom {
+    width: 80vw;
+    height: 100vh;
+    border: 3px solid black;
+    position: absolute;
+    align-self: flex-start;
+    border-radius: 50px;
+    top: 0;
+    left: -50px;
+    animation: none 1.5s;
+    background-color: rgba(197, 188, 173, 0.6);
+    display: none;
+}
+
+@keyframes popup {
+    from{
+        left: -2000px;
+    }
+    to{
+        left: -50px;
+    }
+}
+
+@keyframes popdown {
+    from{
+        left: -50px;
+    }
+    to{
+        left: -2000px;
+    }
+}
+.container{
+    margin: 2em;
+    padding-left: 50px;
+    height: 100%;
+}
+.writing_panel{
+    justify-content: start;
+    display: flex;
+    gap: 1em;
+    position: absolute;
+    padding-top: 5px;
+    bottom: 5%;
+
+}
+.chat_box{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    max-height: 750px;
+}
+.chat_box::-webkit-scrollbar{
+    display: none;
+}
+.person{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 2em;
+}
+.profile{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+    overflow: hidden;
+    background: url(../img/anonymous2.png) no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.messagebox{
+    max-width: 500px;
+    border: 1px solid black;
+    border-radius: 0px 20px 20px 20px;
+    padding: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    background-color: white;
+}
+.messagebox p{
+    font-size: 20px;
+}
+
+.write{
+    padding-left: 20px;
+    width: 65vw;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.submit_button{
+    content: "send";
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.close{
+    width: 45px;
+    position: absolute;
+    top: 45px;
+    right: 45px;
+    cursor: pointer;
+}
