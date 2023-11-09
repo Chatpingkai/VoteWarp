@@ -104,21 +104,24 @@
         <div class="popup_content">
             <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
             <div class="page_creategroup">
-                <h1>Create Your Group</h1>
+                <h1>Create Your Room</h1>
             </div><br>
             <div class="headword">
-                <h3>Group name</h3>
+                <h3>Room Name</h3>
                 <input  type="text" 
                         id="groupname" 
-                        name="groupname"><br><br>
-                <h3>people limit</h3>
-                <input  type="number" 
-                        id="peoplelimit" 
-                        name="peoplelimit"><br><br>
-                <h3>group password</h3>
+                        name="groupname"
+                        placeholder="Please enter your room name"><br><br>
+                <h3>Room Password</h3>
                 <input  type="password" 
                         id="grouppassword" 
-                        name="grouppassword"><br><br>
+                        name="grouppassword"
+                        placeholder="Please enter your room password"><br><br>
+                <h3>Day</h3>
+                <input type="text" 
+                        placeholder="-- Select Day --" 
+                        onpointerover=" (this.type='date') "
+                        class="helpme">
             </div><br>
             <input type="submit" name="submit" onclick="addroom()" class="create_submit">
         </div>

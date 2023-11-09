@@ -282,10 +282,11 @@ span.photo:hover:after{
     margin-top: 30px;
     padding: 15px 20px 15px 10px;
 }
+
 /* input 3 อัน (group name, people limit, group password) */
 input{
     flex: auto;
-    width: 10%;
+    width: 15%;
     height: 45px;
     background: black;
     border-radius: 40px;
@@ -296,7 +297,6 @@ input{
 /* ปุ่ม ส่ง */
 .create_submit{
     color: #fff;
-    width: 90px;
 }
 /* ปุ่มปิด */
 .close{
@@ -305,6 +305,27 @@ input{
     top: 20px;
     right: 40px;
     cursor: pointer;
+}
+
+.helpme{
+    text-transform: uppercase;
+    color: #777777;
+}
+
+.page_creategroup h1{
+    font-family: Jua;
+    color: #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 60px;
+}
+
+.headword h3{
+    font-family: Jua;
+    color: #fff;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    font-size: 30px;
 }
 
 .green{
@@ -384,9 +405,12 @@ input{
         width: 27px;
         transition: .2s;
     }
+    .create_submit{
+        width: 40%;
+    }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 430px) {
     .interface{
         width: 100vw;
         height: 100vw;
@@ -481,4 +505,22 @@ input{
 
 .closebtn:hover {
     background-color: #08f100;
+}
+
+@media (max-width: 430px){
+    .headword input{
+        margin-top: 10%;
+        font-size: 12px;
+        width: 110%;
+    }
+    .page_creategroup h1{
+        font-size: 40px;
+    }
+    .headword h3{
+        font-size: 25px;
+    }
+    .create_submit{
+        width: 60%;
+        margin-top: 15%;
+    }
 }
