@@ -188,9 +188,36 @@ body{
 }
 
 .closebtn:hover {
-    background-color: #d32f2f;
+    background-color: hsl(0, 65%, 51%);
+}
+/* ขึ้นแจ้งเตือน */
+.alerts {
+  font-family: sans-serif;
+  font-weight: bold;
+  z-index: 1;
+  padding: 1%;
+  background-color: #32fc00;
+  color: white;
+  margin: 2%;
+  margin-top: 1.5%;
+  width: 96%;
+  position: fixed;
+
 }
 
+.closebtns {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5%;
+  margin: 0.5%;
+  cursor: pointer;
+}
+
+.closebtns:hover {
+  background-color: #08f100;
+}
 .cloud1{
     position: absolute;
     width: 100vw;

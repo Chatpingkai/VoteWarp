@@ -73,7 +73,7 @@ def register():
             db.session.commit()
             # login_user(user, remember=True)
             flash("Account Created!! enjoy kub pom", category='success')
-            return redirect(url_for('auth.user_page'))
+            return redirect(url_for('auth.login'))
 
     return render_template('Register.html')
 
