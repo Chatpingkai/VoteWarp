@@ -311,42 +311,53 @@ body{
 @media (max-width: 1440px){
   .text_time img{
     width: 850px;
+    transition: .2s;
   }
   .world img{
     width: 850px;
     height: 454px;
+    transition: .2s;
   }
   .box_login{
     margin-left: 70%;
     margin-top: 12%;
     width: 27%;
+    transition: .2s;
   }
   .box_login .remember{
     margin-top: 3%;
+    transition: .2s;
   }
   .username input{
     width: 85%;
+    transition: .2s;
   }
   .password input{
     width: 85%;
+    transition: .2s;
   }
   .remember a{
     margin-left: 63%;
+    transition: .2s;
   }
   .username i{
     margin-left: 83%;
+    transition: .2s;
   }
   .password i{
     margin-left: 83%;
+    transition: .2s;
   }
   .page_login button{
     margin-left: 33%;
     width: 40%;
     font-size: 20px;
+    transition: .2s;
   }
   .login p{
     margin-top: 81%;
     text-align: center;
+    transition: .2s;
   }
 }
 
@@ -355,32 +366,40 @@ body{
     margin-top: 10%;
     width: 600px;
     height: 150px;
+    transition: .2s;
   }
   .world img{
     position: fixed;
     bottom: 0%;
     width: 600px;
     height: 300px;
+    transition: .2s;
   }
   .box_login{
     margin-left: 66.5%;
     margin-top: 20%;
     width: 30%;
+    transition: .2s;
   }
   .remember a{
     margin-left: 57%;
     font-size: 15px;
+    transition: .2s;
   }
+
   .remember label{
     font-size: 15px;
+    transition: .2s;
   }
   .login p{
     font-size: 15px;
     margin-top: 85%;
     margin-left: 6%;
+    transition: .2s;
   }
   .page_login button{
     margin-left: 33%;
+    transition: .2s;
   }
 }
 
@@ -390,43 +409,54 @@ body{
     top: 6px;
     width: 650px;
     height: 150px;
+    transition: .2s;
   }
   .world img{
     position: fixed;
     bottom: 0%;
     width: 470px;
     height: 220px;
+    transition: .2s;
   }
   .box_login{
     margin-left: 60%;
     margin-top: 32%;
     width: 35%;
     height: 55%;
+    transition: .2s;
   }
   .username i{
     font-size: 18px;
+    transition: .2s;
   }
   .password i{
     font-size: 18px;
+    transition: .2s;
   }
   .page_login button{
     font-size: 17px;
+    transition: .2s;
   }
   .remember a{
     margin-left: 57%;
     font-size: 13px;
+    transition: .2s;
   }
   .remember label{
     font-size: 13px;
+    transition: .2s;
   }
   .login p{
     font-size: 13px;
+    transition: .2s;
   }
   .username input{
     font-size: 13px;
+    transition: .2s;
   }
   .password input{
     font-size: 13px;
+    transition: .2s;
   }
 }
 
@@ -437,17 +467,20 @@ body{
     left: 9.2%;
     width: 360px;
     height: 110px;
+    transition: .2s;
   }
   .world img{
     position: fixed;
     bottom: 0%;
     width: 380px;
     height: 180px;
+    transition: .2s;
   }
   .box_login{
     margin-left: 22%;
     margin-top: 45%;
     width: 60%;
     height: 55%;
+    transition: .2s;
   }
 }
