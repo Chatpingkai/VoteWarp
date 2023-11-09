@@ -39,7 +39,7 @@ body{
 .world{
     position: fixed;
     top: 53%;
-    margin-left: 8%;
+    margin-left: 6%;
 }
 
 /* text login */
@@ -164,7 +164,7 @@ body{
 
 /* ขึ้นแจ้งเตือน */
 .alert {
-    font-family: sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     z-index: 1;
     padding: 1%;
@@ -306,4 +306,147 @@ body{
   overflow: hidden;
   display: block;
   animation: cloud 3s;
+}
+
+@media (max-width: 1440px){
+  .text_time img{
+    width: 850px;
+  }
+  .world img{
+    width: 850px;
+    height: 454px;
+  }
+  .box_login{
+    margin-left: 70%;
+    margin-top: 12%;
+    width: 27%;
+  }
+  .box_login .remember{
+    margin-top: 3%;
+  }
+  .username input{
+    width: 85%;
+  }
+  .password input{
+    width: 85%;
+  }
+  .remember a{
+    margin-left: 63%;
+  }
+  .username i{
+    margin-left: 83%;
+  }
+  .password i{
+    margin-left: 83%;
+  }
+  .page_login button{
+    width: 40%;
+    font-size: 20px;
+  }
+  .login p{
+    margin-top: 81%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px){
+  .text_time img{
+    margin-top: 10%;
+    width: 600px;
+    height: 150px;
+  }
+  .world img{
+    position: fixed;
+    bottom: 0%;
+    width: 600px;
+    height: 300px;
+  }
+  .box_login{
+    margin-left: 66.5%;
+    margin-top: 20%;
+    width: 30%;
+  }
+  .remember a{
+    margin-left: 57%;
+    font-size: 15px;
+  }
+  .remember label{
+    font-size: 15px;
+  }
+  .login p{
+    font-size: 15px;
+    margin-top: 85%;
+    margin-left: 6%;
+  }
+  .page_login button{
+    margin-left: 33%;
+  }
+}
+
+@media (max-width: 768px){
+  .text_time img{
+    position: fixed;
+    top: 6px;
+    width: 650px;
+    height: 150px;
+  }
+  .world img{
+    position: fixed;
+    bottom: 0%;
+    width: 470px;
+    height: 220px;
+  }
+  .box_login{
+    margin-left: 60%;
+    margin-top: 32%;
+    width: 35%;
+    height: 55%;
+  }
+  .username i{
+    font-size: 18px;
+  }
+  .password i{
+    font-size: 18px;
+  }
+  .page_login button{
+    font-size: 17px;
+  }
+  .remember a{
+    margin-left: 57%;
+    font-size: 13px;
+  }
+  .remember label{
+    font-size: 13px;
+  }
+  .login p{
+    font-size: 13px;
+  }
+  .username input{
+    font-size: 13px;
+  }
+  .password input{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px){
+  .text_time img{
+    position: fixed;
+    top: 30px;
+    left: 9.2%;
+    width: 360px;
+    height: 110px;
+  }
+  .world img{
+    position: fixed;
+    bottom: 0%;
+    width: 380px;
+    height: 180px;
+  }
+  .box_login{
+    margin-left: 22%;
+    margin-top: 45%;
+    width: 60%;
+    height: 55%;
+  }
 }
