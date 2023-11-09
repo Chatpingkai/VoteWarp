@@ -11,7 +11,7 @@
         <p class="room_text">room.</p>
         <div class="room_name"><p>แมนซ่า007</p></div>
         <img src="../static/img/chat.png" class="chat_img" onclick="openchat()">
-        <img src="../static/img/createbutton.png" class="create_button">
+        <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
     </div>
     <div class="voting_container" id="voting">
         <div class="votingbox">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="confirm checked" id="checked"> 
+                <div class="confirm checked" id="checked" onclick="check()"> 
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="confirm">    
+                <div class="confirm" onclick="check()">    
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="confirm">    
+                <div class="confirm" onclick="check()">    
                 </div>
             </div>
         </div>
@@ -212,6 +212,41 @@
                 <input type="submit" class="submit_button">
             </form>
         </div>
+    </div>
+    <div class="create_vote">
+        <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
+        <div class="name_place">
+            <img src="../static/img/anonymous2.png" alt="รูปใส่ในโพสไปเที่ยวซัมติงเวรี่เวล" width="550px" height="450px">
+            <br>
+            <br>
+            <div class="placebox">
+                <label>place :</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="box_des">
+            <div class="vote_date">
+                <label>date :</label>
+                <input type="text">
+            </div>
+            <div class="time">
+                <label>time :</label>
+                <br>
+                <input type="text">
+            </div>
+            <div class="link_smth">
+                <label>link (optional)</label>
+                <br>
+                <input type="text">
+            </div>
+            <div class="descrip">
+                <label>description :</label>
+                <br>
+                <textarea cols="30" rows="30" maxlength="231"></textarea>
+            </div>
+        </div>
+        <input type="submit" name="submit" class="create_submit" onclick="createvote()">
+    </div>
     <script src="../static/javascript/room.js"></script>
 </body>
 </html>

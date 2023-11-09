@@ -190,7 +190,7 @@ body {
     width: 80vw;
     height: 100vh;
     border: 3px solid black;
-    position: absolute;
+    position: fixed;
     align-self: flex-start;
     border-radius: 50px;
     top: 0;
@@ -289,4 +289,143 @@ body {
     top: 45px;
     right: 45px;
     cursor: pointer;
+}
+
+.create_vote {
+    border: 1px solid black;
+    height: 1500px;
+    width: 1000px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff2cf;
+    position: absolute;
+    overflow: scroll;
+    padding: 50px;
+    border-radius: 50px;
+    gap: 30px;
+    top: 5%;
+    animation: none 1s;
+}
+@keyframes invote {
+    from{
+        top: -1500px;
+    }
+    to{
+        top: 5%;
+    }
+}
+
+@keyframes outvote {
+    from{
+        top: 5%;
+    }
+    to{
+        top: -1500px;
+    }
+}
+
+.create_vote::-webkit-scrollbar{
+    display: none;
+}
+/* ปรับตำแหน่งรูปกับชื่อสถานที่ */
+
+/* ปรับมุมรูป */
+.name_place img{
+    border-radius: 30px;
+}
+.placebox {
+    position: relative;
+    left: 10px;
+}
+/* ตำแหน่งชื่อสถานที่ */
+.name_place label{
+    font-size: 35px;
+    padding-top: 50px;
+}
+
+/* กล่องชื่อ name */
+.name_place input{
+    height: 50px;
+    width: 400px;
+    border: none;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    background-color: #fff2cf;
+    font-family: Playpen Sans, Sriracha;
+}
+
+/* กล่องขาวข้างล่างรูป */
+.box_des{
+    background-color: #fff;
+    width : 70%;
+    height : 60%;
+    border-radius: 50px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.vote_date{
+    display: flex;
+    flex-direction: column;
+
+}
+/* ชื่อ date */
+.vote_date label{
+    font-size: 20px;
+}
+
+/* กล่อง date, box time, box link*/
+.vote_date input, .time input, .link_smth input{
+    height: 40px;
+    width: 78%;
+    border: none;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    background-color: #fff;
+    font-family: Playpen Sans;
+}
+
+/* name time */
+.time label{
+    font-size: 20px;
+}
+
+/* name link */
+.link_smth label{
+    font-size: 20px;
+}
+
+
+/* name descrip */
+.descrip label{
+    font-size: 20px;
+}
+
+/* box descrip */
+.descrip textarea{
+    max-height: 100px;
+    width: 78%;
+    border: none;
+    resize: none;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    font-family: Sriracha;
+}
+
+/* del scrollbar */
+.descrip textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.create_submit{
+    color: white;
+    background: black;
+    width: 250px;
+    position: relative;
+    bottom: 0;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 25px;
 }
