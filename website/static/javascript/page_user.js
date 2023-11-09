@@ -122,3 +122,9 @@ document.addEventListener("mouseup", dragstop);
 //   boxes.forEach(box => {
 //     box.style.fontSize = getFontSize(box.textContent.length)
 //   })
+
+let profilePicture = document.getElementById("picture_room");
+let inputfile = document.getElementById("input-file");
+inputfile.onchange = function(){
+    profilePicture.src = URL.createObjectURL(inputfile.files[0])
+}

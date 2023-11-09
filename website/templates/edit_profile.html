@@ -23,14 +23,17 @@
             <i class='bx bx-pencil'></i>
         </div>
         <div class="photo_profile">
-            <img src="../static/img/anonymous2.png" alt="profile" width="200px" height="200px">
-            <button type="submit">Change Profile</button>
+            <img src="../static/img/anonymous2.png" alt="profile" width="200px" height="200px" id="photo_room">
+            <label for="input-file">Change Profile</label><br>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
         </div>
         <div class="photo_background">
-            <img src="../static/img/fuji.jpg" alt="background" width="200px" height="200px">
-            <button type="submit">Change Background</button>
+            <img src="../static/img/fuji.jpg" alt="background" width="200px" height="200px" id="background_smth">
+            <label for="input-background">Change Background</label><br>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-background">
         </div>
         <button type="submit">Save</button>
     </div>
+    <script src="../static/javascript/edit_profile.js"></script>
 </body>
 </html>
