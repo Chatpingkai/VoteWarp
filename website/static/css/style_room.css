@@ -168,12 +168,20 @@ body {
 }
 
 .confirm{
-    height: 60px;
-    width: 60px;
-    border: 3px solid black;
-    border-radius: 100px;
     position: relative;
     left: 40%;
     cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: 3px solid black;
+    border-radius: 100px;
+}
 
+.checked{
+    background-image: url(../img/checkkk.png);
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    border: 3px solid black;
+    background-size: cover;
 }
