@@ -1,18 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .head {
     display: inline-block;
     border: none;
     border-bottom: 1px solid black;
     font-size: 54px;
 }
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../img/paper2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
 .content{
     position: relative;
-    width: 50%;
-    height: 50%;
-    border-bottom: 2px solid #162938;
-    margin: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
+    width: 75vw;
+    height: 30vh;
     font-size: 56px;
+    display: flex;
+    align-items: center;
 }
 .content .name {
     width: 100%;
@@ -24,4 +36,152 @@
     line-height: 50px;
     font-size: 30px;
     text-align: center;
+}
+
+.room_name {
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 100vw;
+}
+
+.room_text {
+    position: relative;
+    top: 17px;
+}
+
+.chat_img {
+    width: 30%;
+    height: 40%;
+    cursor: pointer;
+}
+
+.create_button {
+    width: 25%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.voting_container {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    justify-content: center;
+}
+
+.votingbox {
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 40px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff2cf;
+}
+
+.votingbox .picture {
+    border: 1px solid black;
+    width: 75%;
+    height: 45%;
+    border-radius: 20px;
+    margin-top: 30px;
+    background: url(../img/bgregister.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);
+}
+.place {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+/* element ของ place, date, time ใน room_box */
+.date, .timey, .votingtext{
+    display: flex;
+    gap: 10px;
+    position: relative;
+    top: 6%;
+    padding-bottom: 30px;
+}
+/* ตัวอักษร 'place:', 'date:', 'time:' ตามลำดับ */
+.place p, .date p, .timey p{
+    top: 3px;
+    font-size: 20px;
+}
+/* ตัวอักษรบนเส้นใต้ place, date, time*/
+.line2 p{
+    position: relative;
+    top: 0;
+    left: 10px;
+}
+
+/* เส้นใต้ตัวอักษรของ place, date, time */
+.line2{
+    position: relative;
+    left: -3%;
+    width: 300px;
+    border-bottom: 1px solid black;
+}
+
+.place .line2 {
+    width: 250px;
+}
+
+.whitebox {
+    width: 80%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.votingtext{
+    display: flex;
+    align-items: center;
+}
+
+.user_votingbox{
+    background-color: #EDEDED;
+    height: 60px;
+    width: 275px;
+    border-radius: 40px;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.votingtext p {
+    font-size: 20px;
+    top: 3px;
+}
+
+.user_voting {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.confirm{
+    position: relative;
+    left: 40%;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: 3px solid black;
+    border-radius: 100px;
+}
+
+.checked{
+    background-image: url(../img/checkkk.png);
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    border: 3px solid black;
+    background-size: cover;
 }
