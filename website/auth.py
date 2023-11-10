@@ -29,7 +29,8 @@ def user_page():
         selectedDate = request.form.get('selectedDate')
         if groupname and grouppassword and selectedDate:
             flash("Successfully created a room", category=1)
-            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, first_name=user)
+            status = False
+            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, status=status , first_name=user)
             db.session.add(new_room)
             db.session.commit()
             return redirect(url_for('auth.user_page', new_user=user, methods=0))

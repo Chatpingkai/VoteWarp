@@ -16,4 +16,5 @@ class room(db.Model):
     groupname = db.Column(db.String(150))
     grouppassword = db.Column(db.String(150))
     selectedDate = db.Column(db.String(150))
+    status = db.Column(db.String(150))
     first_name = db.Column(db.String(150))

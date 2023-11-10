@@ -45,7 +45,30 @@
         <div class="box">
             <div class="wrapper" id="wrapper">
                 {% for i in all_room %}
-                    {{ i }}
+                 <div class="room_box yellow">
+                    <p>room</p>
+                    <div class="line">
+                        <p>{{ i[0] }}</p>
+                    </div>
+                    {% if not i[3] %}
+                        <div class="status yellow">
+                            <p>status:</p>
+                            <p>voting</p>
+                            <img src="../static/img/voteting.png" alt="">
+                        </div>
+                    {% else %}
+                        <div class="status green">
+                            <p>status:</p>
+                            <p>complete</p>
+                            <img src="../static/img/check-mark (1).png" alt="">
+                        </div>
+                    {% endif %}
+                    <div class="date">
+                        <p>date:</p>
+                        <div class="line2"><p>{{ i [2] }}</p></div>
+                    </div>
+                    <div class="picpic"></div>
+                 </div>
                 {% endfor %}
                 <!-- function addroom() จะ add room_box ตรงนี้ -->
 
@@ -121,8 +144,7 @@
                         <input  type="text" 
                                 id="groupname" 
                                 name="groupname"
-                                placeholder="Please enter your room name"
-                                value="{{ groupname }}" required><br><br>
+                                placeholder="Please enter your room name"><br><br>
                         <h3>Room Password</h3>
                         <input  type="password" 
                                 id="grouppassword" 
