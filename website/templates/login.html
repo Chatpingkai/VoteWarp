@@ -11,7 +11,7 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
-    {% if category == 'error' %}
+    {% if category == 'error' or message == "Please log in to access this page." %}
     <div class="alert">
         <span class="closebtn" onclick="closeAlert()">&times;</span>
         {{ message }}

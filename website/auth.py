@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, send_file
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
-from flask_login import login_required, logout_user, current_user
+from flask_login import login_required, logout_user, current_user, login_user
 from .models import User, room
 from . import created_mail, create_app
 from flask_mail import Message
@@ -14,6 +14,7 @@ auth = Blueprint('auth', __name__)
 
 
 @auth.route('/user_page', methods=['GET', 'POST'])
+@login_required
 def user_page():
     user = request.args.get('new_user')
     all_data_user = room.query.filter_by(first_name=user).all()
@@ -44,11 +45,12 @@ def user_page():
             flash("Please enter the room code.", category=0)
         elif not selectedDate:
             flash("Please select a date.", category=0)
-        elif not selectedDate:
+        elif not picture_room:
             flash("Please select a picture.", category=0)
     return render_template('page_user.html', user=user, all_room=all_room, as_attachment=True)
 
 @auth.route('/download_picture/<filename>')
+@login_required
 def download_picture(filename):
     data = room.query.filter_by(filename=filename).first()
     return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
@@ -63,7 +65,7 @@ def login():
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
-                # login_user(user, remember=True)
+                login_user(user, remember=True)
                 new_user = User.query.filter_by(email=email).with_entities(User.first_name).first()
                 return redirect(url_for("auth.user_page", new_user=new_user[0]))
             else:
@@ -78,7 +80,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return render_template('login.html')
+    return redirect(url_for('auth.login'))
 
 
 @auth.route('/register', methods=['GET', 'POST'])
