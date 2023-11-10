@@ -196,12 +196,12 @@ body{
 /* รูปใน room_box */
 .room_box .picpic{
     position: relative;
-    bottom: -10%;
+    top: 20%;
+    left: 1%;
     width: 90%;
     height: 40%;
     border: 1px solid black;
     border-radius: 20px;
-    background: url(../img/bgregister.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);

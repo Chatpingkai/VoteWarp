@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, send_file
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
 from flask_login import login_required, logout_user, current_user
@@ -6,6 +6,7 @@ from .models import User, room
 from . import created_mail, create_app
 from flask_mail import Message
 from itsdangerous import URLSafeTimedSerializer
+from io import BytesIO
 
 
 auth = Blueprint('auth', __name__)
@@ -22,15 +23,18 @@ def user_page():
             groupname_user = data.groupname
             grouppassword_user = data.grouppassword
             selectedDate_user = data.selectedDate
-            all_room.append([groupname_user, grouppassword_user, selectedDate_user])
+            picture_room = data.filename
+            status = data.status
+            all_room.append([groupname_user, grouppassword_user, selectedDate_user, picture_room, status])
     if request.method == 'POST':
         groupname = request.form.get('groupname')
         grouppassword = request.form.get('grouppassword')
         selectedDate = request.form.get('selectedDate')
-        if groupname and grouppassword and selectedDate:
+        picture_room = request.files['file']
+        if groupname and grouppassword and selectedDate and picture_room:
             flash("Successfully created a room", category=1)
             status = False
-            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, status=status , first_name=user)
+            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
             db.session.add(new_room)
             db.session.commit()
             return redirect(url_for('auth.user_page', new_user=user, methods=0))
@@ -40,7 +44,14 @@ def user_page():
             flash("Please enter the room code.", category=0)
         elif not selectedDate:
             flash("Please select a date.", category=0)
-    return render_template('page_user.html', user=user, all_room=all_room)
+        elif not selectedDate:
+            flash("Please select a picture.", category=0)
+    return render_template('page_user.html', user=user, all_room=all_room, as_attachment=True)
+
+@auth.route('/download_picture/<filename>')
+def download_picture(filename):
+    data = room.query.filter_by(filename=filename).first()
+    return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():

@@ -50,7 +50,7 @@
                     <div class="line">
                         <p>{{ i[0] }}</p>
                     </div>
-                    {% if not i[3] %}
+                    {% if i[4] == "0" %}
                         <div class="status yellow">
                             <p>status:</p>
                             <p>voting</p>
@@ -67,7 +67,7 @@
                         <p>date:</p>
                         <div class="line2"><p>{{ i [2] }}</p></div>
                     </div>
-                    <div class="picpic"></div>
+                    <img class="picpic" src="/download_picture/{{ i[3] }}" alt="picture">
                  </div>
                 {% endfor %}
                 <!-- function addroom() จะ add room_box ตรงนี้ -->
@@ -132,7 +132,7 @@
             </div>
         </div>
     </div>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="popup_box">
                 <div class="popup_content">
                     <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
@@ -159,8 +159,8 @@
                                 class="helpme">
                         <h3 class="yohoo">Room Picture</h3>
                         <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
-                        <label for="input-file">Change Profile</label><br>
-                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                        <label for="input-file">Select Picture</label><br>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="file" >
                     </div><br>
                     <input type="submit" name="submit" class="create_submit">
                 </div>
