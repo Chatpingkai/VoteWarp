@@ -27,7 +27,7 @@ body{
     outline: none;
     border: 2px solid;
     border-color: black;
-    width: 1400px;
+    width: 80%;
     height: 810px;
     align-content: stretch;
     margin: auto;
@@ -87,11 +87,6 @@ h1{
     text-shadow: 0 0 70px;
 }
 
-*{
-    margin: 10px;
-    padding: px 45px 20px 20px;
-    box-sizing: border-box;
-}
 /* ขึ้นแจ้งเตือน */
 .alert {
     font-family: sans-serif;
@@ -203,4 +198,25 @@ h1{
   overflow: hidden;
   display: block;
   animation: cloud 3s;
+}
+
+@media screen and (max-width: 370px) and (min-width: 163px) {
+  .page_register {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  .register {
+    margin: auto;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
