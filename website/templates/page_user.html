@@ -10,11 +10,19 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     {% for category, message in messages %}
-    <div class="alert">
-        <span class="closebtn" onclick="closeAlert()">&times;</span>
-        {{ message }}
-    </div>
-    <script src="../static/javascript/resgister.js"></script>
+        {% if category %}
+            <div class="alerts">
+                <span class="closebtns" onclick="closeAlerts()">&times;</span>
+                {{ message }}
+            </div>
+            <script src="../static/javascript/resgister.js"></script>
+        {% else %}
+            <div class="alert">
+                <span class="closebtn" onclick="closeAlert()">&times;</span>
+                {{ message }}
+            </div>
+            <script src="../static/javascript/resgister.js"></script>
+        {% endif %}
     {% endfor %}
   {% endif %}
 {% endwith %}
@@ -26,7 +34,7 @@
             </div>
         </div>
         <div class="name_user">
-            <p>{{ new_user }}</p>
+            <p>{{ user }}</p>
         </div>
         <div class="searchbar">
             <div class="searchbox">
@@ -36,6 +44,9 @@
         </div>
         <div class="box">
             <div class="wrapper" id="wrapper">
+                {% for i in all_room %}
+                    {{ i }}
+                {% endfor %}
                 <!-- function addroom() จะ add room_box ตรงนี้ -->
 
                 <!-- complete room -->
@@ -98,7 +109,7 @@
             </div>
         </div>
     </div>
-        <!-- <form method="POST"> -->
+        <form method="POST">
             <div class="popup_box">
                 <div class="popup_content">
                     <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
@@ -110,7 +121,8 @@
                         <input  type="text" 
                                 id="groupname" 
                                 name="groupname"
-                                placeholder="Please enter your room name"><br><br>
+                                placeholder="Please enter your room name"
+                                value="{{ groupname }}" required><br><br>
                         <h3>Room Password</h3>
                         <input  type="password" 
                                 id="grouppassword" 
@@ -128,10 +140,10 @@
                         <label for="input-file">Change Profile</label><br>
                         <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
                     </div><br>
-                    <input type="submit" name="submit" onclick="addroom()" class="create_submit">
+                    <input type="submit" name="submit" class="create_submit">
                 </div>
             </div>
-        <!-- </form> -->
+        </form>
     <script src="../static/javascript/page_user.js"></script>
     <script src="https://kit.fontawesome.com/152f96ad61.js" crossorigin="anonymous"></script>
 </body>

@@ -11,3 +11,9 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(150))
 
+class room(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    groupname = db.Column(db.String(150))
+    grouppassword = db.Column(db.String(150))
+    selectedDate = db.Column(db.String(150))
+    first_name = db.Column(db.String(150))

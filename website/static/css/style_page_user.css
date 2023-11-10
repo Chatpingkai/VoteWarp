@@ -586,13 +586,13 @@ input{
     font-family: sans-serif;
     z-index: 1;
     padding: 1%;
-    background-color: #32fc00;
+    background-color: #f44336; /* สีแดง */
     color: white;
-    margin: 2%;
-    margin-top: 1.5%;
+    margin: 0.5%;
+    margin-top: 1%;
     width: 96%;
     position: fixed;
-
+    font-weight: bold;
 }
 
 .closebtn {
@@ -606,5 +606,33 @@ input{
 }
 
 .closebtn:hover {
+    background-color: #d32f2f;
+}
+
+.alerts {
+    font-family: sans-serif;
+    font-weight: bold;
+    z-index: 1;
+    padding: 1%;
+    background-color: #32fc00;
+    color: white;
+    margin: 0.5%;
+    margin-top: 1%;
+    width: 96%;
+    position: fixed;
+
+}
+
+.closebtns {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5%;
+    margin: 0.5%;
+    cursor: pointer;
+}
+
+.closebtns:hover {
     background-color: #08f100;
 }

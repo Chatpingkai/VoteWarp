@@ -10,7 +10,7 @@ function cloud_transition_login() {
     setTimeout(wait_login, 2500)
 }
 function wait_login() {
-    window.location.href = "login.html";
+    window.location.href = "/login";
 }
 function cloud_transition_register() {
     const cloudimation = document.getElementById("cloudimation");
@@ -19,7 +19,7 @@ function cloud_transition_register() {
     setTimeout(wait_register, 2500)
 }
 function wait_register() {
-    window.location.href = "Register.html";
+    window.location.href = "/register";
 }
 setTimeout(function() {
     var cloudImage = document.querySelector(".cloudimation");

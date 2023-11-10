@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
 from flask_login import login_required, logout_user, current_user
-from .models import User
+from .models import User, room
 from . import created_mail, create_app
 from flask_mail import Message
 from itsdangerous import URLSafeTimedSerializer
@@ -12,15 +12,34 @@ auth = Blueprint('auth', __name__)
 
 
 
-@auth.route('/user_page/new_user', methods=['GET', 'POST'])
+@auth.route('/user_page', methods=['GET', 'POST'])
 def user_page():
-    new_user = request.args.get('new_user')
+    user = request.args.get('new_user')
+    all_data_user = room.query.filter_by(first_name=user).all()
+    all_room = []
+    if all_data_user:
+        for data in all_data_user:
+            groupname_user = data.groupname
+            grouppassword_user = data.grouppassword
+            selectedDate_user = data.selectedDate
+            all_room.append([groupname_user, grouppassword_user, selectedDate_user])
     if request.method == 'POST':
         groupname = request.form.get('groupname')
         grouppassword = request.form.get('grouppassword')
         selectedDate = request.form.get('selectedDate')
-    return render_template('page_user.html', new_user=new_user)
-
+        if groupname and grouppassword and selectedDate:
+            flash("Successfully created a room", category=1)
+            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, first_name=user)
+            db.session.add(new_room)
+            db.session.commit()
+            return redirect(url_for('auth.user_page', new_user=user, methods=0))
+        elif not groupname:
+            flash("Please enter the room name.", category=0)
+        elif not grouppassword:
+            flash("Please enter the room code.", category=0)
+        elif not selectedDate:
+            flash("Please select a date.", category=0)
+    return render_template('page_user.html', user=user, all_room=all_room)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
