@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
 from flask_login import login_required, logout_user, current_user, login_user
-from .models import User, room
+from .models import User, room, Profile
 from . import created_mail, create_app
 from flask_mail import Message
 from itsdangerous import URLSafeTimedSerializer
@@ -18,6 +18,8 @@ auth = Blueprint('auth', __name__)
 def user_page():
     user = request.args.get('new_user')
     all_data_user = room.query.filter_by(first_name=user).all()
+    all_data_profile = Profile.query.filter_by(first_name=user).first()
+    all_profile  = [all_data_profile.filepname, all_data_profile.filebname]
     all_room = []
     if all_data_user:
         for data in all_data_user:
@@ -47,12 +49,13 @@ def user_page():
             flash("Please select a date.", category=0)
         elif not picture_room:
             flash("Please select a picture.", category=0)
-    return render_template('page_user.html', user=user, all_room=all_room, as_attachment=True)
+    return render_template('page_user.html', user=user, all_room=all_room, all_profile=all_profile, as_attachment=True)
 
 @auth.route('/download_picture/<filename>')
 @login_required
 def download_picture(filename):
     data = room.query.filter_by(filename=filename).first()
+    print("ffff")
     return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -179,3 +182,33 @@ def reset_password(token):
             return render_template("page_user.html")
     return render_template("reset_password.html")
 
+@auth.route('/Profile/<user>', methods=['GET', 'POST'])
+@login_required
+def profile(user):
+    data = Profile.query.filter_by(first_name=user).first()
+    if request.method == 'POST':
+        first_name = user
+        picturep = request.files['picturep']
+        pictureb = request.files['pictureb']
+        if data == None:
+            addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
+            db.session.add(addpicture)
+        else:
+            data.picturep = picturep.read()
+            data.filepname = picturep.filename
+            data.pictureb = pictureb.read()
+            data.filebname = pictureb.filename
+        db.session.commit()
+        return redirect(url_for('auth.user_page', new_user=user))
+    return render_template("edit_profile.html", user=user)
+
+@auth.route('/download_pictureb/<filename>')
+def pictureb(filename):
+    data = Profile.query.filter_by(filename=filename).first()
+    return send_file(BytesIO(data.pictureb), mimetype='image/jpeg', download_name=filename, as_attachment=True)
+
+@auth.route('/download_picturep/<filename>')
+@login_required
+def picturep(filename):
+    data = Profile.query.filter_by(filename=filename).first()
+    return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=filename, as_attachment=True)

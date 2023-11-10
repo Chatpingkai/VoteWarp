@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="../static/css/style_edit_profile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <div class="all">
-        <div>
-            <h1>
-                Edit Your Profile
-            </h1>
-        </div>
-        <div class="text_name">
-            <input type="text">
-            <label>
-                Name
-            </label>
-            <i class='bx bx-pencil'></i>
-        </div>
-        <div class="photo_profile">
-            <img src="../static/img/anonymous2.png" alt="profile" width="200px" height="200px" id="photo_room">
-            <label for="input-file">Change Profile</label><br>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
-        </div>
-        <div class="photo_background">
-            <img src="../static/img/fuji.jpg" alt="background" width="200px" height="200px" id="background_smth">
-            <label for="input-background">Change Background</label><br>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-background">
-        </div>
-        <button type="submit">Save</button>
+        <form method="POST" enctype="multipart/form-data">
+            <div>
+                <h1>
+                    Edit Your Profile
+                </h1>
+            </div>
+            <div class="text_name">
+                <input type="text">
+                <label>
+                    Name
+                </label>
+                <i class='bx bx-pencil'></i>
+            </div>
+            <div class="photo_profile">
+                <img src="../static/img/anonymous2.png" alt="profile" width="200px" height="200px" id="photo_room">
+                <label for="input-file">Change Profile</label><br>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="picturep">
+            </div>
+            <div class="photo_background">
+                <img src="../static/img/fuji.jpg" alt="background" width="200px" height="200px" id="background_smth">
+                <label for="input-background">Change Background</label><br>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-background" name="pictureb">
+            </div>
+            <button type="submit">Save</button>
+        </form>
     </div>
-    <script src="../static/javascript/edit_profile.js"></script>
 </body>
 </html>
