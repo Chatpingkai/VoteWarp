@@ -12,9 +12,13 @@ auth = Blueprint('auth', __name__)
 
 
 
-@auth.route('/user_page')
+@auth.route('/user_page/new_user', methods=['GET', 'POST'])
 def user_page():
     new_user = request.args.get('new_user')
+    if request.method == 'POST':
+        groupname = request.form.get('groupname')
+        grouppassword = request.form.get('grouppassword')
+        selectedDate = request.form.get('selectedDate')
     return render_template('page_user.html', new_user=new_user)
 
 

@@ -26,9 +26,7 @@
             </div>
         </div>
         <div class="name_user">
-            <p>{% for user in new_user %}
-                    {{ user }}
-                {% endfor %}</p>
+            <p>{{ new_user }}</p>
         </div>
         <div class="searchbar">
             <div class="searchbox">
@@ -100,36 +98,40 @@
             </div>
         </div>
     </div>
-    <div class="popup_box">
-        <div class="popup_content">
-            <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
-            <div class="page_creategroup">
-                <h1>Create Your Room</h1>
-            </div><br>
-            <div class="headword">
-                <h3>Room Name</h3>
-                <input  type="text" 
-                        id="groupname" 
-                        name="groupname"
-                        placeholder="Please enter your room name"><br><br>
-                <h3>Room Password</h3>
-                <input  type="password" 
-                        id="grouppassword" 
-                        name="grouppassword"
-                        placeholder="Please enter your room password"><br><br>
-                <h3>Day</h3>
-                <input type="text" 
-                        placeholder="-- Select Day --" 
-                        onpointerover=" (this.type='date') "
-                        class="helpme">
-                <h3 class="yohoo">Room Picture</h3>
-                <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
-                <label for="input-file">Change Profile</label><br>
-                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
-            </div><br>
-            <input type="submit" name="submit" onclick="addroom()" class="create_submit">
-        </div>
-    </div>
+        <!-- <form method="POST"> -->
+            <div class="popup_box">
+                <div class="popup_content">
+                    <img src="../static/img/close_button.png" alt="" class="close" onclick="close_popup()">
+                    <div class="page_creategroup">
+                        <h1>Create Your Room</h1>
+                    </div><br>
+                    <div class="headword">
+                        <h3>Room Name</h3>
+                        <input  type="text" 
+                                id="groupname" 
+                                name="groupname"
+                                placeholder="Please enter your room name"><br><br>
+                        <h3>Room Password</h3>
+                        <input  type="password" 
+                                id="grouppassword" 
+                                name="grouppassword"
+                                placeholder="Please enter your room password"><br><br>
+                        <h3>Day</h3>
+                        <input type="text"
+                                id="selectedDate"
+                                name="selectedDate"
+                                placeholder="-- Select Day --" 
+                                onpointerover=" (this.type='date') "
+                                class="helpme">
+                        <h3 class="yohoo">Room Picture</h3>
+                        <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
+                        <label for="input-file">Change Profile</label><br>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                    </div><br>
+                    <input type="submit" name="submit" onclick="addroom()" class="create_submit">
+                </div>
+            </div>
+        <!-- </form> -->
     <script src="../static/javascript/page_user.js"></script>
     <script src="https://kit.fontawesome.com/152f96ad61.js" crossorigin="anonymous"></script>
 </body>

@@ -2,8 +2,19 @@
 function popup_createroom(){
     document.querySelector(".popup_box").style.display = "flex";
 }
-function close_popup(){
-    document.querySelector(".popup_box").style.display = "none";
+function close_popup() {
+    var popupBox = document.querySelector(".popup_box");
+    popupBox.style.display = "none";
+
+    // หาทุกอินพุตในกล่องข้อความ
+    var inputFields = popupBox.querySelectorAll("input, textarea");
+
+    // เคลียข้อความในทุกอินพุตที่ไม่ใช่ "submit"
+    inputFields.forEach(function (inputField) {
+        if (inputField.type !== "submit") {
+            inputField.value = "";
+        }
+    });
 }
 // เพิ่ม room_box
 const box = document.getElementById("wrapper");
@@ -22,7 +33,7 @@ function addroom(){
     let text_date = document.createElement("p");
     let text_time = document.createElement("p");
     text_room.innerHTML = "room"
-    name_room.innerHTML = "แมนซ่า"
+    name_room.innerHTML = document.getElementById("groupname").value;
     text_status.innerHTML = "status:"
     if (room_box.className === "room_box green") {
         complete.innerHTML = "complete"
@@ -39,7 +50,7 @@ function addroom(){
     let line_date = document.createElement("p");
     let line_time = document.createElement("p");
     line_place.innerHTML = "ร้านเหล้าแถวนี้"
-    line_date.innerHTML = "07/10/2023"
+    line_date.innerHTML = document.getElementById("selectedDate").value;
     line_time.innerHTML = "22.00 น."
     let line = document.createElement("div");
     line.className = "line"
@@ -89,7 +100,7 @@ function addroom(){
     room_box.appendChild(picpic)
     box.appendChild(room_box)
     box.appendChild(createroom)
-    document.querySelector(".popup_box").style.display = "none";
+    close_popup()
 }
 // ทำให้ room_box ขยับซ้ายขวาได้
 const tabBox = document.querySelector(".wrapper");
