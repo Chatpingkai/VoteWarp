@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
 </head>
+<body>
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
     {% for category, message in messages %}
@@ -31,7 +32,13 @@
     {% endfor %}
 {% endif %}
 {% endwith %}
-    <form method="POST"
+    <div class="navbar">
+        <p>VoteWarp</p>
+        <div class="nav_link">
+            <a href="login.html">logout</a>
+        </div>
+    </div>
+    <form method="POST">
         <div class="page_register">
             <div class="picture">
                 <div class="letgo">
@@ -92,7 +99,6 @@
         <!-- <img src="../static/img/cloud6.png" class="cloud6"> -->
         <!-- <img src="../static/img/clound7.png" class="cloud7"> -->
     </div>
-    <div class="smth"><a href="/login">Login in</a></div>
     <script src="../static/javascript/resgister.js"></script>
 </body>
 </html>

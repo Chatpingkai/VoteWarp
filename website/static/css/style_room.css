@@ -26,6 +26,32 @@ body {
     display: flex;
     align-items: center;
 }
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+    width: 100vw;
+    height: 70px;
+    padding: 0 20px 0 20px;
+    background-color: aliceblue;
+    font-size: 35px;
+}
+.nav_link a{
+    border: 2px solid black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    background-color: rgb(179, 226, 245);
+    text-decoration: none;
+    color: black;
+}
+
+.nav_link a:hover{
+    background-color: rgb(68, 162, 199);
+}
+
 .content .name {
     width: 100%;
     height: 50%;

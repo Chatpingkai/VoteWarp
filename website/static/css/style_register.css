@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    top: 5%;
+    top: 20%;
     left: 11%;
     background-color: rgba(245, 245, 245, 0.5);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
@@ -33,6 +33,34 @@ body{
     margin: auto;
     z-index: -1;
 }
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+  height: 70px;
+  width: 100vw;
+  background-color: aliceblue;
+  font-size: 35px;
+  position: absolute;
+  left: 0px;
+  top: -10px;
+}
+.nav_link a{
+  border: 2px solid black;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  font-size: 20px;
+  background-color: rgb(179, 226, 245);
+  text-decoration: none;
+  color: black;
+}
+
+.nav_link a:hover{
+  background-color: rgb(68, 162, 199);
+}
+
 /*หน้าสมัคร*/
 .register{
     position: relative;
