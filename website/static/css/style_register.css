@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    top: 20%;
+    top: 10%;
     left: 11%;
     background-color: rgba(245, 245, 245, 0.5);
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
