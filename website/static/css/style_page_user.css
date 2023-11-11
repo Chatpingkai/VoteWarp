@@ -59,6 +59,12 @@ body{
     top: 30%;
     left: 35%;
 }
+
+.search_input{
+    display: flex;
+    flex-direction: row;
+}
+
 /* ตัว element ช่องsearch */
 .searchbox input{
     width: 45vw;
@@ -68,6 +74,11 @@ body{
     padding-left: 45px;
     font-size: 1rem;
 }
+
+.enter_search:hover{
+    background-color: #949191;
+}
+
 /* รูปแว่นขยาย */
 .searchbox span{
     position: absolute;
@@ -465,6 +476,11 @@ input{
         left: 15%;
         transition: .2s;
     }
+    .enter_search{
+        top: 5%;
+        width: 20vw;
+        height: 100px;
+    }
     .searchbar input{
         width: 65vw;
         transition: .2s;
@@ -512,6 +528,9 @@ input{
     }
     .navbar{
         top: 0;
+    }
+    .enter_search{
+        left: 195px;
     }
     .name_user{
         position: absolute;
