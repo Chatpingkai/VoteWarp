@@ -14,7 +14,35 @@ body{
     background-position: center;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+    width: 100vw;
+    height: 70px;
+    padding: 0 20px 0 20px;
+    background-color: aliceblue;
+    font-size: 35px;
+    position: relative;
+    top: -19px;
+}
+.nav_link a{
+    border: 2px solid black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    background-color: rgb(179, 226, 245);
+    text-decoration: none;
+    color: black;
+}
+
+.nav_link a:hover{
+    background-color: rgb(68, 162, 199);
+}
+
 /* ช่องโปรไฟล์ */
 .picture{
     border-radius: 50%;
@@ -252,11 +280,13 @@ span.photo:hover:after{
 /* element ใน popup create room */
 .popup_box{
     width: 100vw;
-    height: 100vh;
     justify-content: center;
     align-items: center;
     /* text-align: center; */
     display: none;
+    position: absolute;
+    left: 0;
+    top: 50%;
 }
 /* element ใน popup create room เหมือนกัน */
 .popup_content{
@@ -479,18 +509,19 @@ input{
         width: 100vw;
         height: 100vw;
         display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+    .navbar{
+        top: 0;
     }
     .name_user{
         position: absolute;
-        top: 30%;
+        top: 32%;
         left: 17.5%;
         transition: .2s;
     }
     .picture{
         position: absolute;
-        top: 5%;
+        top: 10%;
         left: 27.5%;
         transition: .2s;
     }
@@ -578,6 +609,9 @@ input{
     .headword .yohoo{
         margin-top: 10%;
         transition: .2s;
+    }
+    .popup_box{
+        top: 10%;
     }
 }
 
