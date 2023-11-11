@@ -158,8 +158,8 @@ def forgot_password_1():
         user = User.query.filter_by(email=email).first()
         if user:
             #check email to our database
-            msg = Message("Hey",
-                sender='test@gmail.com',
+            msg = Message("Forgot password link",
+                sender='Votewarp@gmail.com',
                 recipients=[email])
             #get token = email
             token = generate_reset_token(email)
