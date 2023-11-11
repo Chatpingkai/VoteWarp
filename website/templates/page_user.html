@@ -58,24 +58,29 @@
         <div class="box">
             <div class="wrapper" id="wrapper">
                 {% for i in all_room %}
+                {% if i[4] == "0" %}
                  <div class="room_box yellow" onclick="window.open('../templates/room.html')">
                     <p>room</p>
                     <div class="line">
                         <p>{{ i[0] }}</p>
                     </div>
-                    {% if i[4] == "0" %}
                         <div class="status yellow">
                             <p>status:</p>
                             <p>voting</p>
                             <img src="../static/img/voteting.png" alt="">
                         </div>
-                    {% else %}
+                {% else %}
+                 <div class="room_box green" onclick="window.open('../templates/room.html')">
+                    <p>room</p>
+                    <div class="line">
+                        <p>{{ i[0] }}</p>
+                    </div>
                         <div class="status green">
                             <p>status:</p>
                             <p>complete</p>
                             <img src="../static/img/check-mark (1).png" alt="">
                         </div>
-                    {% endif %}
+                {% endif %}
                     <div class="date">
                         <p>date:</p>
                         <div class="line2"><p>{{ i [2] }}</p></div>
