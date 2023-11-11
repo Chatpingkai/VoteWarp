@@ -22,9 +22,17 @@ class room(db.Model):
     first_name = db.Column(db.String(150))
 
 class Profile(db.Model):
-    id = id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     filepname = db.Column(db.String(150))
     picturep = db.Column(db.LargeBinary)
     filebname = db.Column(db.String(150))
     pictureb = db.Column(db.LargeBinary)
     first_name = db.Column(db.String(150))
+
+class vote(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    grouppassword = db.Column(db.String(150))
+    place = db.Column(db.String(150))
+    time = db.Column(db.String(150))
+    description = db.Column(db.String(150))
+    votename = db.Column(db.String(150))

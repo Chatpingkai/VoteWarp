@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style_room.css">
     <title>Room</title>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert">
+          <span class="closebtn" onclick="closeAlert()">&times;</span>
+          {{ message }}
+      </div>
+      <script src="../static/javascript/resgister.js"></script>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
 </head>
 <body>
     <div class="navbar">
         <p>VoteWarp</p>
         <div class="nav_link">
-            <a href="login.html">logout</a>
+            <a href="/logout">logout</a>
         </div>
     </div>
     <div class="content">
@@ -20,132 +31,33 @@
         <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
     </div>
     <div class="voting_container" id="voting">
-        <div class="votingbox">
-            <div class="picture">
-            </div>
-            <div class="place">
-                <p>place:</p>
-                <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
-            </div>
-            <div class="whitebox">
-                <div class="date">
-                    <p>date:</p>
-                    <div class="line2"><p>07/10/2023</p></div>
+        {% for i in list_vote%}
+            <div class="votingbox">
+                <div class="picture">
                 </div>
-                <div class="timey">
-                    <p>time:</p>
-                    <div class="line2"><p>22.00 น.</p></div>
+                <div class="place">
+                    <p>place:</p>
+                    <div class="line2"><p>{{ i[0] }}</p></div>
                 </div>
-                <div class="votingtext">
-                    <p>voting</p>
-                    <div class="user_votingbox">
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
+                <div class="whitebox">
+                    <div class="timey">
+                        <p>time:</p>
+                        <div class="line2"><p>{{ i[1] }}.</p></div>
+                    </div>
+                    <p>{{ i [2] }}</p>
+                    <div class="votingtext">
+                        <p>voting</p>
+                        <div class="user_votingbox">
+                            <p>{{ i [3] }}</p>
                         </div>
                     </div>
-                </div>
-                <div class="confirm checked" id="checked" onclick="check()"> 
-                </div>
-            </div>
-        </div>
-        <div class="votingbox">
-            <div class="picture">
-            </div>
-            <div class="place">
-                <p>place:</p>
-                <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
-            </div>
-            <div class="whitebox">
-                <div class="date">
-                    <p>date:</p>
-                    <div class="line2"><p>07/10/2023</p></div>
-                </div>
-                <div class="timey">
-                    <p>time:</p>
-                    <div class="line2"><p>22.00 น.</p></div>
-                </div>
-                <div class="votingtext">
-                    <p>voting</p>
-                    <div class="user_votingbox">
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
+                    <div class="confirm checked" id="checked"> 
                     </div>
                 </div>
-                <div class="confirm" onclick="check()">    
-                </div>
             </div>
-        </div>
-        <div class="votingbox">
-            <div class="picture">
-            </div>
-            <div class="place">
-                <p>place:</p>
-                <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
-            </div>
-            <div class="whitebox">
-                <div class="date">
-                    <p>date:</p>
-                    <div class="line2"><p>07/10/2023</p></div>
-                </div>
-                <div class="timey">
-                    <p>time:</p>
-                    <div class="line2"><p>22.00 น.</p></div>
-                </div>
-                <div class="votingtext">
-                    <p>voting</p>
-                    <div class="user_votingbox">
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                    </div>
-                </div>
-                <div class="confirm" onclick="check()">    
-                </div>
-            </div>
-        </div>
-        <div class="votingbox">
-            <div class="picture">
-            </div>
-            <div class="place">
-                <p>place:</p>
-                <div class="line2"><p>ร้านเหล้าแถวนี้</p></div>
-            </div>
-            <div class="whitebox">
-                <div class="date">
-                    <p>date:</p>
-                    <div class="line2"><p>07/10/2023</p></div>
-                </div>
-                <div class="timey">
-                    <p>time:</p>
-                    <div class="line2"><p>22.00 น.</p></div>
-                </div>
-                <div class="votingtext">
-                    <p>voting</p>
-                    <div class="user_votingbox">
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                        <div class="user_voting">
-                        </div>
-                    </div>
-                </div>
-                <div class="confirm">    
-                </div>
-            </div>
-        </div>
+            {% endfor %}
     </div>
-    <div class="chatroom">
+    <!-- <div class="chatroom">
         <div class="container">
             <img src="../static/img/close_button.png" alt="" class="close" onclick="closechat()">
             <div class="chat_box">
@@ -218,8 +130,9 @@
                 <input type="submit" class="submit_button">
             </form>
         </div>
-    </div>
-    <div class="create_vote">
+    </div> -->
+<form method="POST" class="create_vote">
+        <form  methods="POST">
         <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
         <div class="name_place">
             <img src="../static/img/anonymous2.png" alt="รูปใส่ในโพสไปเที่ยวซัมติงเวรี่เวล" width="550px" height="450px">
@@ -227,32 +140,23 @@
             <br>
             <div class="placebox">
                 <label>place :</label>
-                <input type="text">
+                <input type="text" name="place">
             </div>
         </div>
         <div class="box_des">
-            <div class="vote_date">
-                <label>date :</label>
-                <input type="text">
-            </div>
             <div class="time">
                 <label>time :</label>
                 <br>
-                <input type="text">
-            </div>
-            <div class="link_smth">
-                <label>link (optional)</label>
-                <br>
-                <input type="text">
+                <input type="text" name="time">
             </div>
             <div class="descrip">
                 <label>description :</label>
                 <br>
-                <textarea cols="30" rows="30" maxlength="231"></textarea>
+                <textarea cols="30" rows="30" maxlength="231" name="descrip"></textarea>
             </div>
         </div>
-        <input type="submit" name="submit" class="create_submit" onclick="createvote()">
-    </div>
+        <input type="submit" name="submit" class="create_submit">
+</form>
     <script src="../static/javascript/room.js"></script>
 </body>
 </html>
