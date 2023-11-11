@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db # == import db from __init__.py
 from flask_login import login_required, logout_user, current_user, login_user
-from .models import User, room, Profile
+from .models import User, room, Profile, vote
 from . import created_mail, create_app
 from flask_mail import Message
 from itsdangerous import URLSafeTimedSerializer
@@ -227,9 +227,34 @@ def picturep(filename):
     return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=filename, as_attachment=True)
 
 
-@auth.route('/room/<grouppassword>')
+@auth.route('/room/<grouppassword>', methods=['GET', 'POST'])
 @login_required
 def voteroom(grouppassword):
     data = room.query.filter_by(grouppassword=grouppassword).first()
     roomname = data.groupname
-    return render_template("room.html", grouppassword=grouppassword, roomname=roomname)
+    all_vote = vote.query.filter_by(grouppassword=grouppassword).all()
+    list_vote = []
+    if all_vote:
+        for data in all_vote:
+            place = data.place
+            time = data.time
+            description = data.description
+            votename = data.votename
+            list_vote.append([place, time, description, votename])
+    if request.method == 'POST':
+        place = request.form.get('place')
+        time = request.form.get('time')
+        description = request.form.get('descrip')
+        votename = ""
+        if place and time and description:
+            add_vote = vote(grouppassword=grouppassword, place=place, time=time, description=description, votename=votename)
+            db.session.add(add_vote)
+            db.session.commit()
+            return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
+        elif not place:
+            flash("Please enter the location")
+        elif not time:
+            flash("Please enter time")
+        elif not description:
+            flash("Please enter description.")
+    return render_template("room.html", grouppassword=grouppassword, roomname=roomname, list_vote=list_vote)
