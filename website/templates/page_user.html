@@ -26,18 +26,27 @@
     {% endfor %}
   {% endif %}
 {% endwith %}
+{% if all_profile %}
+<body style="display: flex;
+min-height: 10vh;
+background: url('/download_pictureb/{{ all_profile[1] }}');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+justify-content: center;
+align-items: center;">
+    <div class="interface">
+        <div class="profile">
+            <div class="picture">
+                <a href="/Profile/{{ user }}"><span style="background: url('/download_picturep/{{ all_profile[0] }}');
+                background-position: center;
+                background-size: cover;" class="photo" title="Upload your Avatar!">
+                </span></a>
+            </div>
+        </div>
+{% else %}
 <body>
-    {% if all_profile %}
-    <img src="/download_pictureb/{{ all_profile[1] }}">
-    <div class="interface">
-        <div class="profile">
-            <div class="picture">
-                <a href="/Profile/{{ user }}"><span class="photo" title="Upload your Avatar!">
-                    <img src="/download_picturep/{{ all_profile[0] }}">
-                </span></a>
-            </div>
-        </div>
-    {% else %}
     <div class="interface">
         <div class="profile">
             <div class="picture">
@@ -45,7 +54,7 @@
                 </span></a>
             </div>
         </div>
-    {% endif %}
+{% endif %}
         <div class="name_user">
             <p>{{ user }}</p>
         </div>
@@ -59,7 +68,7 @@
             <div class="wrapper" id="wrapper">
                 {% for i in all_room %}
                 {% if i[4] == "0" %}
-                 <div class="room_box yellow" onclick="window.open('../templates/room.html')">
+                 <div class="room_box yellow" onclick="window.open('/room/{{ i[5] }}')">
                     <p>room</p>
                     <div class="line">
                         <p>{{ i[0] }}</p>
