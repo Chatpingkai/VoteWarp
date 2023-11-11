@@ -39,14 +39,14 @@ def user_page():
         picture_room = request.files['file']
         if groupname and grouppassword and selectedDate and picture_room:
             password = room.query.filter_by(grouppassword=grouppassword).first()
-            if password == None and grouppassword.isalpha() and grouppassword.isupper():
+            if password == None and grouppassword.isalpha() and grouppassword.isupper() and len(grouppassword) == 4:
                 flash("Successfully created a room", category=1)
                 status = False
                 new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
                 db.session.add(new_room)
                 db.session.commit()
                 return redirect(url_for('auth.user_page', new_user=user, methods=0))
-            elif not grouppassword.isupper():
+            elif not grouppassword.isupper() or len(grouppassword) != 4:
                 flash("Please enter 4 capital letters.", category=0)
             else:
                 flash("This Code room has already", category=0)
@@ -231,7 +231,6 @@ def picturep(filename):
 @login_required
 def voteroom(grouppassword):
     data = room.query.filter_by(grouppassword=grouppassword[:4]).first()
-    print(grouppassword[4:])
     roomname = data.groupname
     all_vote = vote.query.filter_by(grouppassword=grouppassword[:4]).all()
     list_vote = []
@@ -259,3 +258,19 @@ def voteroom(grouppassword):
         elif not description:
             flash("Please enter description.")
     return render_template("room.html", grouppassword=grouppassword, roomname=roomname, list_vote=list_vote)
+
+@auth.route('/find/<user>', methods=['GET', 'POST'])
+@login_required
+def find(user):
+    password = request.form.get("search")
+    password2 = room.query.filter_by(grouppassword=password).first()
+    if request.method == "POST":
+        if password2:
+            if password == password2.grouppassword:
+                password = password+user
+                return redirect(url_for('auth.voteroom', grouppassword=password))
+            else:
+                flash("Don't have This room code", category=0)
+        else:
+            flash("Don't have This room code", category=0)
+    return redirect(url_for('auth.user_page', new_user=user, methods=0))
