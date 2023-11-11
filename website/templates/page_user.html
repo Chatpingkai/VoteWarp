@@ -67,10 +67,10 @@ align-items: center;">
         <div class="searchbar">
             <div class="searchbox">
                 <span></span>
-                <div class="search_input">
-                    <input type="text" placeholder="search your room" src="" class="search">
+                <form action="/find/{{ user }}" method="POST" class="search_input">
+                    <input type="text" placeholder="search your room" src="" class="search" name="search">
                     <input type="submit" class="enter_search" value="enter">
-                </div>
+                </form>
             </div>
         </div>
         <div class="box">
