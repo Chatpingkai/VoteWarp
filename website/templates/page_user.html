@@ -68,7 +68,7 @@ align-items: center;">
             <div class="wrapper" id="wrapper">
                 {% for i in all_room %}
                 {% if i[4] == "0" %}
-                 <div class="room_box yellow" onclick="window.open('../templates/room.html')">
+                 <div class="room_box yellow" onclick="window.open('/room/{{ i[5] }}')">
                     <p>room</p>
                     <div class="line">
                         <p>{{ i[0] }}</p>

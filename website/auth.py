@@ -30,19 +30,26 @@ def user_page():
             selectedDate_user = data.selectedDate
             picture_room = data.filename
             status = data.status
-            all_room.append([groupname_user, grouppassword_user, selectedDate_user, picture_room, status])
+            grouppassword = data.grouppassword
+            all_room.append([groupname_user, grouppassword_user, selectedDate_user, picture_room, status, grouppassword])
     if request.method == 'POST':
         groupname = request.form.get('groupname')
         grouppassword = request.form.get('grouppassword')
         selectedDate = request.form.get('selectedDate')
         picture_room = request.files['file']
         if groupname and grouppassword and selectedDate and picture_room:
-            flash("Successfully created a room", category=1)
-            status = False
-            new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
-            db.session.add(new_room)
-            db.session.commit()
-            return redirect(url_for('auth.user_page', new_user=user, methods=0))
+            password = room.query.filter_by(grouppassword=grouppassword).first()
+            if password == None and grouppassword.isalpha() and grouppassword.isupper():
+                flash("Successfully created a room", category=1)
+                status = False
+                new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
+                db.session.add(new_room)
+                db.session.commit()
+                return redirect(url_for('auth.user_page', new_user=user, methods=0))
+            elif not grouppassword.isupper():
+                flash("Please enter 4 capital letters.", category=0)
+            else:
+                flash("This Code room has already", category=0)
         elif not groupname:
             flash("Please enter the room name.", category=0)
         elif not grouppassword:
@@ -218,3 +225,11 @@ def pictureb(filename):
 def picturep(filename):
     data = Profile.query.filter_by(filepname=filename).first()
     return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=filename, as_attachment=True)
+
+
+@auth.route('/room/<grouppassword>')
+@login_required
+def voteroom(grouppassword):
+    data = room.query.filter_by(grouppassword=grouppassword).first()
+    roomname = data.groupname
+    return render_template("room.html", grouppassword=grouppassword, roomname=roomname)
