@@ -27,12 +27,25 @@
   {% endif %}
 {% endwith %}
 <body>
+    {% if all_profile %}
+    <img src="/download_pictureb/{{ all_profile[1] }}">
     <div class="interface">
         <div class="profile">
             <div class="picture">
-                <a href="/Profile/{{ user }}"><span class="photo" title="Upload your Avatar!"></span></a>
+                <a href="/Profile/{{ user }}"><span class="photo" title="Upload your Avatar!">
+                    <img src="/download_picturep/{{ all_profile[0] }}">
+                </span></a>
             </div>
         </div>
+    {% else %}
+    <div class="interface">
+        <div class="profile">
+            <div class="picture">
+                <a href="/Profile/{{ user }}"><span class="photo" title="Upload your Avatar!">
+                </span></a>
+            </div>
+        </div>
+    {% endif %}
         <div class="name_user">
             <p>{{ user }}</p>
         </div>

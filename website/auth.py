@@ -19,7 +19,9 @@ def user_page():
     user = request.args.get('new_user')
     all_data_user = room.query.filter_by(first_name=user).all()
     all_data_profile = Profile.query.filter_by(first_name=user).first()
-    all_profile  = [all_data_profile.filepname, all_data_profile.filebname]
+    all_profile = []
+    if all_data_profile:
+        all_profile  = [all_data_profile.filepname, all_data_profile.filebname]
     all_room = []
     if all_data_user:
         for data in all_data_user:
@@ -55,7 +57,6 @@ def user_page():
 @login_required
 def download_picture(filename):
     data = room.query.filter_by(filename=filename).first()
-    print("ffff")
     return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -186,6 +187,10 @@ def reset_password(token):
 @login_required
 def profile(user):
     data = Profile.query.filter_by(first_name=user).first()
+    all_data_profile = Profile.query.filter_by(first_name=user).first()
+    all_profile = []
+    if all_data_profile:
+        all_profile  = [all_data_profile.filepname, all_data_profile.filebname]
     if request.method == 'POST':
         first_name = user
         picturep = request.files['picturep']
@@ -193,22 +198,23 @@ def profile(user):
         if data == None:
             addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
             db.session.add(addpicture)
-        else:
+        elif picturep.filename != "" and pictureb.filename != "":
             data.picturep = picturep.read()
             data.filepname = picturep.filename
             data.pictureb = pictureb.read()
             data.filebname = pictureb.filename
         db.session.commit()
         return redirect(url_for('auth.user_page', new_user=user))
-    return render_template("edit_profile.html", user=user)
+    return render_template("edit_profile.html", user=user, all_profile=all_profile)
 
 @auth.route('/download_pictureb/<filename>')
+@login_required
 def pictureb(filename):
-    data = Profile.query.filter_by(filename=filename).first()
+    data = Profile.query.filter_by(filebname=filename).first()
     return send_file(BytesIO(data.pictureb), mimetype='image/jpeg', download_name=filename, as_attachment=True)
 
 @auth.route('/download_picturep/<filename>')
 @login_required
 def picturep(filename):
-    data = Profile.query.filter_by(filename=filename).first()
+    data = Profile.query.filter_by(filepname=filename).first()
     return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=filename, as_attachment=True)

@@ -23,6 +23,18 @@
                 </label>
                 <i class='bx bx-pencil'></i>
             </div>
+            {% if all_profile %}
+            <div class="photo_profile">
+                <img src="/download_picturep/{{ all_profile[0] }}" alt="profile" width="200px" height="200px" id="photo_room">
+                <label for="input-file">Change Profile</label><br>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="picturep">
+            </div>
+            <div class="photo_background">
+                <img src="/download_pictureb/{{ all_profile[1] }}" alt="background" width="200px" height="200px" id="background_smth">
+                <label for="input-background">Change Background</label><br>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-background" name="pictureb">
+            </div>
+            {% else %}
             <div class="photo_profile">
                 <img src="../static/img/anonymous2.png" alt="profile" width="200px" height="200px" id="photo_room">
                 <label for="input-file">Change Profile</label><br>
@@ -33,6 +45,7 @@
                 <label for="input-background">Change Background</label><br>
                 <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-background" name="pictureb">
             </div>
+            {% endif %}
             <button type="submit">Save</button>
         </form>
     </div>
