@@ -9,3 +9,4 @@ let inputFiles = document.getElementById("input-background");
 inputFiles.onchange = function(){
     profilePics.src = URL.createObjectURL(inputFiles.files[0])
 }
+

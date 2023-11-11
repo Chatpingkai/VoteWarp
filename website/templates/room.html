@@ -27,8 +27,12 @@
     <div class="content">
         <p class="room_text">room.</p>
         <div class="room_name"><p>{{ roomname }}</p></div>
-        <img src="../static/img/chat.png" class="chat_img" onclick="openchat()">
+        <p class="code_text">code</p>
+        <div class="code_name"><p>1150</p></div>
         <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
+    </div>
+    <div class="finished">
+
     </div>
     <div class="voting_container" id="voting">
         {% for i in list_vote%}
@@ -44,14 +48,17 @@
                         <p>time:</p>
                         <div class="line2"><p>{{ i[1] }}.</p></div>
                     </div>
-                    <p>{{ i [2] }}</p>
+                    <div class="descriptionn">
+                        <p>description:</p>
+                        <p>{{ i [2] }}</p>
+                    </div>
                     <div class="votingtext">
                         <p>voting</p>
                         <div class="user_votingbox">
                             <p>{{ i [3] }}</p>
                         </div>
                     </div>
-                    <div class="confirm checked" id="checked"> 
+                    <div class="confirm" id="checked"> 
                     </div>
                 </div>
             </div>
@@ -135,7 +142,9 @@
         <form  methods="POST">
         <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
         <div class="name_place">
-            <img src="../static/img/anonymous2.png" alt="รูปใส่ในโพสไปเที่ยวซัมติงเวรี่เวล" width="550px" height="450px">
+            <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
+            <label for="input-file" class="upload_label">Select Picture</label><br>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="file" >
             <br>
             <br>
             <div class="placebox">

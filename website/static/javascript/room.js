@@ -121,3 +121,10 @@ function createvote(){
     console.log(check)
     closevote();
 }
+
+
+let profilePicture = document.getElementById("picture_room");
+let inputfile = document.getElementById("input-file");
+inputfile.onchange = function(){
+    profilePicture.src = URL.createObjectURL(inputfile.files[0])
+}

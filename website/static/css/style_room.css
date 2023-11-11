@@ -72,7 +72,22 @@ body {
 
 .room_text {
     position: relative;
-    top: 17px;
+    top: 12px;
+}
+
+.code_text{
+    font-size: 50px;
+    position: relative;
+    top: 15px;
+}
+
+.code_name {
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 30vw;
+    font-size: 40px;
+    position: relative;
+    top: 10px;
 }
 
 .chat_img {
@@ -82,8 +97,23 @@ body {
 }
 
 .create_button {
-    width: 25%;
-    height: 50%;
+    width: 175px;
+    height: 125px;
+    cursor: pointer;
+}
+
+.finished{
+    background: url(../img/racing-flag.png) no-repeat;
+    background-size: 100px;
+    background-position: center;
+    border: 2px solid black;
+    width: 125px;
+    height: 125px;
+    border-radius: 666px;
+    background-color: rgb(202, 255, 122);
+    position: fixed;
+    right: 2%;
+    bottom: 1%;
     cursor: pointer;
 }
 
@@ -95,7 +125,7 @@ body {
 }
 
 .votingbox {
-    height: 600px;
+    height: 800px;
     border: 1px solid black;
     border-radius: 40px;
     margin: 50px;
@@ -107,8 +137,8 @@ body {
 
 .votingbox .picture {
     border: 1px solid black;
-    width: 75%;
-    height: 45%;
+    width: 350px;
+    height: 300px;
     border-radius: 20px;
     margin-top: 30px;
     background: url(../img/bgregister.jpg) no-repeat;
@@ -123,15 +153,24 @@ body {
     padding-top: 20px;
 }
 /* element ของ place, date, time ใน room_box */
-.date, .timey, .votingtext{
+.date, .timey {
     display: flex;
     gap: 10px;
     position: relative;
     top: 6%;
-    padding-bottom: 30px;
+    padding: 0 10px 30px 10px;
+}
+
+.descriptionn {
+    position: relative;
+    top: 2%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: 150px;
+    padding: 10px 10px 0 10px;
 }
 /* ตัวอักษร 'place:', 'date:', 'time:' ตามลำดับ */
-.place p, .date p, .timey p{
+.place p, .date p, .timey p, .descriptionn p{
     top: 3px;
     font-size: 20px;
 }
@@ -166,6 +205,10 @@ body {
 .votingtext{
     display: flex;
     align-items: center;
+    position: relative;
+    gap: 10px;
+    padding-bottom: 10px;
+    top: 10%;
 }
 
 .user_votingbox{
@@ -179,6 +222,7 @@ body {
     align-items: center;
     gap: 5px;
     padding: 10px;
+    
 }
 
 .votingtext p {
@@ -197,16 +241,17 @@ body {
     position: relative;
     left: 40%;
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border: 3px solid black;
     border-radius: 100px;
+    top: 10%;
 }
 
 .checked{
     background-image: url(../img/checkkk.png);
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     border-radius: 100px;
     border: 3px solid black;
     background-size: cover;
@@ -354,6 +399,72 @@ body {
 .create_vote::-webkit-scrollbar{
     display: none;
 }
+
+span.photo{
+    position: relative;
+    height: 450px;
+    width: 550px;
+    border: 2px solid black;
+    display: block;
+    overflow: hidden;
+    background: url(../img/anonymous2.png) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    cursor: pointer;
+}
+/* animation เมื่อ hover ที่ โปรไฟล์ */
+span.photo:after{
+  content: " change your picture ";
+  text-align: center;
+  position: absolute;
+  left: 0;
+  padding: 35% 0 65%;
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  color: #222;
+  background-color: rgba(0,0,0,0.25);
+  background-size: 100%;
+  transition: 0.35s ease-in-out;
+  overflow: hidden;
+  font-size: 3vw;
+}
+/* animation เมื่อ hover ที่ โปรไฟล์ */
+span.photo:hover:after{
+  opacity: 1;
+  color: #fff;
+}
+
+.upload_label{
+    display: block;
+    cursor: pointer;
+    font-family: Jua;
+    margin-left: 1px;
+    width: 250px;
+    height: 100px;
+    border-radius: 40px;
+    font-size: 20px;
+    color: #777777;
+    font-weight: 500;
+    padding-left: 1%;
+}
+
+/* .upload_label{
+
+    cursor: pointer;
+    border: 1px solid black
+} */
+
+#input-file{
+    display: none;
+}
+
+#picture_room{
+    width: 550px;
+    height: 450px;
+}
+
+
 /* ปรับตำแหน่งรูปกับชื่อสถานที่ */
 
 /* ปรับมุมรูป */
