@@ -230,9 +230,10 @@ def picturep(filename):
 @auth.route('/room/<grouppassword>', methods=['GET', 'POST'])
 @login_required
 def voteroom(grouppassword):
-    data = room.query.filter_by(grouppassword=grouppassword).first()
+    data = room.query.filter_by(grouppassword=grouppassword[:4]).first()
+    print(grouppassword[4:])
     roomname = data.groupname
-    all_vote = vote.query.filter_by(grouppassword=grouppassword).all()
+    all_vote = vote.query.filter_by(grouppassword=grouppassword[:4]).all()
     list_vote = []
     if all_vote:
         for data in all_vote:
@@ -247,10 +248,10 @@ def voteroom(grouppassword):
         description = request.form.get('descrip')
         votename = ""
         if place and time and description:
-            add_vote = vote(grouppassword=grouppassword, place=place, time=time, description=description, votename=votename)
+            add_vote = vote(grouppassword=grouppassword[:4], place=place, time=time, description=description, votename=votename)
             db.session.add(add_vote)
             db.session.commit()
-            return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
+            return redirect(url_for('auth.voteroom', grouppassword=grouppassword[:4]))
         elif not place:
             flash("Please enter the location")
         elif not time:
