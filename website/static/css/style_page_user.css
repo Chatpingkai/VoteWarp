@@ -16,6 +16,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
 .navbar{
     display: flex;
     align-items: center;
@@ -66,12 +67,22 @@ body{
 }
 
 /* ตัว element ช่องsearch */
-.searchbox input{
+.search_input .search{
     width: 45vw;
     height: 50px;
     background-color: #ffffff;
     border: 1.5px solid black;
     padding-left: 45px;
+    font-size: 1rem;
+}
+
+.search_input .enter_search{
+    width: 20%;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1.5px solid black;
+    margin-left: 3%;
+    text-align: center;
     font-size: 1rem;
 }
 
@@ -96,8 +107,7 @@ body{
     top: 17.5%;
     left: 35%;
     font-family: Jua;
-    color: black;
-    -webkit-text-stroke: 0.005vw white;
+    color: #fff;
 }
 /* กล่องสี่เหลี่ยมสีขาว */
 .box{
@@ -408,6 +418,7 @@ input{
         transition: .2s;
     }
     .name_user{
+        font-size: 70px;
         top: 20%;
         left: 37%;
         transition: .2s;
@@ -435,13 +446,17 @@ input{
     }
 }
 @media (max-width: 1025px) {
-    .searchbar{
+    .search_input .search{
         top: 30%;
         left: 39%;
         transition: .2s;
     }
+    .search_input .enter_search{
+        width: 30%;
+        transition: .2s;
+    }
     .name_user{
-        top: 23.5%;
+        top: 19%;
         left: 39%;
         transition: .2s;
     }
@@ -471,24 +486,21 @@ input{
     }
 }
 @media (max-width: 769px) {
-    .searchbar{
+    .search_input .search{
         top: 40%;
         left: 15%;
         transition: .2s;
     }
-    .enter_search{
-        top: 5%;
-        width: 20vw;
-        height: 100px;
-    }
-    .searchbar input{
-        width: 65vw;
+    .search_input .enter_search{
+        padding-left: 10%;
+        padding-right: 20%;
+        margin-left: 5%;
         transition: .2s;
     }
     .name_user{
-        font-size: 5vw;
-        top: 150px;
-        left: 300px;
+        font-size: 6vw;
+        top: 21%;
+        left: 43%;
         transition: .2s;
     }
     span.photo{
@@ -520,6 +532,55 @@ input{
     }
 }
 
+@media (max-width: 721px) {
+    .search_input .search{
+        position: fixed;
+        top: 40%;
+        left: 15%;
+        transition: .2s;
+    }
+    .searchbox span{
+        position: fixed;
+        top: 41.3%;
+        left: 16.2%;
+        transition: .2s;
+        z-index: 50;
+    }
+    .search_input .enter_search{
+        margin-left: 17%;
+        width: 20%;
+        position: fixed;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        top: 40%;
+        left: 50%;
+        transition: .2s;
+    }
+    .name_user{
+        font-size: 7vw;
+        top: 23%;
+        margin-left: 10%;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 560px) {
+    .name_user{
+        margin-left: 15%;
+        transition: .2s;
+    }
+}
+
+@media (max-width: 450px) {
+    .name_user{
+        font-size: 7vw;
+        top: 25%;
+        margin-left: 20%;
+        transition: .2s;
+    }
+}
+
 @media (max-width: 430px) {
     .interface{
         width: 100vw;
@@ -534,8 +595,9 @@ input{
     }
     .name_user{
         position: absolute;
+        font-size: 8vw;
         top: 32%;
-        left: 17.5%;
+        left: 17%;
         transition: .2s;
     }
     .picture{

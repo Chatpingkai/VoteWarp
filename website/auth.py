@@ -39,14 +39,14 @@ def user_page():
         picture_room = request.files['file']
         if groupname and grouppassword and selectedDate and picture_room:
             password = room.query.filter_by(grouppassword=grouppassword).first()
-            if password == None and grouppassword.isalpha() and grouppassword.isupper():
+            if password == None and grouppassword.isalpha() and grouppassword.isupper() and len(grouppassword) == 4:
                 flash("Successfully created a room", category=1)
                 status = False
                 new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
                 db.session.add(new_room)
                 db.session.commit()
                 return redirect(url_for('auth.user_page', new_user=user, methods=0))
-            elif not grouppassword.isupper():
+            elif not grouppassword.isupper() or len(grouppassword) != 4:
                 flash("Please enter 4 capital letters.", category=0)
             else:
                 flash("This Code room has already", category=0)
@@ -158,8 +158,8 @@ def forgot_password_1():
         user = User.query.filter_by(email=email).first()
         if user:
             #check email to our database
-            msg = Message("Hey",
-                sender='test@gmail.com',
+            msg = Message("Forgot password link",
+                sender='Votewarp@gmail.com',
                 recipients=[email])
             #get token = email
             token = generate_reset_token(email)
@@ -230,9 +230,9 @@ def picturep(filename):
 @auth.route('/room/<grouppassword>', methods=['GET', 'POST'])
 @login_required
 def voteroom(grouppassword):
-    data = room.query.filter_by(grouppassword=grouppassword).first()
+    data = room.query.filter_by(grouppassword=grouppassword[:4]).first()
     roomname = data.groupname
-    all_vote = vote.query.filter_by(grouppassword=grouppassword).all()
+    all_vote = vote.query.filter_by(grouppassword=grouppassword[:4]).all()
     list_vote = []
     if all_vote:
         for data in all_vote:
@@ -247,10 +247,10 @@ def voteroom(grouppassword):
         description = request.form.get('descrip')
         votename = ""
         if place and time and description:
-            add_vote = vote(grouppassword=grouppassword, place=place, time=time, description=description, votename=votename)
+            add_vote = vote(grouppassword=grouppassword[:4], place=place, time=time, description=description, votename=votename)
             db.session.add(add_vote)
             db.session.commit()
-            return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
+            return redirect(url_for('auth.voteroom', grouppassword=grouppassword[:4]))
         elif not place:
             flash("Please enter the location")
         elif not time:
@@ -258,3 +258,19 @@ def voteroom(grouppassword):
         elif not description:
             flash("Please enter description.")
     return render_template("room.html", grouppassword=grouppassword, roomname=roomname, list_vote=list_vote)
+
+@auth.route('/find/<user>', methods=['GET', 'POST'])
+@login_required
+def find(user):
+    password = request.form.get("search")
+    password2 = room.query.filter_by(grouppassword=password).first()
+    if request.method == "POST":
+        if password2:
+            if password == password2.grouppassword:
+                password = password+user
+                return redirect(url_for('auth.voteroom', grouppassword=password))
+            else:
+                flash("Don't have This room code", category=0)
+        else:
+            flash("Don't have This room code", category=0)
+    return redirect(url_for('auth.user_page', new_user=user, methods=0))
