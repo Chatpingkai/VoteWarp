@@ -241,7 +241,6 @@ def voteroom(grouppassword):
             description = data.description
             votename = data.votename
             list_vote.append([place, time, description, votename])
-    print(list_vote)
     if request.method == 'POST':
         place = request.form.get('place')
         time = request.form.get('time')
