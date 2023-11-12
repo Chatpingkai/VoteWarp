@@ -113,7 +113,8 @@ def register():
             flash("YoYo Ur pass too weak make them power up pls", category='error')
         elif password1 != password2:
             flash("Are u got a problem about remember?? It's Not Match", category='error')
-        
+        elif User.query.filter_by(first_name=first_name) != "":
+            flash("This name has already", category='error')
         else:
             # add user to our database <3
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
@@ -202,7 +203,8 @@ def profile(user):
         first_name = user
         picturep = request.files['picturep']
         pictureb = request.files['pictureb']
-        if data == None:
+        print(pictureb, picturep)
+        if data == None and picturep and pictureb:
             addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
             db.session.add(addpicture)
         elif picturep.filename != "" and pictureb.filename != "":
@@ -240,6 +242,9 @@ def voteroom(grouppassword):
             time = data.time
             description = data.description
             votename = data.votename
+            if votename != "":
+                votename = votename.split()
+                print(votename)
             picturename = data.filename
             list_vote.append([place, time, description, votename, picturename])
     if request.method == 'POST':
@@ -248,11 +253,17 @@ def voteroom(grouppassword):
         description = request.form.get('descrip')
         picture = request.files['votepic']
         votename = ""
-        if place and time and description:
+        sameplace = ""
+        for i in vote.query.filter_by(grouppassword=grouppassword[:4]).all():
+            if i.place == place:
+                sameplace = i.place
+        if place and time and description and sameplace != place:
             add_vote = vote(grouppassword=grouppassword[:4], place=place, time=time, description=description, filename=picture.filename, picture=picture.read(),  votename=votename)
             db.session.add(add_vote)
             db.session.commit()
             return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
+        elif sameplace == place:
+            flash("This place has already")
         elif not place:
             flash("Please enter the location")
         elif not time:
@@ -277,10 +288,16 @@ def find(user):
             flash("Don't have This room code", category=0)
     return redirect(url_for('auth.user_page', new_user=user, methods=0))
 
-@auth.route('/test/<grouppassworduser>', methods=['GET', 'POST'])
+@auth.route('/test/<data>', methods=['GET', 'POST'])
 @login_required
-def test(grouppassworduser):
-    return redirect(url_for('auth.user_page', new_user=grouppassworduser))
+def test(data):
+    list_data = data.split(",")
+    all_vote = vote.query.filter_by(grouppassword=list_data[0][:4]).all()
+    for whatvote in all_vote:
+        if whatvote.place == list_data[1] and whatvote.time == list_data[2] and list_data[0][4:] not in whatvote.votename:
+            whatvote.votename = whatvote.votename+list_data[0][4:]+" "
+    db.session.commit()
+    return redirect(url_for('auth.voteroom', grouppassword=list_data[0]))
 
 @auth.route('/download_vote/<filename>')
 @login_required
