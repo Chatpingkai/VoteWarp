@@ -28,7 +28,7 @@
         <p class="room_text">room.</p>
         <div class="room_name"><p>{{ roomname }}</p></div>
         <p class="code_text">code</p>
-        <div class="code_name"><p>1150</p></div>
+        <div class="code_name"><p>{{ grouppassword[:4] }}</p></div>
         <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
     </div>
     <div class="finished">
@@ -37,8 +37,21 @@
     <div class="voting_container" id="voting">
         {% for i in list_vote%}
             <div class="votingbox">
+                {% if i[4] %}
+                <div style="border: 1px solid black;
+                    width: 350px;
+                    height: 300px;
+                    border-radius: 20px;
+                    margin-top: 30px;
+                    background: url('/download_vote/{{ i[4] }}') no-repeat;
+                    background-size: cover;
+                    background-position: center top;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);">
+                </div>
+                {% else %}
                 <div class="picture">
                 </div>
+                {% endif %}
                 <div class="place">
                     <p>place:</p>
                     <div class="line2"><p>{{ i[0] }}</p></div>
@@ -58,8 +71,9 @@
                             <p>{{ i [3] }}</p>
                         </div>
                     </div>
-                    <div class="confirm" id="checked"> 
-                    </div>
+                    <form action="/test/{{ grouppassword }}{{ i[0] }}" class="confirm" id="checked">
+                        <input type="submit">
+                    </form>
                 </div>
             </div>
             {% endfor %}
@@ -138,13 +152,13 @@
             </form>
         </div>
     </div> -->
-<form method="POST" class="create_vote">
+<form method="POST" class="create_vote" enctype="multipart/form-data">
         <form  methods="POST">
         <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
         <div class="name_place">
             <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
             <label for="input-file" class="upload_label">Select Picture</label><br>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="file" >
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="votepic" >
             <br>
             <br>
             <div class="placebox">

@@ -35,4 +35,6 @@ class vote(db.Model):
     place = db.Column(db.String(150))
     time = db.Column(db.String(150))
     description = db.Column(db.String(150))
+    filename = db.Column(db.String(150))
+    picture = db.Column(db.LargeBinary)
     votename = db.Column(db.String(150))

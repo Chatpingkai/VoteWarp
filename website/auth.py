@@ -240,17 +240,19 @@ def voteroom(grouppassword):
             time = data.time
             description = data.description
             votename = data.votename
-            list_vote.append([place, time, description, votename])
+            picturename = data.filename
+            list_vote.append([place, time, description, votename, picturename])
     if request.method == 'POST':
         place = request.form.get('place')
         time = request.form.get('time')
         description = request.form.get('descrip')
+        picture = request.files['votepic']
         votename = ""
         if place and time and description:
-            add_vote = vote(grouppassword=grouppassword[:4], place=place, time=time, description=description, votename=votename)
+            add_vote = vote(grouppassword=grouppassword[:4], place=place, time=time, description=description, filename=picture.filename, picture=picture.read(),  votename=votename)
             db.session.add(add_vote)
             db.session.commit()
-            return redirect(url_for('auth.voteroom', grouppassword=grouppassword[:4]))
+            return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
         elif not place:
             flash("Please enter the location")
         elif not time:
@@ -274,3 +276,14 @@ def find(user):
         else:
             flash("Don't have This room code", category=0)
     return redirect(url_for('auth.user_page', new_user=user, methods=0))
+
+@auth.route('/test/<grouppassworduser>', methods=['GET', 'POST'])
+@login_required
+def test(grouppassworduser):
+    return redirect(url_for('auth.user_page', new_user=grouppassworduser))
+
+@auth.route('/download_vote/<filename>')
+@login_required
+def votepicture(filename):
+    data = vote.query.filter_by(filename=filename).first()
+    return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
