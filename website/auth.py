@@ -113,8 +113,8 @@ def register():
             flash("YoYo Ur pass too weak make them power up pls", category='error')
         elif password1 != password2:
             flash("Are u got a problem about remember?? It's Not Match", category='error')
-        elif User.query.filter_by(first_name=first_name) != "":
-            flash("This name has already", category='error')
+        elif User.query.filter_by(first_name=first_name).first():
+            flash("This name has already been taken", category='error')
         else:
             # add user to our database <3
             new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
