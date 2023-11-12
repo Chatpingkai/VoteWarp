@@ -16,47 +16,6 @@ body{
     background-position: center;
 }
 
-/* box name */
-.text_name input{
-    height: 100%;
-    width: 50%;
-    border: none;
-    font-size: 30px;
-    border-bottom: 2px solid black;
-    background-color: #F5D899;
-    font-family: Jua;
-}
-
-/* ปรับขนาดกล่อง */
-.all .text_name input{
-    height: 40px;
-    width: 40%;
-    position: absolute;
-    top: 33%;
-    left: 10%;
-}
-
-/* picture pencil */
-.text_name i{
-    position: absolute;
-    top: 33.5%;
-    left: 48%;
-    font-size: 30px;
-}
-
-/* text Name */
-.text_name label{
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    color: black;
-    font-size: 50px;
-    font-family: Jua;
-    color: #fff;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: black;
-}
-
 /* text edit profile */
 .all h1{
     position: absolute;
@@ -72,7 +31,7 @@ body{
 /* img profile */
 .photo_profile img{
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10%;
     border-radius: 50%;
 }
@@ -80,7 +39,7 @@ body{
 /* img background */
 .photo_background img{
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 10%;
     border-radius: 50%;
 }
@@ -91,7 +50,7 @@ body{
     cursor: pointer;
     position: absolute;
     border: 2px solid black;
-    top: 49%;
+    top: 38%;
     margin-left: 30%;
     width: 20%;
     height: 6%;
@@ -115,7 +74,7 @@ body{
     cursor: pointer;
     position: absolute;
     border: 2px solid black;
-    top: 72%;
+    top: 63%;
     left: 30%;
     width: 20%;
     height: 6%;
@@ -151,7 +110,7 @@ body{
 
 @media (max-width: 1440px){
     .all .photo_profile label{
-        top: 48%;
+        top: 38%;
         left: 2%;
         text-align: center;
         padding-left: 0.5%;
@@ -159,7 +118,7 @@ body{
         transition: .2s;
     }
     .all .photo_background label{
-        top: 72%;
+        top: 62%;
         left: 32%;
         width: 30%;
         text-align: center;
@@ -178,7 +137,7 @@ body{
 
 @media (max-width: 1024px){
     .all .photo_profile label{
-        top: 46.5%;
+        top: 36.5%;
         left: 10%;
         font-size: 20px;
         text-align: center;
@@ -187,7 +146,7 @@ body{
         transition: .2s;
     }
     .all .photo_background label{
-        top: 71%;
+        top: 61%;
         left: 40%;
         width: 30%;
         font-size: 20px;
@@ -197,10 +156,6 @@ body{
     }
     .all h1{
         font-size: 75px;
-        transition: .2s;
-    }
-    .text_name label{
-        font-size: 45px;
         transition: .2s;
     }
     .photo_profile img{
@@ -230,13 +185,18 @@ body{
         -webkit-text-stroke-width: 2px;
         transition: .2s;
     }
-    .text_name label{
-        font-size: 35px;
-        -webkit-text-stroke-width: 1.5px;
+    .all .photo_profile label{
+        margin-left: 38%;
+        width: 35%;
+        font-size: 17px;
+        padding-top: 2%;
         transition: .2s;
     }
-    .text_name input{
-        font-size: 22px;
+    .all .photo_background label{
+        margin-left: 8%;
+        width: 35%;
+        font-size: 17px;
+        padding-top: 2%;
         transition: .2s;
     }
 }
@@ -248,22 +208,6 @@ body{
         -webkit-text-stroke-width: 2px;
         transition: .2s;
     }
-    .all .text_name input{
-        height: 30px;
-        width: 70%;
-    }
-    .text_name label{
-        font-size: 35px;
-        top: 28%;
-        -webkit-text-stroke-width: 1.5px;
-        transition: .2s;
-    }
-    .text_name i{
-        top: 33%;
-        left: 74%;
-        font-size: 30px;
-        transition: .2s;
-    }
     .photo_profile img{
         width: 110px;
         height: 110px;
@@ -272,11 +216,11 @@ body{
     .photo_background img{
         width: 110px;
         height: 110px;
-        top: 60%;
+        top: 50%;
         transition: .2s;
     }
     .all .photo_profile label{
-        top: 43.9%;
+        top: 34.5%;
         left: 15%;
         font-size: 13px;
         text-align: center;
@@ -287,20 +231,20 @@ body{
         transition: .2s;
     }
     .all .photo_background label{
-        top: 63.8%;
+        top: 53.8%;
         left: 45%;
         font-size: 13px;
         text-align: center;
-        padding-top: 1.5%;
+        padding-top: 2%;
         padding-left: 0.5%;
         width: 40%;
         height: 4.5%;
         transition: .2s;
     }
     .all button{
-        top: 85%;
-        right: 5%;
-        font-size: 13px;
+        top: 75%;
+        right: 10%;
+        font-size: 17px;
         text-align: center;
         padding-top: 0.2%;
         padding-left: 0.5%;

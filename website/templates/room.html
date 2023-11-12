@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style_room.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playpen Sans">
     <title>Room</title>
 {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -28,7 +30,7 @@
         <div onclick="window.open('/complete')" style="width: 500px; height: 500px; border: 1px solid black;"></div>
         <p class="room_text">room.</p>
         <div class="room_name"><p>{{ roomname }}</p></div>
-        <p class="code_text">code</p>
+        <p class="code_text">code.</p>
         <div class="code_name"><p>{{ grouppassword[:4] }}</p></div>
         <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
     </div>
@@ -167,18 +169,18 @@
             <br>
             <br>
             <div class="placebox">
-                <label>place :</label>
+                <label>Place :</label>
                 <input type="text" name="place">
             </div>
         </div>
         <div class="box_des">
             <div class="time">
-                <label>time :</label>
+                <label>Time :</label>
                 <br>
                 <input type="text" name="time">
             </div>
             <div class="descrip">
-                <label>description :</label>
+                <label>Description :</label>
                 <br>
                 <textarea cols="30" rows="30" maxlength="231" name="descrip"></textarea>
             </div>

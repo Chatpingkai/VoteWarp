@@ -87,14 +87,6 @@ body{
     padding: 6px 20px;
 }
 
-/* picture lock */
-.password i{
-    position: absolute;
-    margin-top: 31.3%;
-    margin-left: 80%;
-    font-size: 25px;
-}
-
 /* text remember me & check box */
 .remember label{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -348,10 +340,6 @@ body{
     margin-left: 83%;
     transition: .2s;
   }
-  .password i{
-    margin-left: 83%;
-    transition: .2s;
-  }
   .page_login button{
     margin-top: 75%;
     margin-left: 33%;
@@ -463,10 +451,6 @@ body{
     font-size: 20px;
     transition: .2s;
   }
-  .password i{
-    font-size: 20px;
-    transition: .2s;
-  }
   .login p{
     margin-top: 108%;
     font-size: 14px;
@@ -533,10 +517,6 @@ body{
     font-size: 18px;
     transition: .2s;
   }
-  .password i{
-    font-size: 18px;
-    transition: .2s;
-  }
   .page_login button{
     margin-top: 65%;
     font-size: 17px;
@@ -592,11 +572,6 @@ body{
   }
   .username i{
     margin-top: 11.5%;
-    font-size: 18px;
-    transition: .2s;
-  }
-  .password i{
-    margin-top: 27%;
     font-size: 18px;
     transition: .2s;
   }
@@ -853,11 +828,6 @@ body{
   }
   .username i{
     margin-top: 13%;
-    font-size: 13px;
-    transition: .2s;
-  }
-  .password i{
-    margin-top: 32%;
     font-size: 13px;
     transition: .2s;
   }
