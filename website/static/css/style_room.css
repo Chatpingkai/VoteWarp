@@ -388,6 +388,7 @@ body {
     top: 5%;
     animation: none 1s;
 }
+
 @keyframes invote {
     from{
         top: -1500px;
@@ -603,5 +604,210 @@ span.photo:hover:after{
 
 .closebtn:hover {
     background-color: hsl(0, 65%, 51%);
+}
+
+@media (max-width: 768px){
+    .room_text {
+        top: 12px;
+        font-size: 35px;
+    }
+    .room_name{
+        font-size: 35px;
+    }
+
+    .code_text{
+        top: 10px;
+        font-size: 35px;
+    }
+    
+    .code_name {
+        width: 30vw;
+        font-size: 35px;
+        top: 7px;
+        font-size: 25px;
+    }
+
+    .create_button {
+        width: 175px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    .finished{
+        width: 100px;
+        height: 100px;
+        right: 2%;
+        bottom: 1%;
+        background-size: contain;
+    }
+
+    .voting_container{
+        transition: .2s;
+    }
+    .votingbox{
+        width: 25rem;
+        height: 40rem;
+        transition: .2s;
+    }
+    .picture{
+        width: 230px;
+        height: 230px;
+        transition: .2s;
+    }
+    .place p{
+        font-size: 20px;
+        transition: .2s;
+    }
+    .date p, .timey p, .descriptionn p{
+        font-size: 15px;
+        transition: .2s;
+    }
+    .line2{
+        width: 300px;
+        transition: .2s;
+    }
+    .place .line2 {
+        width: 100px;
+        transition: .2s;
+    }
+    .content p{
+        font-size: 25px;
+        transition: .2s;
+    }
+    
+
+    .room_name {
+        border-bottom: 1px solid black;
+        text-align: center;
+        width: 100vw;
+        transition: .2s;
+    }
+    .room_text {
+        position: relative;
+        top: 7px;
+        transition: .2s;
+    }
+    .code_text{
+        font-size: 50px;
+        position: relative;
+        top: 5px;
+        transition: .2s;
+    }
+    .code_name {
+        border-bottom: 1px solid black;
+        text-align: center;
+        width: 30vw;
+        font-size: 40px;
+        position: relative;
+        top: 1px;
+        transition: .2s;
+    }
+    .content{
+        height: 15vh;
+        transition: .2s;
+    }
+    .votingtext {
+        position:relative;
+        transition: .2s;
+        top: -10%;
+    }
+    .votingtext p{
+        font-size: 15px;
+        transition: .2s;
+    }
+    .user_votingbox{
+        width: 250px;
+        transition: .2s;
+    }
+    .yohohoho{
+        position: relative;
+        bottom: 20%;
+    }
+}
+
+@media (max-width: 430px){
+    .room_text {
+        position: relative;
+        top: 7px;
+        font-size: 15px;
+    }
+    .room_name{
+        font-size: 15px;
+    }
+
+    .code_text{
+        position: relative;
+        top: 7px;
+        font-size: 15px;
+    }
+    
+    .code_name {
+        top: 1px;
+        font-size: 15px;
+    }
+
+    .create_button {
+        width: 150px;
+        height: 75px;
+        cursor: pointer;
+    }
+    .votingtext {
+        position:relative;
+        transition: .2s;
+        top: 10%;
+    }
+    .votingbox{
+        width: 300px;
+        height: 500px;
+        transition: .2s;
+    }
+    .votingbox .picture{
+        display: none;
+    }
+    .place p{
+        font-size: 20px;
+        transition: .2s;
+    }
+    .date p, .timey p, .descriptionn p{
+        font-size: 15px;
+        transition: .2s;
+    }
+    .line2{
+        width: 300px;
+        transition: .2s;
+    }
+    .place .line2 {
+        width: 100px;
+        transition: .2s;
+    }
+    .content p{
+        font-size: 25px;
+        transition: .2s;
+    }
+    .yohohoho{
+        position: relative;
+        top: 8%;
+        right: 5%;
+    }
+    .whitebox {
+        width: 80%;
+        height: 80%;
+        border: 1px solid black;
+        border-radius: 40px;
+        padding-left: 10px;
+        background-color: white;
+    }
+
+    .finished{
+        width: 70px;
+        height: 70px;
+        right: 3%;
+        bottom: 2%;
+        background-size: contain;
+    }
+
+    .voting_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
