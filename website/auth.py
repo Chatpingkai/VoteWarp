@@ -268,7 +268,7 @@ def voteroom(grouppassword):
             db.session.add(add_vote)
             db.session.commit()
             return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
-        elif sameplace == place:
+        elif sameplace == place and place != "":
             flash("This place has already")
         elif not place:
             flash("Please enter the location")
