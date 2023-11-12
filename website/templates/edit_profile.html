@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="../static/css/style_edit_profile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jua">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert">
+          <span class="closebtn" onclick="closeAlert()">&times;</span>
+          {{ message }}
+      </div>
+      <script src="../static/javascript/resgister.js"></script>
+      {% endfor %}
+    {% endif %}
+{% endwith %}
 </head>
 <body>
     <div class="all">

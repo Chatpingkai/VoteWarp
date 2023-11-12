@@ -203,13 +203,17 @@ def profile(user):
         first_name = user
         picturep = request.files['picturep']
         pictureb = request.files['pictureb']
-        if data == None and picturep and pictureb:
-            addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
-            db.session.add(addpicture)
+        if data == None:
+            if picturep and pictureb:
+                addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
+                db.session.add(addpicture)
+            else:
+                flash("Please edit both of your profile and backgroound", category=0)
+                return render_template("edit_profile.html", user=user, all_profile=all_profile)
         elif picturep.filename != "":
             data.picturep = picturep.read()
             data.filepname = picturep.filename
-        elif pictureb.filename != "":
+        elif pictureb.filename != "": 
             data.pictureb = pictureb.read()
             data.filebname = pictureb.filename
         db.session.commit()
@@ -315,4 +319,3 @@ def votepro(user):
     data = Profile.query.filter_by(first_name=user).first()
     if data:
         return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=data.filepname, as_attachment=True)
-    
