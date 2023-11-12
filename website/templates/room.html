@@ -83,35 +83,33 @@
             </div>
             {% endfor %}
     </div>
-<!-- <form method="POST" class="create_vote" enctype="multipart/form-data"> -->
-    <div class="create_vote">
-        <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
-        <div class="name_place">
-            <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
-            <label for="input-file" class="upload_label">Select Picture</label><br>
-            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="votepic" >
-            <br>
-            <br>
-            <div class="placebox">
-                <label>Place :</label>
-                <input type="text" name="place">
-            </div>
+<form method="POST" class="create_vote" enctype="multipart/form-data">
+    <img src="../static/img/close_button.png" alt="" class="close" onclick="closevote()">
+    <div class="name_place">
+        <img src="../static/img/anonymous2.png" alt="profile" width="100px" height="100px" id="picture_room"><br>
+        <label for="input-file" class="upload_label">Select Picture</label><br>
+        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" name="votepic" >
+        <br>
+        <br>
+        <div class="placebox">
+            <label>Place :</label>
+            <input type="text" name="place">
         </div>
-        <div class="box_des">
-            <div class="time">
-                <label>Time :</label>
-                <br>
-                <input type="text" name="time">
-            </div>
-            <div class="descrip">
-                <label>Description :</label>
-                <br>
-                <textarea cols="30" rows="30" maxlength="231" name="descrip"></textarea>
-            </div>
-        </div>
-        <input type="submit" name="submit" class="create_submit">
     </div>
-<!-- </form> -->
+    <div class="box_des">
+        <div class="time">
+            <label>Time :</label>
+            <br>
+            <input type="text" name="time">
+        </div>
+        <div class="descrip">
+            <label>Description :</label>
+            <br>
+            <textarea cols="30" rows="30" maxlength="231" name="descrip"></textarea>
+        </div>
+    </div>
+    <input type="submit" name="submit" class="create_submit">
+</form>
     <script src="../static/javascript/room.js"></script>
 </body>
 </html>
