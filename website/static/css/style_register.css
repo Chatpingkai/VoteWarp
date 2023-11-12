@@ -30,7 +30,7 @@ body{
     width: 80%;
     height: 810px;
     align-content: stretch;
-    margin: auto;
+    margin: 0;
     z-index: -1;
 }
 
@@ -113,6 +113,10 @@ body{
 
 h1{
     text-shadow: 0 0 70px;
+}
+.setting {
+  height: 100%;
+  width: 100%;
 }
 
 /* ขึ้นแจ้งเตือน */
@@ -231,45 +235,73 @@ h1{
 
 @media screen and (max-width: 425px) {
   .page_register {
-    position: fixed;
     display: flex;
-    flex-direction: column;
-    height: 100vh;
+    height: 85vh;
   }
   img {
     height: auto;
-    max-width: 100%;
+    max-width: 250px;
   }
   .register {
-    margin: auto;
+    margin: 0;
   }
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  .setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 768px) {
   .page_register {
-    position: fixed;
     display: flex;
-    flex-direction: column;
     height: 100vh;
-    align-items: center;
   }
   img {
     height: auto;
-    width: 90%;
-    margin-left: 2vh;
-    margin-top: 2vh;
+    width: 340px;
   }
   .register {
-    margin: 10px;
+    margin: 0;
   }
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  .setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .page_register {
+    display: flex;
+    height: 90vh;
+  }
+  img {
+    height: auto;
+    width: 350px;
+  }
+  .register {
+    margin: 0;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
