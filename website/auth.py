@@ -13,10 +13,10 @@ auth = Blueprint('auth', __name__)
 
 
 
-@auth.route('/user_page', methods=['GET', 'POST'])
+@auth.route('/user_page/<new_user>', methods=['GET', 'POST'])
 @login_required
-def user_page():
-    user = request.args.get('new_user')
+def user_page(new_user):
+    user = new_user
     all_data_user = room.query.filter_by(first_name=user).all()
     all_data_profile = Profile.query.filter_by(first_name=user).first()
     all_profile = []
@@ -45,7 +45,7 @@ def user_page():
                 new_room = room(groupname=groupname, grouppassword=grouppassword, selectedDate=selectedDate, filename=picture_room.filename, picture=picture_room.read(), status=status , first_name=user)
                 db.session.add(new_room)
                 db.session.commit()
-                return redirect(url_for('auth.user_page', new_user=user, methods=0))
+                return redirect(url_for('auth.user_page', new_user=user))
             elif not grouppassword.isupper() or len(grouppassword) != 4:
                 flash("Please enter 4 capital letters.", category=0)
             else:
@@ -285,9 +285,12 @@ def find(user):
     password2 = room.query.filter_by(grouppassword=password).first()
     if request.method == "POST":
         if password2:
-            if password == password2.grouppassword:
+            if password == password2.grouppassword and password2.status != "1":
                 password = password+user
                 return redirect(url_for('auth.voteroom', grouppassword=password))
+            elif password == password2.grouppassword and password2.status == "1":
+                password = password+user
+                return redirect(url_for('auth.maxvotefirst', grouppassword=password))
             else:
                 flash("Don't have This room code", category=0)
         else:
@@ -320,6 +323,27 @@ def votepro(user):
     if data:
         return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=data.filepname, as_attachment=True)
 
-@auth.route('/complete')
-def complete():
-    return render_template('complete.html')
+@auth.route('/complete/<grouppassword>')
+def maxvotefirst(grouppassword):
+    data = vote.query.filter_by(grouppassword=grouppassword[:4]).all()
+    data = sorted(data, key=lambda x:len(x.votename))
+    max_vote = []
+    if data:
+        for i in data:
+            place = i.place
+            time = i.time
+            description = i.description
+            votename = i.votename
+            if votename != "":
+                votename = votename.split()
+            picturename = i.filename
+        max_vote.append([place, time, description, votename, picturename])
+    else:
+        flash("Please vote the room")
+        return redirect(url_for('auth.voteroom', grouppassword=grouppassword))
+    cstatus = room.query.filter_by(grouppassword=grouppassword[:4]).first()
+    cstatus.status = 1
+    db.session.commit()
+    data = room.query.filter_by(grouppassword=grouppassword[:4]).first()
+    roomname = (data.groupname, data.selectedDate)
+    return render_template('complete.html', grouppassword=grouppassword, max_vote=max_vote, roomname=roomname)

@@ -5,49 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/complete.css">
     <title>complete</title>
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      {% for category, message in messages %}
-      <div class="alert">
-          <span class="closebtn" onclick="closeAlert()">&times;</span>
-          {{ message }}
-      </div>
-      <script src="../static/javascript/resgister.js"></script>
-      {% endfor %}
-    {% endif %}
-{% endwith %}
 </head>
 <body>
     <div class="navbar">
         <p>VoteWarp</p>
         <div class="nav_link">
-            <a href="/logout">logout</a>
+            <a href="/user_page/{{ grouppassword[4:] }}">home</a>
         </div>
     </div>
     <div class="content">
         <p class="room_text">room.</p>
-        <div class="room_name"><p>ffff</p></div>
+        <div class="room_name"><p>{{ roomname[0] }}</p></div>
         <p class="code_text">code</p>
-        <div class="code_name"><p>ffff</p></div>
+        <div class="code_name"><p>{{ grouppassword[:4] }}</p></div>
     </div>
     <div class="voting_container" id="voting">
         <!-- {% for i in list_vote%}
             <div class="votingbox">
-                {% if i[4] %}
-                <div style="border: 1px solid black;
-                    width: 350px;
-                    height: 300px;
-                    border-radius: 20px;
-                    margin-top: 30px;
-                    background: url('/download_vote/{{ i[4] }}') no-repeat;
-                    background-size: cover;
-                    background-position: center top;
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);">
-                </div>
-                {% else %}
-                <div class="picture">
-                </div>
-                {% endif %}
                 <div class="place">
                     <p>place:</p>
                     <div class="line2"><p>{{ i[0] }}</p></div>
@@ -77,29 +51,44 @@
             </div>
             {% endfor %} -->
             <div class="votingbox">
+                {% if max_vote[4] %}
+                <div style="border: 1px solid black;
+                    width: 350px;
+                    height: 300px;
+                    border-radius: 20px;
+                    margin-top: 30px;
+                    background: url('/download_vote/{{ i[4] }}') no-repeat;
+                    background-size: cover;
+                    background-position: center top;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);">
+                </div>
+                {% else %}
                 <div class="picture">
                 </div>
+                {% endif %}
                 <div class="place">
                     <p>place:</p>
-                    <div class="line2"><p>hehe</p></div>
+                    <div class="line2"><p>{{ max_vote[0][0] }}</p></div>
                 </div>
                 <div class="whitebox">
                     <div class="date">
                         <p>date:</p>
-                        <div class="line2"><p>99999</p></div>
+                        <div class="line2"><p>{{ roomname[1] }}</p></div>
                     </div>
                     <div class="timey">
                         <p>time:</p>
-                        <div class="line2"><p>88888</p></div>
+                        <div class="line2"><p>{{ max_vote[0][1] }}</p></div>
                     </div>
                     <div class="descriptionn">
                         <p>description:</p>
-                        <p>สวัสดีครับบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ</p>
+                        <p>{{ max_vote[0][2] }}</p>
                     </div>
                     <div class="votingtext">
                         <p>voting</p>
                         <div class="user_votingbox">
-                            <img class="user_voting" src="../static/img/anonymous2" alt="../static/img/anonymous2"></img>
+                            {% for j in max_vote[0][3] %}
+                                    <img class="user_voting" src="/votepro/{{j}}" alt="../static/img/anonymous2"></img>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

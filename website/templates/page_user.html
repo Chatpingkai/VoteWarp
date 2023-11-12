@@ -88,7 +88,7 @@ align-items: center;">
                             <img src="../static/img/voteting.png" alt="">
                         </div>
                 {% else %}
-                 <div class="room_box green" onclick="window.open('../templates/room.html')">
+                 <div class="room_box green" onclick="window.open('/complete/{{ i[5] }}{{ user }}')">
                     <p>room</p>
                     <div class="line">
                         <p>{{ i[0] }}</p>

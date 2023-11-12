@@ -27,16 +27,14 @@
         </div>
     </div>
     <div class="content">
-        <div onclick="window.open('/complete')" style="width: 500px; height: 500px; border: 1px solid black;"></div>
         <p class="room_text">room.</p>
         <div class="room_name"><p>{{ roomname }}</p></div>
         <p class="code_text">code.</p>
         <div class="code_name"><p>{{ grouppassword[:4] }}</p></div>
         <img src="../static/img/createbutton.png" class="create_button" onclick="openvote()">
     </div>
-    <div class="finished">
-
-    </div>
+    <a href='/complete/{{ grouppassword }}' class="finished">
+    </a>
     <div class="voting_container" id="voting">
         {% for i in list_vote%}
             <div class="votingbox">

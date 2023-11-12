@@ -108,7 +108,7 @@ body {
     background-color: #e0f7bb;
 }
 
-/* .votingbox .picture {
+.votingbox .picture {
     border: 1px solid black;
     width: 350px;
     height: 300px;
@@ -118,7 +118,7 @@ body {
     background-size: cover;
     background-position: center top;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);
-} */
+}
 .place {
     display: flex;
     gap: 10px;
