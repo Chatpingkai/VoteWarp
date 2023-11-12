@@ -68,7 +68,9 @@
                     <div class="votingtext">
                         <p>voting</p>
                         <div class="user_votingbox">
-                            <p>{{ i [3] }}</p>
+                            {% for j in i[3] %}
+                                    <img class="user_voting" src="/votepro/{{j}}" alt="../static/img/anonymous2"></img>
+                            {% endfor %}
                         </div>
                     </div>
                     <form action="/test/{{ grouppassword }},{{ i[0] }},{{ i[1]}}" class="confirm" id="checked">

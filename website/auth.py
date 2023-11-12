@@ -203,13 +203,13 @@ def profile(user):
         first_name = user
         picturep = request.files['picturep']
         pictureb = request.files['pictureb']
-        print(pictureb, picturep)
         if data == None and picturep and pictureb:
             addpicture = Profile(filepname=picturep.filename, picturep=picturep.read(), filebname=pictureb.filename, pictureb=pictureb.read(), first_name=first_name)
             db.session.add(addpicture)
-        elif picturep.filename != "" and pictureb.filename != "":
+        elif picturep.filename != "":
             data.picturep = picturep.read()
             data.filepname = picturep.filename
+        elif pictureb.filename != "":
             data.pictureb = pictureb.read()
             data.filebname = pictureb.filename
         db.session.commit()
@@ -232,6 +232,9 @@ def picturep(filename):
 @auth.route('/room/<grouppassword>', methods=['GET', 'POST'])
 @login_required
 def voteroom(grouppassword):
+    if not Profile.query.filter_by(first_name=grouppassword[4:]).first():
+        flash("Please edit your profile and backgroound", category=0)
+        return redirect(url_for('auth.user_page', new_user=grouppassword[4:]))
     data = room.query.filter_by(grouppassword=grouppassword[:4]).first()
     roomname = data.groupname
     all_vote = vote.query.filter_by(grouppassword=grouppassword[:4]).all()
@@ -244,7 +247,6 @@ def voteroom(grouppassword):
             votename = data.votename
             if votename != "":
                 votename = votename.split()
-                print(votename)
             picturename = data.filename
             list_vote.append([place, time, description, votename, picturename])
     if request.method == 'POST':
@@ -296,6 +298,8 @@ def test(data):
     for whatvote in all_vote:
         if whatvote.place == list_data[1] and whatvote.time == list_data[2] and list_data[0][4:] not in whatvote.votename:
             whatvote.votename = whatvote.votename+list_data[0][4:]+" "
+        elif whatvote.place == list_data[1] and whatvote.time == list_data[2] and list_data[0][4:] in whatvote.votename:
+            whatvote.votename =  (whatvote.votename).replace(list_data[0][4:], "")
     db.session.commit()
     return redirect(url_for('auth.voteroom', grouppassword=list_data[0]))
 
@@ -304,3 +308,11 @@ def test(data):
 def votepicture(filename):
     data = vote.query.filter_by(filename=filename).first()
     return send_file(BytesIO(data.picture), mimetype='image/jpeg', download_name=filename, as_attachment=True)
+
+@auth.route('/votepro/<user>')
+@login_required
+def votepro(user):
+    data = Profile.query.filter_by(first_name=user).first()
+    if data:
+        return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=data.filepname, as_attachment=True)
+    
