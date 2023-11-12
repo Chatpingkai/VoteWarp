@@ -319,3 +319,7 @@ def votepro(user):
     data = Profile.query.filter_by(first_name=user).first()
     if data:
         return send_file(BytesIO(data.picturep), mimetype='image/jpeg', download_name=data.filepname, as_attachment=True)
+
+@auth.route('/complete')
+def complete():
+    return render_template('complete.html')
