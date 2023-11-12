@@ -239,13 +239,12 @@ body {
 
 .confirm{
     position: relative;
+    margin-top: 10%;
     left: 40%;
     cursor: pointer;
     height: 60px;
     width: 60px;
-    border: 3px solid black;
     border-radius: 100px;
-    top: 10%;
 }
 
 .checked{
@@ -253,8 +252,19 @@ body {
     height: 60px;
     width: 60px;
     border-radius: 100px;
-    border: 3px solid black;
     background-size: cover;
+}
+
+.yohohoho button{
+    position: relative;
+    background-color: #fff;
+    margin-top: 1%;
+    left: 0;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border: 3px solid black;
+    border-radius: 100px;
 }
 
 .chatroom {
@@ -594,3 +604,4 @@ span.photo:hover:after{
 .closebtn:hover {
     background-color: hsl(0, 65%, 51%);
 }
+
