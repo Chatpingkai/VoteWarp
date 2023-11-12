@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 54px;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: url(../img/paper2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.content{
+    position: relative;
+    width: 75vw;
+    height: 30vh;
+    font-size: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+    width: 100vw;
+    height: 70px;
+    padding: 0 20px 0 20px;
+    background-color: aliceblue;
+    font-size: 35px;
+}
+.nav_link a{
+    border: 2px solid black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    background-color: rgb(179, 226, 245);
+    text-decoration: none;
+    color: black;
+}
+
+.nav_link a:hover{
+    background-color: rgb(68, 162, 199);
+}
+
+.content .name {
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.room_name {
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 100vw;
+}
+
+.room_text {
+    position: relative;
+    top: 12px;
+}
+
+.code_text{
+    font-size: 50px;
+    position: relative;
+    top: 15px;
+}
+
+.code_name {
+    border-bottom: 1px solid black;
+    text-align: center;
+    width: 30vw;
+    font-size: 40px;
+    position: relative;
+    top: 10px;
+}
+
+.voting_container {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50rem);
+    justify-content: center;
+}
+
+.votingbox {
+    height: 1000px;
+    border: 1px solid black;
+    border-radius: 40px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff2cf;
+}
+
+.votingbox .picture {
+    border: 1px solid black;
+    width: 350px;
+    height: 300px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background: url(../img/bgregister.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.29);
+}
+.place {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+/* element ของ place, date, time ใน room_box */
+.date, .timey {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    top: 6%;
+    padding: 0 10px 30px 10px;
+}
+
+.descriptionn {
+    position: relative;
+    top: 2%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    height: 150px;
+    padding: 10px 10px 0 10px;
+}
+/* ตัวอักษร 'place:', 'date:', 'time:' ตามลำดับ */
+.place p, .date p, .timey p, .descriptionn p{
+    top: 3px;
+    font-size: 20px;
+}
+/* ตัวอักษรบนเส้นใต้ place, date, time*/
+.line2 p{
+    position: relative;
+    top: 0;
+    left: 10px;
+}
+
+/* เส้นใต้ตัวอักษรของ place, date, time */
+.line2{
+    position: relative;
+    left: -3%;
+    width: 300px;
+    border-bottom: 1px solid black;
+}
+
+.place .line2 {
+    width: 250px;
+}
+
+.whitebox {
+    width: 80%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.votingtext{
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    padding-bottom: 10px;
+    top: 10%;
+}
+
+.user_votingbox{
+    background-color: #EDEDED;
+    height: 60px;
+    width: 275px;
+    border-radius: 40px;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    
+}
+
+.votingtext p {
+    font-size: 20px;
+    top: 3px;
+}
+
+.user_voting {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 100px;
+}
