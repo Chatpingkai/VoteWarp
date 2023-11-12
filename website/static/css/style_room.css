@@ -414,8 +414,8 @@ body {
 
 span.photo{
     position: relative;
-    height: 450px;
-    width: 550px;
+    height: 300px;
+    width: 400px;
     border: 2px solid black;
     display: block;
     overflow: hidden;
@@ -607,10 +607,47 @@ span.photo:hover:after{
     background-color: hsl(0, 65%, 51%);
 }
 
+
+@media (max-width: 1024px){
+    .create_vote{
+        height: 1156px;
+        width: 645px;
+    }
+    #picture_room {
+        width: 403px;
+        height: 360px;
+    }
+}
+
 @media (max-width: 768px){
+    .create_vote {
+        height: 960px;
+        width: 474px;
+    }
+    .name_place label {
+        font-size: 20px;
+        padding-top: 10px;
+    }
+    #picture_room {
+        width: 267px;
+        height: 236px;
+    }
+    .placebox {
+        position: relative;
+        left: 10px;
+        top: -20%;
+    }
     .room_text {
         top: 12px;
         font-size: 35px;
+    }
+    .box_des {
+        width: 406px;
+        height: 80%;
+        padding: 30px;
+        gap: 50px;
+        position: relative;
+        top: -10%;
     }
     .room_name{
         font-size: 35px;
@@ -727,6 +764,38 @@ span.photo:hover:after{
 }
 
 @media (max-width: 430px){
+    .close {
+        width: 26px;
+    }
+    .name_place input {
+        width: 131px;
+    }
+    .create_vote{
+        justify-content: center;
+        align-items: center;
+        height: 744px;
+        width: 315px;
+    }
+    #picture_room {
+        position: relative;
+        top: 30%;
+        width: 239px;
+        height: 197px;
+    }
+    .box_des{
+        width: 270px;
+        top: 1%;
+    }
+    .name_place label {
+        font-size: 20px;
+        position: relative;
+        top: 30%;
+    }
+    .placebox {
+        position: relative;
+        left: 10px;
+        top: 10px;
+    }
     .room_text {
         position: relative;
         top: 7px;
