@@ -110,8 +110,8 @@ body {
 
 .votingbox .picture {
     border: 1px solid black;
-    width: 350px;
-    height: 300px;
+    width: 530px;
+    height: 340px;
     border-radius: 20px;
     margin-top: 30px;
     background: url(../img/bgregister.jpg) no-repeat;
@@ -238,10 +238,9 @@ body {
         height: 40rem;
         transition: .2s;
     }
-    .picture{
-        width: 230px;
-        height: 230px;
-        transition: .2s;
+    .votingbox .picture {
+        width: 257px;
+        height: 178px;
     }
     .place p{
         font-size: 20px;
