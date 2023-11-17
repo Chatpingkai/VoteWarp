@@ -1,42 +1,40 @@
 @font-face {
-  font-family: "inter";
-  src: url(../font/Inter-Regular.woff);
+    font-family: "inter";
+    src: url(../font/Inter-Regular.woff);
 }
-
 /*ภาพ background*/
-body {
-  background-image: url("../img/background_login.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  font-family: Inter, sans-serif;
-  overflow: hidden;
+body{
+    background-image: url("../img/background_login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Inter, sans-serif;
+    overflow: hidden;
 }
-
 /*ทั้งหมดในกรอบขาว*/
-.page_register {
-  position: fixed;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  top: 10%;
-  left: 11%;
-  background-color: rgba(245, 245, 245, 0.5);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  border: none;
-  outline: none;
-  border: 2px solid;
-  border-color: black;
-  width: 80%;
-  height: 810px;
-  align-content: stretch;
-  margin: 0;
-  z-index: -1;
+.page_register{
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    top: 10%;
+    left: 11%;
+    background-color: rgba(245, 245, 245, 0.5);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    border: 2px solid;
+    border-color: black;
+    width: 80%;
+    height: 810px;
+    align-content: stretch;
+    margin: 0;
+    z-index: -1;
 }
 
-.navbar {
+.navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,8 +47,7 @@ body {
   left: 0px;
   top: -10px;
 }
-
-.nav_link a {
+.nav_link a{
   border: 2px solid black;
   padding: 10px 20px 10px 20px;
   border-radius: 30px;
@@ -60,66 +57,63 @@ body {
   color: black;
 }
 
-.nav_link a:hover {
+.nav_link a:hover{
   background-color: rgb(68, 162, 199);
 }
 
 /*หน้าสมัคร*/
-.register {
-  position: relative;
-  display: flex;
-  margin-top: 80px;
+.register{
+    position: relative;
+    display: flex;
+    margin-top: 80px;
 }
-
 /*รวมภาพไว้ในกลุ่มเดียวกัน*/
-.picture {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+ .picture{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
+ /*createaccount button*/
+.register .Createaccount{
+    width: 100%;
+    height: 45px;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    
 }
 
-/*createaccount button*/
-.register .Createaccount {
-  width: 100%;
-  height: 45px;
-  background: black;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 16px;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-
+.register .box input{
+    align-items: center;
+    width: 100%;
+    height: 15px;
+    margin: px;
 }
 
-.register .box input {
-  align-items: center;
-  width: 100%;
-  height: 15px;
-  margin: px;
+.box input{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    margin-top: 30px;
+    padding: 20px 45px 20px 20px;
 }
 
-.box input {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, .3);
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif, sans-serif;
-  margin-top: 30px;
-  padding: 20px 45px 20px 20px;
+h1{
+    text-shadow: 0 0 70px;
 }
-
-h1 {
-  text-shadow: 0 0 70px;
-}
-
 .setting {
   height: 100%;
   width: 100%;
@@ -127,38 +121,36 @@ h1 {
 
 /* ขึ้นแจ้งเตือน */
 .alert {
-  font-family: sans-serif;
-  font-weight: bold;
-  padding: 20px;
-  background-color: #f44336;
-  /* สีแดง */
-  color: white;
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 50;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 20px;
+    background-color: #f44336; /* สีแดง */
+    color: white;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 50;
 }
 
 .closebtn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .closebtn:hover {
-  background-color: #d32f2f;
+    background-color: #d32f2f;
 }
 
-.cloud1 {
-  position: absolute;
-  width: 100vw;
-  display: block;
-  overflow: hidden;
-  top: -10%;
+.cloud1{
+    position: absolute;
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+    top: -10%;
 }
-
-.cloud2 {
+.cloud2{
   position: absolute;
   width: 80%;
   display: block;
@@ -166,84 +158,73 @@ h1 {
   top: 4%;
   left: 5%;
 }
-
-.cloud3 {
+.cloud3{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   top: 15%;
 }
-
-.cloud4 {
+.cloud4{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   top: 10%;
 }
-
-.cloud5 {
+.cloud5{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 30%;
 }
-
-.cloud6 {
+.cloud6{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 50%;
 }
-
-.cloud7 {
+.cloud7{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 40%;
 }
-
-.cloud8 {
+.cloud8{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 15%;
 }
-
-.cloud9 {
+.cloud9{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 10%;
 }
-
-.cloud10 {
+.cloud10{
   position: absolute;
   width: 80%;
   display: block;
   overflow: hidden;
   bottom: 0;
 }
-
-@keyframes cloud {
-  0% {
-    opacity: 1;
-    transform: scale(3);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(3);
-  }
+@keyframes cloud{
+    0% {
+      opacity: 1;
+      transform: scale(3);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(3);
+    }
 }
-
-.cloudimation {
+.cloudimation{
   position: absolute;
   width: 100%;
   height: 100%;
@@ -257,22 +238,18 @@ h1 {
     display: flex;
     height: 85vh;
   }
-
   img {
     height: auto;
     max-width: 250px;
   }
-
   .register {
     margin: 0;
   }
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
   .setting {
     display: flex;
     flex-direction: column;
@@ -285,22 +262,18 @@ h1 {
     display: flex;
     height: 100vh;
   }
-
   img {
     height: auto;
     width: 340px;
   }
-
   .register {
     margin: 0;
   }
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
   .setting {
     display: flex;
     flex-direction: column;
@@ -308,28 +281,23 @@ h1 {
     justify-content: center;
   }
 }
-
 @media screen and (max-width: 1440px) {
   .page_register {
     display: flex;
     height: 90vh;
   }
-
   img {
     height: auto;
     width: 350px;
   }
-
   .register {
     margin: 0;
   }
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
   .setting {
     display: flex;
     flex-direction: column;
